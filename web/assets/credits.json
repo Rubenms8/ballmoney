@@ -1,0 +1,79 @@
+{
+  "ch-5": {
+    "src": "assets/img/ch-5.jpg",
+    "title": "42 - Game",
+    "creator": "ethnosax",
+    "creator_url": "https://www.flickr.com/photos/49977858@N04",
+    "license": "by-nc-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/49977858@N04/15483604147",
+    "source": "flickr"
+  },
+  "k-1": {
+    "src": "assets/img/k-1.jpg",
+    "title": "Chess king",
+    "creator": "Steve A Johnson",
+    "creator_url": "https://www.flickr.com/photos/14529257@N03",
+    "license": "by-sa",
+    "license_version": "3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=706586",
+    "source": "wikimedia"
+  },
+  "k-2": {
+    "src": "assets/img/k-2.png",
+    "title": "<div class='fn'> <div style='font-weight:bold;display:inline-block;'><div style='display:inline-block' dir='ltr' lang='en'><i>Chess pawns (16).</i></div></div><div style='display: none;'>label QS:Len,'Chess pawns (16).'</div> <div style='display: none;'>label QS:Lpl,'Piony szachowe (16).'</div> <div style='display: none;'>label QS:Lfr,'Les pièces du jeu d'échecs (16).'</div></div>",
+    "creator": "Anonymous (Qing Dynasty)Unknown author",
+    "creator_url": "https://en.wikipedia.org/wiki/en:Qing_dynasty",
+    "license": "cc0",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=26600345",
+    "source": "wikimedia"
+  },
+  "k-3": {
+    "src": "assets/img/k-3.jpg",
+    "title": "Sorry!",
+    "creator": "John-Morgan",
+    "creator_url": "https://www.flickr.com/photos/24742305@N00",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/24742305@N00/5572949493",
+    "source": "flickr"
+  },
+  "k-4": {
+    "src": "assets/img/k-4.jpg",
+    "title": "Concept to Implementation",
+    "creator": "Todd Huffman",
+    "creator_url": "https://www.flickr.com/photos/99287245@N00",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/99287245@N00/3423925779",
+    "source": "flickr"
+  },
+  "k-5": {
+    "src": "assets/img/k-5.jpg",
+    "title": "Chess Pieces",
+    "creator": "plffft",
+    "creator_url": "https://www.flickr.com/photos/23081268@N05",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/23081268@N05/2221698932",
+    "source": "flickr"
+  },
+  "k-6": {
+    "src": "assets/img/k-6.jpg",
+    "title": "Chess nld45",
+    "creator": "Cburnett",
+    "creator_url": "https://commons.wikimedia.org/wiki/User:Cburnett",
+    "license": "by-sa",
+    "license_version": "3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=1496655",
+    "source": "wikimedia"
+  }
+}
