@@ -233,6 +233,7 @@
       var body =
         "Nombre: " + d.nombre + "\n" +
         "Correo: " + d.email + "\n" +
+        "Edad: " + d.edad + "\n" +
         "País: " + d.pais + "\n" +
         "Experiencia en ventas: " + d.ventas + "\n\n" +
         "Por qué quiero entrar:\n" + d.mensaje + "\n";
@@ -270,6 +271,7 @@
       var data = {
         nombre: get("nombre"),
         email: get("email"),
+        edad: get("edad"),
         pais: get("pais"),
         ventas: get("ventas"),
         mensaje: get("mensaje"),
