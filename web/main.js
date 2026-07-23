@@ -209,22 +209,57 @@
     var success = form.querySelector("[data-success]");
     var MAIL = "ballmoney.contact@gmail.com";
 
+    /* =========================================================
+       ENVÍO AUTOMÁTICO
+       Pega aquí tu endpoint de Formspree (https://formspree.io/f/xxxxxxxx).
+       Con esto la solicitud llega a tu correo AL INSTANTE y queda
+       guardada en el panel de Formspree (aunque el email fallara).
+       Mientras esté vacío, se usa el correo manual como respaldo.
+       ========================================================= */
+    var FORM_ENDPOINT = "https://formspree.io/f/xrenybvd";   // endpoint de Formspree
+    var STORE_KEY = "bm_solicitudes";    // respaldo local en el navegador
+
+    function get(n) { var el = form.querySelector("#" + n); return el ? el.value.trim() : ""; }
+
+    function saveLocal(data) {
+      try {
+        var arr = JSON.parse(localStorage.getItem(STORE_KEY) || "[]");
+        arr.push(data);
+        localStorage.setItem(STORE_KEY, JSON.stringify(arr));
+      } catch (e) { /* almacenamiento no disponible */ }
+    }
+
+    function buildMailto(d) {
+      var body =
+        "Nombre: " + d.nombre + "\n" +
+        "Correo: " + d.email + "\n" +
+        "País: " + d.pais + "\n" +
+        "Experiencia en ventas: " + d.ventas + "\n\n" +
+        "Por qué quiero entrar:\n" + d.mensaje + "\n";
+      return "mailto:" + MAIL +
+        "?subject=" + encodeURIComponent("Solicitud equipo BallMoney — " + d.nombre) +
+        "&body=" + encodeURIComponent(body);
+    }
+
+    function showSuccess() {
+      form.querySelectorAll(".field, .apply-submit, .apply-form-step").forEach(function (el) { el.style.display = "none"; });
+      if (success) {
+        success.classList.add("is-visible");
+        success.setAttribute("aria-hidden", "false");
+      }
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      // clear errors
       form.querySelectorAll(".is-error").forEach(function (f) { f.classList.remove("is-error"); });
 
       var valid = true;
       form.querySelectorAll("[required]").forEach(function (input) {
-        if (!input.value.trim()) {
-          input.closest(".field").classList.add("is-error");
-          valid = false;
-        }
+        if (!input.value.trim()) { input.closest(".field").classList.add("is-error"); valid = false; }
       });
       var email = form.querySelector("#email");
       if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        email.closest(".field").classList.add("is-error");
-        valid = false;
+        email.closest(".field").classList.add("is-error"); valid = false;
       }
       if (!valid) {
         var firstErr = form.querySelector(".is-error");
@@ -232,27 +267,44 @@
         return;
       }
 
-      // build mailto with all data
-      var get = function (n) { var el = form.querySelector("#" + n); return el ? el.value.trim() : ""; };
-      var body =
-        "Nombre: " + get("nombre") + "\n" +
-        "Correo: " + get("email") + "\n" +
-        "Edad: " + get("edad") + "\n" +
-        "Instagram/TikTok: " + get("social") + "\n" +
-        "Experiencia en ventas: " + get("ventas") + "\n\n" +
-        "Por qué quiero formar parte:\n" + get("mensaje") + "\n";
-      var url = "mailto:" + MAIL +
-        "?subject=" + encodeURIComponent("Solicitud equipo BallMoney — " + get("nombre")) +
-        "&body=" + encodeURIComponent(body);
+      var data = {
+        nombre: get("nombre"),
+        email: get("email"),
+        pais: get("pais"),
+        ventas: get("ventas"),
+        mensaje: get("mensaje"),
+        fecha: new Date().toISOString(),
+        _subject: "Nueva solicitud BallMoney — " + get("nombre")
+      };
 
-      window.location.href = url;
+      // 1) Respaldo local inmediato: no se pierde aunque falle la red o el correo
+      saveLocal(data);
 
-      // show success state
-      form.querySelectorAll(".field, .apply-submit, .apply-form-step").forEach(function (el) { el.style.display = "none"; });
-      if (success) {
-        success.classList.add("is-visible");
-        success.setAttribute("aria-hidden", "false");
+      var btn = form.querySelector("[type=submit]");
+      var label = btn ? btn.querySelector("span") : null;
+      var prevText = label ? label.textContent : "";
+      if (btn) btn.disabled = true;
+      if (label) label.textContent = "Enviando…";
+
+      // Respaldo por correo si el envío automático no está configurado o falla
+      function fallbackMailto() {
+        if (btn) btn.disabled = false;
+        if (label) label.textContent = prevText;
+        window.location.href = buildMailto(data);
       }
+
+      // Sin endpoint configurado todavía → respaldo por correo
+      if (!FORM_ENDPOINT) { fallbackMailto(); return; }
+
+      // 2) Envío automático (llega al correo y queda almacenado en Formspree)
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (res && res.ok) { showSuccess(); }
+        else { fallbackMailto(); }
+      }).catch(function () { fallbackMailto(); });
     });
 
     // clear error on input
