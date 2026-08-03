@@ -3,324 +3,408 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BALLMONEY — Únete al equipo</title>
-  <meta name="description" content="No vendemos cursos ni dinero fácil. Construimos un equipo basado en trabajo, disciplina y largo plazo. Descubre el proyecto y postúlate." />
-  <meta name="theme-color" content="#0a0a0b" />
+  <title>Ballmoney — Mentalidad, dinero y futuro para quien no se conforma</title>
+  <meta name="description" content="Ballmoney es un medio digital para jóvenes ambiciosos: mentalidad, disciplina, productividad, negocios online, libertad financiera y las habilidades del futuro. Ideas prácticas, sin humo." />
+  <meta name="theme-color" content="#fbfbf9" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="BALLMONEY — Únete al equipo" />
-  <meta property="og:description" content="Buscamos personas comprometidas, ambiciosas y con ganas de aprender. No es un curso. Es un equipo." />
+  <meta property="og:title" content="Ballmoney — Mentalidad, dinero y futuro" />
+  <meta property="og:description" content="Ideas prácticas sobre mentalidad, productividad, dinero y negocios para construir tu mejor versión." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260717" />
+  <link rel="stylesheet" href="styles.css?v=20260719" />
 </head>
-<body>
+<body id="top">
 
-  <!-- ============ SPLASH ============ -->
-  <div class="splash" data-splash aria-hidden="true">
-    <div class="splash-inner">
-      <span class="logo logo--xl" aria-label="BallMoney">
-        <svg viewBox="0 0 78 44" role="img" aria-label="BM"><defs>
-          <linearGradient id="goldSplash" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#8a6a1e"/><stop offset=".38" stop-color="#f4e2a0"/>
-            <stop offset=".62" stop-color="#e8c766"/><stop offset="1" stop-color="#9c7628"/>
-          </linearGradient></defs>
-          <text x="1" y="35" class="logo-glyph" fill="url(#goldSplash)">BM</text>
-        </svg>
-      </span>
-      <div class="splash-bar"><span></span></div>
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <button class="burger" data-burger aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <a href="#top" class="brand" aria-label="Ballmoney — inicio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Ball<b>money</b></span>
+      </a>
+      <div class="masthead-actions">
+        <span class="masthead-date" data-today>Edición de hoy</span>
+        <a href="#newsletter" class="btn btn--primary btn--sm">Suscríbete</a>
+      </div>
     </div>
-  </div>
-
-  <!-- ============ PROGRESS + GLOW ============ -->
-  <div class="scroll-progress" data-progress></div>
-  <div class="cursor-glow" data-glow aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- ============ NAV ============ -->
-  <header class="nav" data-nav>
-    <a href="#top" class="logo logo--nav" aria-label="BallMoney — inicio">
-      <svg viewBox="0 0 78 44" role="img" aria-label="BM"><defs>
-        <linearGradient id="goldNav" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#8a6a1e"/><stop offset=".38" stop-color="#f4e2a0"/>
-          <stop offset=".62" stop-color="#e8c766"/><stop offset="1" stop-color="#9c7628"/>
-        </linearGradient></defs>
-        <text x="1" y="35" class="logo-glyph" fill="url(#goldNav)">BM</text>
-      </svg>
-    </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#consiste">Cómo funciona</a>
-      <a href="#unete">Formulario</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a href="#unete" class="btn btn--nav" data-magnetic>Quiero entrar</a>
-    <button class="nav-burger" data-burger aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span>
-    </button>
   </header>
 
-  <!-- mobile menu -->
+  <!-- ============ NAV DE CATEGORÍAS ============ -->
+  <nav class="catnav" data-nav aria-label="Categorías">
+    <div class="wrap catnav-inner">
+      <a href="#mentalidad">Mentalidad</a>
+      <a href="#productividad">Productividad</a>
+      <a href="#dinero">Dinero</a>
+      <a href="#negocios">Negocios</a>
+      <a href="#futuro">Futuro &amp; IA</a>
+      <a href="#historias">Historias</a>
+      <a href="#newsletter" class="catnav-cta">Suscríbete →</a>
+    </div>
+  </nav>
+
+  <!-- menú móvil -->
   <div class="mobile-menu" data-mobile-menu aria-hidden="true">
-    <a href="#consiste">Cómo funciona</a>
-    <a href="#unete">Formulario</a>
-    <a href="#faq">FAQ</a>
-    <a href="#unete" class="btn btn--primary">Quiero entrar</a>
+    <button class="mobile-close" data-burger aria-label="Cerrar menú">×</button>
+    <a href="#mentalidad">Mentalidad</a>
+    <a href="#productividad">Productividad</a>
+    <a href="#dinero">Dinero</a>
+    <a href="#negocios">Negocios</a>
+    <a href="#futuro">Futuro &amp; IA</a>
+    <a href="#historias">Historias</a>
+    <a href="#newsletter" class="mm-cta">Suscríbete gratis →</a>
   </div>
 
-  <main id="top">
+  <main>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <!-- Fotografía exacta proporcionada por el cliente (peón/rey en el espejo).
-             Anclada a la derecha a altura completa: se muestra reducida (nítida) y su
-             propio negro se funde con el fondo, dejando el titular sobre espacio negativo. -->
-        <img class="hero-img" src="assets/img/hero.jpg?v=20260717" alt="" />
-        <div class="hero-scrim"></div>
-        <div class="hero-vignette"></div>
-      </div>
+    <!-- ============ PORTADA / LEAD ============ -->
+    <section class="wrap lead">
+      <div class="lead-grid">
+        <article class="card card--lead reveal">
+          <a href="#" tabindex="-1" aria-hidden="true"><div class="thumb thumb--1"></div></a>
+          <span class="card-cat">Disciplina</span>
+          <h2 class="card-title"><a href="#">Cómo desarrollar una disciplina inquebrantable</a></h2>
+          <p class="card-excerpt">La disciplina no es motivación ni fuerza de voluntad: es un sistema que puedes construir. Te explicamos, paso a paso, cómo diseñarlo para no depender de las ganas.</p>
+          <div class="card-meta"><span>Mentalidad</span><span class="dot"></span><span>8 min de lectura</span></div>
+        </article>
 
-      <div class="hero-inner">
-        <p class="kicker reveal"><span class="kicker-dot"></span>BALLMONEY · SELECCIÓN ABIERTA</p>
-        <h1 class="hero-title" data-split>
-          Busco personas<br>
-          que quieran<br>
-          <span class="text-gold">trabajar conmigo.</span>
-        </h1>
-        <p class="hero-sub reveal">Estoy formando mi equipo de ventas. Busco personas comprometidas, con ambición y ganas reales de crecer.</p>
-        <div class="hero-actions reveal">
-          <a href="#unete" class="btn btn--primary btn--lg" data-magnetic>Quiero entrar al equipo</a>
+        <div class="lead-side">
+          <article class="card card--row reveal">
+            <a href="#" tabindex="-1" aria-hidden="true"><div class="thumb thumb--5"></div></a>
+            <div>
+              <span class="card-cat">Negocios</span>
+              <h3 class="card-title"><a href="#">Los mejores negocios que puedes empezar con poco dinero</a></h3>
+              <div class="card-meta"><span>7 min</span></div>
+            </div>
+          </article>
+          <article class="card card--row reveal">
+            <a href="#" tabindex="-1" aria-hidden="true"><div class="thumb thumb--2"></div></a>
+            <div>
+              <span class="card-cat">Futuro</span>
+              <h3 class="card-title"><a href="#">Las habilidades mejor pagadas de la próxima década</a></h3>
+              <div class="card-meta"><span>6 min</span></div>
+            </div>
+          </article>
+          <article class="card card--row reveal">
+            <a href="#" tabindex="-1" aria-hidden="true"><div class="thumb thumb--3"></div></a>
+            <div>
+              <span class="card-cat">Dinero</span>
+              <h3 class="card-title"><a href="#">Los errores financieros que comete la mayoría de jóvenes</a></h3>
+              <div class="card-meta"><span>7 min</span></div>
+            </div>
+          </article>
         </div>
       </div>
-
-      <a href="#consiste" class="hero-scroll" aria-label="Bajar">
-        <span>Scroll</span>
-        <span class="hero-scroll-line"></span>
-      </a>
     </section>
 
-    <!-- ============ EN QUÉ CONSISTE ============ -->
-    <section class="section benefits" id="consiste">
-      <p class="sec-num sec-num--center reveal">El puesto</p>
-      <h2 class="sec-title sec-title--center reveal">En qué consiste.</h2>
-      <div class="benefit-grid">
-        <article class="benefit reveal">
-          <div class="benefit-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 4l1 3.8-1.9 1.4a11 11 0 0 0 5.3 5.3L15.8 16l3.8 1 .5 2.4a2 2 0 0 1-2.1 2.4A15.5 15.5 0 0 1 4.1 5.6 2 2 0 0 1 6.6 3.5Z"/></svg></div>
-          <h3>Llamas a negocios</h3>
-          <p>Contactas con empresas por teléfono. Yo te digo a quién.</p>
+    <!-- ============ LO ÚLTIMO ============ -->
+    <section class="wrap section" id="ultimo">
+      <div class="sec-head">
+        <h2>Lo último</h2>
+        <a href="#newsletter" class="sec-link">Recíbelo por correo →</a>
+      </div>
+      <div class="grid grid--4">
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--4"></div></a>
+          <span class="card-cat">Hábitos</span>
+          <h3 class="card-title"><a href="#">10 hábitos que comparten las personas exitosas</a></h3>
+          <p class="card-excerpt">Ni suerte ni talento: rutinas concretas que puedes copiar hoy.</p>
+          <div class="card-meta"><span>5 min</span></div>
         </article>
-        <article class="benefit reveal">
-          <div class="benefit-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></div>
-          <h3>Con un guion probado</h3>
-          <p>No improvisas. Sigues un guion que ya funciona.</p>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--2"></div></a>
+          <span class="card-cat">Productividad</span>
+          <h3 class="card-title"><a href="#">Cómo dejar de procrastinar (de una vez)</a></h3>
+          <p class="card-excerpt">Por qué lo aplazas todo y el método para romper el bucle.</p>
+          <div class="card-meta"><span>6 min</span></div>
         </article>
-        <article class="benefit reveal">
-          <div class="benefit-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.3a3 3 0 0 1 0 5.4"/><path d="M17.8 20a5.5 5.5 0 0 0-3-4.9"/></svg></div>
-          <h3>Con apoyo constante</h3>
-          <p>No estás solo. Te acompaño en cada paso.</p>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--1"></div></a>
+          <span class="card-cat">Dinero</span>
+          <h3 class="card-title"><a href="#">Cómo construir múltiples fuentes de ingresos</a></h3>
+          <p class="card-excerpt">La lógica detrás de no depender de un único sueldo.</p>
+          <div class="card-meta"><span>9 min</span></div>
         </article>
-        <article class="benefit reveal">
-          <div class="benefit-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.3 12.3 12 9.6l2.7 2.7M12 9.6V16"/></svg></div>
-          <h3>Ganas comisiones</h3>
-          <p>Cobras por resultados. Tu esfuerzo se traduce en dinero.</p>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--6"></div></a>
+          <span class="card-cat">Mentalidad</span>
+          <h3 class="card-title"><a href="#">La psicología de quienes sí consiguen sus metas</a></h3>
+          <p class="card-excerpt">Qué piensan de forma distinta los que llegan hasta el final.</p>
+          <div class="card-meta"><span>8 min</span></div>
         </article>
       </div>
     </section>
 
-    <!-- ============ LA OPORTUNIDAD ============ -->
-    <section class="section oportunidad" id="oportunidad">
-      <p class="sec-num sec-num--center reveal">La oportunidad</p>
-      <h2 class="sec-title sec-title--center reveal">No busco alumnos.<br>Busco a mi próximo equipo.</h2>
-      <p class="opp-lead reveal">Esto no va de terminar un curso. Va de entrar en un proyecto desde el principio y crecer con él.</p>
-      <ul class="opp-list">
-        <li class="reveal">Formar parte de un proyecto <strong>desde el principio.</strong></li>
-        <li class="reveal">Aprender una habilidad que te servirá <strong>toda la vida.</strong></li>
-        <li class="reveal">Trabajar codo con codo con <strong>un equipo real.</strong></li>
-        <li class="reveal">Ganar <strong>comisiones reales</strong> por lo que consigues.</li>
-        <li class="reveal">Ganar <strong>confianza</strong> hablando con cualquier persona.</li>
-        <li class="reveal">Crecer dentro del proyecto <strong>según tus resultados.</strong></li>
-      </ul>
-      <div class="opp-cta reveal">
-        <a href="#unete" class="btn btn--primary btn--lg" data-magnetic>Quiero formar parte</a>
+    <!-- ============ MENTALIDAD & DISCIPLINA ============ -->
+    <section class="wrap section" id="mentalidad">
+      <div class="sec-head">
+        <h2>Mentalidad &amp; disciplina</h2>
+        <a href="#" class="sec-link">Ver todo →</a>
+      </div>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--3"></div></a>
+          <span class="card-cat">Psicología del éxito</span>
+          <h3 class="card-title"><a href="#">Los errores mentales que te impiden progresar</a></h3>
+          <p class="card-excerpt">Sesgos y excusas que te frenan sin que te des cuenta.</p>
+          <div class="card-meta"><span>7 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--4"></div></a>
+          <span class="card-cat">Desarrollo personal</span>
+          <h3 class="card-title"><a href="#">Cómo aprender cualquier habilidad más rápido</a></h3>
+          <p class="card-excerpt">El método de práctica deliberada, explicado sin postureo.</p>
+          <div class="card-meta"><span>5 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--6"></div></a>
+          <span class="card-cat">Mentalidad</span>
+          <h3 class="card-title"><a href="#">Cómo construir confianza real (y no fingida)</a></h3>
+          <p class="card-excerpt">La seguridad se entrena. Aquí tienes por dónde empezar.</p>
+          <div class="card-meta"><span>6 min</span></div>
+        </article>
       </div>
     </section>
 
-    <!-- ============ ESTO ES PARA TI SI ============ -->
-    <section class="section para-ti" id="para-ti">
-      <p class="sec-num sec-num--center reveal">Filtro rápido</p>
-      <h2 class="sec-title sec-title--center reveal">Esto es para ti si…</h2>
-      <ul class="filter-list">
-        <li class="reveal"><span class="filter-check" aria-hidden="true">✓</span>No te rindes a la primera.</li>
-        <li class="reveal"><span class="filter-check" aria-hidden="true">✓</span>Quieres aprender una habilidad útil de verdad.</li>
-        <li class="reveal"><span class="filter-check" aria-hidden="true">✓</span>Estás dispuesto a comprometerte.</li>
-        <li class="reveal"><span class="filter-check" aria-hidden="true">✓</span>Buscas una oportunidad real, no un atajo.</li>
-        <li class="reveal"><span class="filter-check" aria-hidden="true">✓</span>Te motiva trabajar en equipo.</li>
-      </ul>
-      <p class="para-ti-foot reveal">Si te has visto reflejado, este es tu momento.</p>
-      <div class="opp-cta reveal">
-        <a href="#unete" class="btn btn--primary btn--lg" data-magnetic>Solicitar mi plaza</a>
-      </div>
-    </section>
-
-    <!-- ============ FORMULARIO ============ -->
-    <section class="section apply" id="unete">
-      <div class="apply-mesh" aria-hidden="true"></div>
-      <div class="apply-inner">
-        <p class="sec-num sec-num--center reveal">Únete al equipo</p>
-        <h2 class="apply-title" data-split>¿Listo para entrar?<br><span class="text-gold">Solicita tu plaza.</span></h2>
-        <p class="apply-lead reveal">Rellena esto. Reviso cada solicitud personalmente.</p>
-        <div class="apply-badges reveal">
-          <span class="apply-badge"><span class="apply-badge-dot"></span>Plazas limitadas</span>
-          <span class="apply-badge">Respondo personalmente</span>
+    <!-- ============ DINERO & LIBERTAD FINANCIERA ============ -->
+    <div class="band">
+      <section class="wrap section" id="dinero">
+        <div class="sec-head">
+          <h2>Dinero &amp; libertad financiera</h2>
+          <a href="#" class="sec-link">Ver todo →</a>
         </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--1"></div></a>
+            <span class="card-cat">Educación financiera</span>
+            <h3 class="card-title"><a href="#">Finanzas personales desde cero: la guía básica</a></h3>
+            <p class="card-excerpt">Presupuesto, ahorro e inversión explicados en simple.</p>
+            <div class="card-meta"><span>10 min</span></div>
+          </article>
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--5"></div></a>
+            <span class="card-cat">Ingresos</span>
+            <h3 class="card-title"><a href="#">Cómo ganar tu primer dinero por internet (de forma legal)</a></h3>
+            <p class="card-excerpt">Vías reales para empezar, con sus pros y sus contras.</p>
+            <div class="card-meta"><span>8 min</span></div>
+          </article>
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--3"></div></a>
+            <span class="card-cat">Libertad financiera</span>
+            <h3 class="card-title"><a href="#">Qué significa de verdad la libertad financiera</a></h3>
+            <p class="card-excerpt">Más allá del tópico: números, tiempo y decisiones.</p>
+            <div class="card-meta"><span>7 min</span></div>
+          </article>
+        </div>
+      </section>
+    </div>
 
-        <form class="apply-form" data-form novalidate>
-          <p class="apply-form-step reveal">Tu solicitud</p>
-          <div class="field reveal">
-            <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder=" " />
-            <label for="nombre">Nombre completo</label>
+    <!-- ============ PRODUCTIVIDAD & HÁBITOS ============ -->
+    <section class="wrap section" id="productividad">
+      <div class="sec-head">
+        <h2>Productividad &amp; hábitos</h2>
+        <a href="#" class="sec-link">Ver todo →</a>
+      </div>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--4"></div></a>
+          <span class="card-cat">Productividad</span>
+          <h3 class="card-title"><a href="#">Cómo organizar tu tiempo para producir el doble</a></h3>
+          <p class="card-excerpt">Sistemas simples para hacer más sin quemarte.</p>
+          <div class="card-meta"><span>6 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--2"></div></a>
+          <span class="card-cat">Hábitos</span>
+          <h3 class="card-title"><a href="#">Cómo crear un hábito que de verdad se mantenga</a></h3>
+          <p class="card-excerpt">La ciencia del hábito, aplicada a tu día real.</p>
+          <div class="card-meta"><span>5 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--6"></div></a>
+          <span class="card-cat">Enfoque</span>
+          <h3 class="card-title"><a href="#">Cómo recuperar tu concentración en un mundo de distracciones</a></h3>
+          <p class="card-excerpt">Recupera la atención profunda que casi todos han perdido.</p>
+          <div class="card-meta"><span>7 min</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ NEGOCIOS ============ -->
+    <section class="wrap section" id="negocios">
+      <div class="sec-head">
+        <h2>Negocios &amp; emprendimiento</h2>
+        <a href="#" class="sec-link">Ver todo →</a>
+      </div>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--5"></div></a>
+          <span class="card-cat">Emprendimiento</span>
+          <h3 class="card-title"><a href="#">Cómo validar tu idea de negocio antes de invertir</a></h3>
+          <p class="card-excerpt">Evita gastar meses en algo que nadie quiere.</p>
+          <div class="card-meta"><span>8 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--1"></div></a>
+          <span class="card-cat">Negocios online</span>
+          <h3 class="card-title"><a href="#">Modelos de negocio online que funcionan en 2026</a></h3>
+          <p class="card-excerpt">Qué opciones tienen sentido hoy y para quién.</p>
+          <div class="card-meta"><span>9 min</span></div>
+        </article>
+        <article class="card reveal">
+          <a href="#"><div class="thumb thumb--3"></div></a>
+          <span class="card-cat">Ventas</span>
+          <h3 class="card-title"><a href="#">Aprender a vender: la habilidad que lo cambia todo</a></h3>
+          <p class="card-excerpt">Por qué saber vender te sirve, montes lo que montes.</p>
+          <div class="card-meta"><span>6 min</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FUTURO & IA ============ -->
+    <div class="band">
+      <section class="wrap section" id="futuro">
+        <div class="sec-head">
+          <h2>Futuro &amp; IA</h2>
+          <a href="#" class="sec-link">Ver todo →</a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--2"></div></a>
+            <span class="card-cat">Inteligencia artificial</span>
+            <h3 class="card-title"><a href="#">Cómo usar la IA para trabajar mejor (no para vaguear)</a></h3>
+            <p class="card-excerpt">Casos prácticos para ahorrar horas cada semana.</p>
+            <div class="card-meta"><span>6 min</span></div>
+          </article>
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--4"></div></a>
+            <span class="card-cat">Habilidades del futuro</span>
+            <h3 class="card-title"><a href="#">Las 7 habilidades que más valdrán en los próximos años</a></h3>
+            <p class="card-excerpt">En qué invertir tu tiempo para no quedarte atrás.</p>
+            <div class="card-meta"><span>8 min</span></div>
+          </article>
+          <article class="card reveal">
+            <a href="#"><div class="thumb thumb--1"></div></a>
+            <span class="card-cat">IA aplicada</span>
+            <h3 class="card-title"><a href="#">Cómo generar ingresos con herramientas de IA, con cabeza</a></h3>
+            <p class="card-excerpt">Ideas realistas, sin promesas de dinero fácil.</p>
+            <div class="card-meta"><span>7 min</span></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ HISTORIAS ============ -->
+    <section class="wrap section stories" id="historias">
+      <div class="sec-head">
+        <h2>Historias que inspiran</h2>
+        <a href="#" class="sec-link">Ver todo →</a>
+      </div>
+      <div class="grid grid--2">
+        <article class="story reveal">
+          <a href="#"><div class="thumb thumb--6"></div></a>
+          <div>
+            <span class="card-cat">Historias</span>
+            <h3 class="card-title"><a href="#">Qué tienen en común los que empiezan de cero y lo consiguen</a></h3>
+            <p class="card-excerpt">Patrones reales detrás de quienes construyeron algo partiendo de nada.</p>
           </div>
-          <div class="field reveal">
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder=" " />
-            <label for="email">Correo electrónico</label>
+        </article>
+        <article class="story reveal">
+          <a href="#"><div class="thumb thumb--5"></div></a>
+          <div>
+            <span class="card-cat">Emprendimiento</span>
+            <h3 class="card-title"><a href="#">Lecciones de sus primeros negocios (y de sus primeros fracasos)</a></h3>
+            <p class="card-excerpt">Lo que de verdad se aprende montando, cayendo y volviendo a empezar.</p>
           </div>
-          <div class="field reveal">
-            <input type="text" id="pais" name="pais" required autocomplete="country-name" placeholder=" " />
-            <label for="pais">País donde resides</label>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="news" id="newsletter">
+      <div class="wrap news-inner">
+        <div>
+          <p class="eyebrow">La newsletter de Ballmoney</p>
+          <h2>Una idea que te acerca a tu mejor versión, cada semana.</h2>
+          <p>Mentalidad, productividad, dinero y futuro. Contenido práctico y directo, sin relleno ni frases vacías. Gratis.</p>
+        </div>
+        <form class="news-form" data-form novalidate>
+          <div class="news-row">
+            <div class="field">
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre (opcional)" autocomplete="name" />
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" required placeholder="Tu correo electrónico" autocomplete="email" />
+            </div>
           </div>
-          <div class="field reveal">
-            <input type="text" id="edad" name="edad" required inputmode="numeric" placeholder=" " />
-            <label for="edad">Edad</label>
-          </div>
-          <div class="field field--full reveal">
-            <select id="ventas" name="ventas" required>
-              <option value="" disabled selected></option>
-              <option>Sí, tengo experiencia en ventas</option>
-              <option>Algo de experiencia</option>
-              <option>Sin experiencia, pero con muchas ganas</option>
-            </select>
-            <label for="ventas" class="label--select">¿Experiencia en ventas?</label>
-          </div>
-          <div class="field field--full reveal">
-            <textarea id="mensaje" name="mensaje" rows="3" placeholder=" "></textarea>
-            <label for="mensaje">¿Por qué quieres entrar? (opcional)</label>
-          </div>
-          <div class="apply-submit reveal">
-            <button type="submit" class="btn btn--primary btn--block">
-              <span>Quiero entrar al equipo</span>
-              <svg viewBox="0 0 24 24" class="btn-arrow" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-            </button>
-            <p class="apply-hint">Al enviar, tu solicitud me llega directamente. Reviso cada una personalmente.</p>
-          </div>
+          <button type="submit" class="btn btn--accent btn--block"><span>Suscribirme gratis</span></button>
+          <p class="news-hint">Sin spam. Te puedes dar de baja cuando quieras. Ver <a href="privacidad.html">privacidad</a>.</p>
           <div class="form-success" data-success aria-hidden="true">
-            <svg viewBox="0 0 52 52" class="success-check"><circle cx="26" cy="26" r="24" fill="none"/><path fill="none" d="M14 27l8 8 16-16"/></svg>
-            <h3>¡Solicitud enviada!</h3>
-            <p>Gracias por dar el paso. La reviso personalmente y te contactaré si hay encaje.</p>
+            <h3>¡Estás dentro!</h3>
+            <p>Revisa tu correo: te escribiremos con las mejores ideas de la semana.</p>
           </div>
         </form>
-      </div>
-    </section>
-
-    <!-- ============ TESTIMONIOS ============ -->
-    <section class="section testimonios" id="testimonios">
-      <p class="sec-num sec-num--center reveal">Lo que dicen dentro</p>
-      <div class="tst-grid">
-        <figure class="tst-card reveal">
-          <blockquote>Mis primeras llamadas fueron un desastre, pero con el apoyo del equipo enseguida les cogí el punto.</blockquote>
-          <figcaption>Marcos D. · Ventas</figcaption>
-        </figure>
-        <figure class="tst-card reveal">
-          <blockquote>Lo que más me engancha es el ambiente. Somos un equipo de verdad, cada uno tira del otro.</blockquote>
-          <figcaption>Lucía F.</figcaption>
-        </figure>
-        <figure class="tst-card reveal">
-          <blockquote>Entré sin saber nada de ventas y hoy cierro mis propias llamadas. El salto ha sido enorme.</blockquote>
-          <figcaption>Javier O. · Ventas</figcaption>
-        </figure>
-        <figure class="tst-card reveal">
-          <blockquote>Nunca me habían dado tanto apoyo. Aquí no te sueltan a la primera dificultad.</blockquote>
-          <figcaption>Marta R.</figcaption>
-        </figure>
-        <figure class="tst-card reveal">
-          <blockquote>Estar en el proyecto desde el principio es lo que más valoro. Sientes que construyes algo tuyo.</blockquote>
-          <figcaption>Álvaro S.</figcaption>
-        </figure>
-        <figure class="tst-card reveal">
-          <blockquote>Antes me daba pánico llamar por teléfono. Ahora hablo con cualquiera sin bloquearme.</blockquote>
-          <figcaption>Nerea G. · Ventas</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section class="section faq" id="faq">
-      <p class="sec-num sec-num--center reveal">Preguntas frecuentes</p>
-      <div class="faq-list reveal">
-        <details class="faq-item" open>
-          <summary>¿Esto es un curso?</summary>
-          <p>No. Es un puesto en mi equipo de ventas. La formación es solo la herramienta para que puedas empezar aunque partas de cero.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿Necesito experiencia?</summary>
-          <p>No. Te enseño lo que necesitas para hacer tus primeras llamadas. Busco sobre todo actitud y compromiso.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿Cómo se gana dinero?</summary>
-          <p>Por comisiones: cobras según los resultados que consigues.</p>
-        </details>
-        <details class="faq-item">
-          <summary>¿Desde dónde puedo trabajar?</summary>
-          <p>Desde casa. Solo necesitas conexión y ganas. Por eso te pregunto tu país: para cuadrar bien los horarios.</p>
-        </details>
       </div>
     </section>
 
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer" id="contacto">
-    <div class="footer-cta">
-      <p class="sec-num">Contacto</p>
-      <a href="mailto:ballmoney.contact@gmail.com" class="footer-mail reveal">ballmoney.contact@gmail.com</a>
-    </div>
-
-    <div class="footer-social">
-      <a href="https://www.instagram.com/ballmoneyyyy" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-        <span>Instagram</span><em>@ballmoneyyyy</em>
-      </a>
-      <a href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer" class="social-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.3 3.3 0 1 1-3-3.28"/><path d="M14 6.4a5.5 5.5 0 0 0 5 3.1"/></svg>
-        <span>TikTok</span><em>@ballmoneyy</em>
-      </a>
-      <a href="mailto:ballmoney.contact@gmail.com" class="social-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
-        <span>Correo</span><em>ballmoney.contact@gmail.com</em>
-      </a>
-    </div>
-
-    <div class="footer-bottom">
-      <span class="logo logo--foot" aria-label="BallMoney">
-        <svg viewBox="0 0 78 44" role="img" aria-label="BM"><defs>
-          <linearGradient id="goldFoot" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#8a6a1e"/><stop offset=".38" stop-color="#f4e2a0"/>
-            <stop offset=".62" stop-color="#e8c766"/><stop offset="1" stop-color="#9c7628"/>
-          </linearGradient></defs>
-          <text x="1" y="35" class="logo-glyph" fill="url(#goldFoot)">BM</text>
-        </svg>
-      </span>
-      <p>© <span data-year>2026</span> BallMoney. Trabajo, disciplina y largo plazo.</p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="aviso-legal.html">Aviso legal</a>
-        <a href="privacidad.html">Privacidad</a>
-        <a href="cookies.html">Cookies</a>
-        <a href="terminos.html">Términos</a>
-        <button type="button" class="footer-legal-btn" data-cookie-settings>Configurar cookies</button>
-      </nav>
+  <footer class="foot" id="contacto">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Ball<b>money</b></span></a>
+          <p class="foot-tagline">Un medio para quien no se conforma. Ideas prácticas sobre mentalidad, dinero y futuro para construir tu mejor versión.</p>
+          <div class="foot-social">
+            <a href="https://www.instagram.com/ballmoneyyyy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.3 3.3 0 1 1-3-3.28"/><path d="M14 6.4a5.5 5.5 0 0 0 5 3.1"/></svg>
+            </a>
+            <a href="mailto:ballmoney.contact@gmail.com" aria-label="Correo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Secciones</h4>
+          <a href="#mentalidad">Mentalidad</a>
+          <a href="#productividad">Productividad</a>
+          <a href="#dinero">Dinero</a>
+          <a href="#negocios">Negocios</a>
+          <a href="#futuro">Futuro &amp; IA</a>
+        </div>
+        <div class="foot-col">
+          <h4>Ballmoney</h4>
+          <a href="#historias">Historias</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="mailto:ballmoney.contact@gmail.com">Contacto</a>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <a href="aviso-legal.html">Aviso legal</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="terminos.html">Términos</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© <span data-year>2026</span> Ballmoney. Ideas para tu mejor versión.</p>
+        <nav class="foot-legal" aria-label="Legal">
+          <a href="aviso-legal.html">Aviso legal</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="cookies.html">Cookies</a>
+          <button type="button" data-cookie-settings>Configurar cookies</button>
+        </nav>
+      </div>
     </div>
   </footer>
 
@@ -329,7 +413,7 @@
     <div class="cookie-banner-inner">
       <div class="cookie-banner-text">
         <h3>Cookies</h3>
-        <p>Usamos cookies propias necesarias para el funcionamiento del sitio y, con tu permiso, cookies de terceros (p. ej. tipografías). Puedes aceptarlas, rechazarlas o configurarlas. Más info en nuestra <a href="cookies.html">Política de cookies</a>.</p>
+        <p>Usamos cookies propias necesarias y, con tu permiso, cookies de terceros (p. ej. tipografías). Más info en la <a href="cookies.html">Política de cookies</a>.</p>
       </div>
       <div class="cookie-banner-actions">
         <button type="button" class="btn btn--ghost btn--sm" data-cookie-reject>Rechazar</button>
@@ -338,7 +422,7 @@
     </div>
   </div>
 
-  <script defer src="cookies.js?v=20260717"></script>
-  <script defer src="main.js?v=20260717"></script>
+  <script defer src="cookies.js?v=20260719"></script>
+  <script defer src="main.js?v=20260719"></script>
 </body>
 </html>
