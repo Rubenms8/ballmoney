@@ -7,6 +7,7 @@
 <meta name="description" content="Así uso la inteligencia artificial para generar ingresos reales. Todo lo que descubro lo comparto gratis en Techix. Sin cursos, sin mentorías, sin venderte nada." />
 <meta name="theme-color" content="#070708" />
 <meta name="robots" content="index, follow" />
+<link rel="icon" type="image/png" href="../assets/img/bm-logo.png" />
 
 <meta property="og:title" content="Ballmoney — IA para generar ingresos reales" />
 <meta property="og:description" content="Todo lo que descubro sobre IA y negocios lo comparto gratis en Techix. Sin cursos ni humo." />
@@ -54,7 +55,8 @@
   /* marca */
   .brand{display:flex;align-items:center;justify-content:space-between;gap:1rem}
   .brand-id{display:inline-flex;align-items:center;gap:.55rem}
-  .brand-dot{width:10px;height:10px;border-radius:3px;background:var(--accent);box-shadow:0 0 14px rgba(124,155,255,.7)}
+  .brand-logo{position:relative;height:40px;width:40px;flex-shrink:0;overflow:hidden;border-radius:9px}
+  .brand-logo img{position:absolute;top:50%;left:50%;width:172%;height:172%;transform:translate(-50%,-50%);mix-blend-mode:screen}
   .brand-name{font-family:var(--font-serif);font-weight:600;font-size:1.2rem;letter-spacing:-.01em}
   .brand-handle{font-size:.82rem;color:var(--mute);letter-spacing:.01em}
 
@@ -137,7 +139,7 @@
 
     <header class="brand rise d1">
       <span class="brand-id">
-        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-logo"><img src="../assets/img/bm-logo.png" alt="Ballmoney" /></span>
         <span class="brand-name">Ballmoney</span>
       </span>
       <span class="brand-handle">@ballmoney</span>
