@@ -70,9 +70,9 @@
   .nav.scrolled{background:rgba(8,9,14,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
   .nav.scrolled .nav-in{padding-block:.7rem}
   .brand{display:inline-flex;align-items:center;gap:.75rem}
-  .brand-logo{position:relative;width:46px;height:46px;border-radius:12px;overflow:hidden;flex-shrink:0;
-    background:#0a1122;border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 22px -8px rgba(74,158,255,.55)}
-  .brand-logo img{position:absolute;top:50%;left:50%;width:168%;height:168%;transform:translate(-50%,-50%)}
+  .brand-logo{width:46px;height:46px;border-radius:12px;flex-shrink:0;
+    background:#0a1122 url("assets/img/bm-logo.png") center/164% no-repeat;
+    border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 22px -8px rgba(74,158,255,.55)}
   .brand-tx{display:flex;flex-direction:column;line-height:1.05}
   .brand-name{font-family:var(--serif);font-weight:600;font-size:1.22rem;letter-spacing:-.01em}
   .brand-sub{font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:2px}
@@ -222,16 +222,9 @@
   @media(max-width:520px){
     .foot-in{justify-content:center;text-align:center}
     .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
-    .handle span:last-child{display:none}
   }
   @media(hover:none){.cursor{display:none}}
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important}
-    .reveal,.words .w{opacity:1;transform:none;transition:none}
-    .bars span{transform:scaleY(1)}
-    .ic svg{stroke-dashoffset:0}
-    .grad{color:var(--blue);-webkit-text-fill-color:var(--blue)}
-  }
+  /* Animaciones activas por igual en escritorio y móvil (no se gatean por reduce). */
 </style>
 </head>
 <body id="top">
@@ -247,7 +240,7 @@
   <header class="nav" data-nav>
     <div class="nav-in">
       <a class="brand reveal" href="#top" aria-label="Ballmoney — inicio">
-        <span class="brand-logo"><img src="assets/img/bm-logo.png" alt="Ballmoney" /></span>
+        <span class="brand-logo" aria-hidden="true"></span>
         <span class="brand-tx"><span class="brand-name">Ballmoney</span><span class="brand-sub">IA · Negocios · Futuro</span></span>
       </a>
       <a class="handle reveal" style="--d:.08s" href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer">
@@ -345,7 +338,7 @@
   <!-- FOOTER -->
   <footer class="foot">
     <div class="foot-in">
-      <span class="foot-id reveal"><span class="brand-logo"><img src="assets/img/bm-logo.png" alt="Ballmoney" /></span>Ballmoney</span>
+      <span class="foot-id reveal"><span class="brand-logo" aria-hidden="true"></span>Ballmoney</span>
       <span class="foot-social reveal" style="--d:.06s">
         <a href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://www.instagram.com/ballmoneyyyy" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -387,7 +380,6 @@
       if(el.dataset.done) return; el.dataset.done="1";
       var target=parseInt(el.getAttribute("data-count"),10)||0;
       var pre=el.getAttribute("data-prefix")||"", suf=el.getAttribute("data-suffix")||"";
-      if(reduce){ el.textContent=pre+target.toLocaleString("es-ES")+suf; return; }
       var str=String(target), n=str.length;
       el.textContent=""; el.classList.add("od");
       if(pre) el.appendChild(odStatic(pre));
@@ -440,8 +432,6 @@
       if(prog){ var h=document.documentElement.scrollHeight-innerHeight; prog.style.width=(h>0?(y/h*100):0)+"%"; }
     }
     onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
-
-    if(reduce) return;
 
     /* parallax de auroras */
     var auras=document.querySelectorAll(".aura"), ticking=false;
