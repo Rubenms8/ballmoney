@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ballmoney Method — Crea y monetiza páginas web con Google AdSense</title>
+<meta name="description" content="Ballmoney Method: el método paso a paso para empezar a generar ingresos online creando y monetizando páginas web con Google AdSense. Manual, recursos, plantillas, prompts y acceso directo a Rubén. 97 €." />
+<meta name="theme-color" content="#060608" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ballmoney.vercel.app/metodo/" />
+<link rel="icon" type="image/png" href="../assets/img/bm-logo.png" />
+
+<meta property="og:title" content="Ballmoney Method — Crea y monetiza páginas web" />
+<meta property="og:description" content="El método que utilizo para generar ingresos online con páginas web y Google AdSense. Paso a paso, sin promesas irreales. 97 €." />
+<meta property="og:type" content="product" />
+<meta property="og:url" content="https://ballmoney.vercel.app/metodo/" />
+<meta property="og:image" content="https://ballmoney.vercel.app/assets/img/bm-logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#060608; --panel:rgba(255,255,255,.028); --panel-2:rgba(255,255,255,.05);
+    --fg:#f4f5f7; --sub:rgba(244,245,247,.62); --mute:rgba(244,245,247,.40);
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.055);
+    --accent:#4a9eff; --accent-soft:rgba(74,158,255,.14);
+    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --maxw:1080px; --pad:clamp(1.2rem,5vw,2.4rem);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.65;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;position:relative;min-height:100svh}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--fg);color:#000}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.06;color:var(--fg)}
+  [id]{scroll-margin-top:80px}
+
+  /* fondo */
+  .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.5}
+  .glow.g1{width:70vw;height:70vw;max-width:820px;max-height:820px;top:-26%;left:50%;transform:translateX(-50%);
+    background:radial-gradient(circle,rgba(74,158,255,.16),transparent 60%)}
+  .glow.g2{width:44vw;height:44vw;max-width:520px;max-height:520px;bottom:-16%;right:-8%;
+    background:radial-gradient(circle,rgba(255,255,255,.04),transparent 60%)}
+  .grain{position:absolute;inset:0;opacity:.03;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* layout */
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+  .section{position:relative;z-index:2;padding-block:clamp(3.6rem,9vw,6.5rem)}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+  .eyebrow.acc{color:var(--accent)}
+  .lead{color:var(--sub);font-size:clamp(1.02rem,1.6vw,1.18rem);max-width:60ch}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .nav.scrolled{background:rgba(6,6,8,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .brand{display:inline-flex;align-items:center;gap:.7rem}
+  .brand-logo{width:42px;height:42px;border-radius:11px;flex-shrink:0;
+    background:#0a1122 url("../assets/img/bm-logo.png") center/164% no-repeat;
+    border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 20px -8px rgba(74,158,255,.5)}
+  .brand-name{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+  .nav-price{display:inline-flex;align-items:center;gap:.7rem}
+  .nav-price .p{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+
+  /* botones */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;cursor:pointer;
+    font-family:var(--sans);font-weight:700;font-size:.9rem;letter-spacing:.02em;
+    padding:1.05rem 1.8rem;border-radius:100px;border:1px solid transparent;white-space:nowrap;
+    transition:transform .25s var(--ease),background .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .btn--primary{background:#fff;color:#08080c;box-shadow:0 10px 40px -14px rgba(255,255,255,.35)}
+  .btn--primary:hover{transform:translateY(-2px);box-shadow:0 16px 55px -14px rgba(255,255,255,.5)}
+  .btn--ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+  .btn--ghost:hover{border-color:var(--fg);transform:translateY(-2px)}
+  .btn--sm{padding:.62rem 1.2rem;font-size:.82rem}
+  .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
+  .btn:hover svg{transform:translateX(4px)}
+
+  /* hero */
+  .hero{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;
+    padding-block:clamp(3rem,9vw,6rem) clamp(3rem,8vw,5rem)}
+  .hero .eyebrow{margin-bottom:1.5rem}
+  .hero h1{font-size:clamp(2.5rem,6.6vw,4.6rem);max-width:17ch;text-wrap:balance}
+  .hero .lead{margin:1.7rem auto 0;font-size:clamp(1.05rem,1.8vw,1.3rem)}
+  .hero-cta{margin-top:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+  .price-chip{display:inline-flex;align-items:baseline;gap:.5rem;padding:.5rem 1.1rem;border:1px solid var(--line);border-radius:100px;background:var(--panel)}
+  .price-chip .n{font-family:var(--serif);font-weight:600;font-size:1.3rem}
+  .price-chip .t{font-size:.78rem;color:var(--mute);letter-spacing:.04em}
+
+  /* problema */
+  .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,3rem);align-items:start}
+  .prob-list{list-style:none;display:grid;gap:.2rem}
+  .prob-list li{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 0;border-top:1px solid var(--line2);color:var(--sub);font-size:1rem}
+  .prob-list li::before{content:"";flex-shrink:0;width:16px;height:16px;margin-top:.28em;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,90,90,.0),transparent);border:1px solid rgba(255,255,255,.18);position:relative}
+  .prob-list li .x{flex-shrink:0;width:18px;height:18px;margin-top:.15em;color:var(--mute)}
+  .prob-close{margin-top:1.6rem;font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.6rem);color:var(--fg);line-height:1.3}
+  .prob-close b{color:var(--accent);font-weight:600}
+
+  /* método */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,2vw,1.3rem);margin-top:clamp(2rem,4vw,3rem)}
+  .step{position:relative;padding:clamp(1.6rem,2.6vw,2.1rem);border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden;
+    transition:transform .3s var(--ease),border-color .3s ease,background .3s ease}
+  .step:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);background:var(--panel-2)}
+  .step .num{font-family:var(--serif);font-weight:600;font-size:2.4rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28);
+    letter-spacing:-.02em}
+  .step h3{font-size:1.24rem;margin-top:1rem}
+  .step p{margin-top:.5rem;color:var(--sub);font-size:.95rem}
+
+  /* qué incluye */
+  .incl{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:center}
+  .incl-list{list-style:none;display:grid;gap:.1rem}
+  .incl-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem 0;border-top:1px solid var(--line2);font-size:1rem;color:var(--fg)}
+  .incl-list li:first-child{border-top:0}
+  .incl-list .ck{flex-shrink:0;width:20px;height:20px;margin-top:.18em;color:var(--accent)}
+  .incl-card{position:relative;padding:clamp(1.8rem,3vw,2.6rem);border:1px solid var(--line);border-radius:22px;
+    background:linear-gradient(180deg,var(--panel-2),transparent);text-align:center}
+  .incl-card .k{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .incl-card .big{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,7vw,4.2rem);line-height:1;margin:.6rem 0 .2rem}
+  .incl-card .u{color:var(--sub);font-size:.95rem}
+  .incl-card .btn{margin-top:1.6rem;width:100%}
+
+  /* por qué */
+  .why{max-width:820px;margin-inline:auto;text-align:center}
+  .why h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:1rem}
+  .why p{margin-top:1.6rem;color:var(--sub);font-size:clamp(1.05rem,1.7vw,1.22rem);line-height:1.7}
+  .why p b{color:var(--fg);font-weight:600}
+  .sig{margin-top:2rem;display:inline-flex;align-items:center;gap:.7rem;color:var(--mute);font-size:.9rem}
+  .sig .brand-logo{width:34px;height:34px}
+
+  /* precio */
+  .pricing{text-align:center}
+  .price-box{max-width:520px;margin:clamp(2rem,4vw,3rem) auto 0;padding:clamp(2rem,4vw,3rem);
+    border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,var(--panel-2),transparent);position:relative;overflow:hidden}
+  .price-box::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.5),transparent)}
+  .price-box .name{font-family:var(--serif);font-weight:600;font-size:1.4rem}
+  .price-box .amount{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,9vw,5rem);line-height:1;margin:.6rem 0}
+  .price-box .amount span{font-size:.42em;color:var(--sub);vertical-align:.35em;margin-left:.1em}
+  .price-box .sum{list-style:none;display:grid;gap:.55rem;margin:1.6rem auto;max-width:340px;text-align:left}
+  .price-box .sum li{display:flex;gap:.6rem;align-items:flex-start;color:var(--sub);font-size:.94rem}
+  .price-box .sum .ck{flex-shrink:0;width:17px;height:17px;margin-top:.2em;color:var(--accent)}
+  .price-box .btn{width:100%}
+  .price-box .fine{margin-top:1rem;font-size:.8rem;color:var(--mute)}
+
+  /* faq */
+  .faq{max-width:800px;margin-inline:auto}
+  .faq-list{margin-top:clamp(1.8rem,3vw,2.6rem);border-top:1px solid var(--line2)}
+  .faq-item{border-bottom:1px solid var(--line2)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:1.4rem 0;display:flex;justify-content:space-between;gap:1.2rem;align-items:center;
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.08rem,2.2vw,1.28rem);color:var(--fg);transition:color .25s ease}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";color:var(--accent);font-size:1.5rem;line-height:1;flex-shrink:0;transition:transform .3s var(--ease)}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item summary:hover{color:var(--accent)}
+  .faq-item p{color:var(--sub);line-height:1.7;padding:0 0 1.4rem;max-width:64ch}
+
+  /* cta final */
+  .final{text-align:center;position:relative;z-index:2}
+  .final h2{font-size:clamp(2.3rem,6vw,4.2rem);max-width:16ch;margin-inline:auto;letter-spacing:-.03em}
+  .final p{margin-top:1.3rem;color:var(--sub);font-size:clamp(1.05rem,1.7vw,1.25rem);max-width:44ch;margin-inline:auto}
+  .final .btn{margin-top:2.2rem}
+
+  /* footer */
+  .foot{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem)}
+  .foot-in{max-width:var(--maxw);margin-inline:auto;padding:2.2rem var(--pad);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem}
+  .foot-id{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:600;color:var(--sub)}
+  .foot-id .brand-logo{width:30px;height:30px}
+  .foot-social{display:flex;gap:1.2rem}
+  .foot-social a{font-size:.84rem;color:var(--mute);transition:color .25s ease}
+  .foot-social a:hover{color:var(--fg)}
+  .foot-legal{width:100%;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;padding-top:1.4rem;border-top:1px solid var(--line2)}
+  .foot-legal a,.foot-legal button{font-size:.8rem;color:var(--mute);background:none;border:0;padding:0;cursor:pointer;font-family:var(--sans);transition:color .2s ease}
+  .foot-legal a:hover,.foot-legal button:hover{color:var(--accent)}
+  .foot-legal .cpy{margin-left:auto;font-size:.78rem;color:var(--mute)}
+
+  /* cookies */
+  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:130;padding:0 var(--pad) max(1rem,env(safe-area-inset-bottom));transform:translateY(140%);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
+  .cookie-banner.is-visible{transform:none;opacity:1}
+  .cookie-in{max-width:960px;margin:0 auto 1rem;display:flex;align-items:center;gap:1.3rem;padding:1.1rem 1.35rem;border:1px solid var(--line);border-radius:16px;background:rgba(12,13,18,.94);backdrop-filter:blur(16px);box-shadow:0 24px 60px -24px rgba(0,0,0,.7)}
+  .cookie-in h3{font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--fg);margin-bottom:.25rem}
+  .cookie-in p{font-size:.83rem;color:var(--sub);line-height:1.5;margin:0}
+  .cookie-in a{color:var(--accent);text-decoration:underline}
+  .ck-actions{display:flex;gap:.6rem;flex-shrink:0}
+  .btn-sm2{font-family:var(--sans);font-weight:600;font-size:.85rem;padding:.6rem 1.1rem;border-radius:100px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--fg);transition:border-color .25s ease}
+  .btn-sm2:hover{border-color:var(--accent)}
+  .btn-sm2.solid{background:#fff;color:#08080c;border-color:#fff}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+  .reveal.sc{transform:translateY(26px) scale(.97)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* responsive */
+  @media(max-width:860px){
+    .steps{grid-template-columns:1fr 1fr}
+    .prob-grid{grid-template-columns:1fr;gap:1.6rem}
+    .incl{grid-template-columns:1fr;gap:2rem}
+    .nav-price .btn{display:none}
+  }
+  @media(max-width:560px){
+    .steps{grid-template-columns:1fr}
+    .hero-cta .btn,.final .btn{width:100%}
+    .nav-price .p{display:none}
+    .foot-in{justify-content:center;text-align:center}
+    .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
+  }
+  @media(max-width:640px){.cookie-in{flex-direction:column;align-items:stretch}.ck-actions .btn-sm2{flex:1}}
+</style>
+</head>
+<body id="top">
+
+  <div class="bg" aria-hidden="true">
+    <div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" data-nav>
+    <div class="nav-in">
+      <a class="brand" href="#top" aria-label="Ballmoney — inicio">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span class="brand-name">Ballmoney</span>
+      </a>
+      <span class="nav-price">
+        <span class="p">97&nbsp;€</span>
+        <a class="btn btn--primary btn--sm" href="#precio">Quiero el método</a>
+      </span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow acc reveal">Ballmoney Method</p>
+      <h1 class="reveal" style="--d:.08s">El método para empezar a generar ingresos creando y monetizando páginas web.</h1>
+      <p class="lead reveal" style="--d:.16s">Te enseño el sistema que utilizo para generar ingresos online mediante páginas web y Google&nbsp;AdSense. Paso a paso, sin depender de promesas irreales.</p>
+      <div class="hero-cta reveal" style="--d:.24s">
+        <a class="btn btn--primary" href="#metodo">Quiero conocer el método
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="price-chip"><span class="n">97&nbsp;€</span><span class="t">pago único</span></span>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section" id="problema">
+      <div class="prob-grid">
+        <div>
+          <p class="eyebrow reveal">El problema</p>
+          <h2 class="reveal" style="--d:.06s;font-size:clamp(1.8rem,4vw,2.8rem)">Quieres empezar, pero todo es ruido.</h2>
+          <p class="lead reveal" style="--d:.12s;margin-top:1.2rem">Casi todo el mundo que quiere generar ingresos por Internet se topa con lo mismo:</p>
+        </div>
+        <div>
+          <ul class="prob-list">
+            <li class="reveal"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Demasiada información y todo se contradice.</li>
+            <li class="reveal" style="--d:.05s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Gurús vendiendo fórmulas mágicas.</li>
+            <li class="reveal" style="--d:.1s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber por dónde empezar ni qué construir.</li>
+            <li class="reveal" style="--d:.15s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber cómo conseguir tráfico.</li>
+            <li class="reveal" style="--d:.2s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber cómo monetizarlo de verdad.</li>
+          </ul>
+          <p class="prob-close reveal" style="--d:.24s">Ballmoney Method es lo contrario: <b>un camino ordenado, de principio a fin.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="section" id="metodo">
+      <p class="eyebrow acc reveal">El método</p>
+      <h2 class="reveal" style="--d:.06s;font-size:clamp(1.9rem,4.4vw,3rem)">Seis fases. Un solo camino.</h2>
+      <div class="steps">
+        <article class="step reveal sc"><div class="num">01</div><h3>Encontrar una oportunidad</h3><p>Detectar temáticas con potencial real, no al azar.</p></article>
+        <article class="step reveal sc" style="--d:.06s"><div class="num">02</div><h3>Crear la web</h3><p>Montar el sitio de forma sencilla, sin programar.</p></article>
+        <article class="step reveal sc" style="--d:.12s"><div class="num">03</div><h3>Crear contenido</h3><p>Una estrategia de contenido con criterio, no relleno.</p></article>
+        <article class="step reveal sc" style="--d:.18s"><div class="num">04</div><h3>Conseguir tráfico</h3><p>SEO y posicionamiento para que la gente te encuentre.</p></article>
+        <article class="step reveal sc" style="--d:.24s"><div class="num">05</div><h3>Monetizar</h3><p>Preparar y aplicar Google AdSense correctamente.</p></article>
+        <article class="step reveal sc" style="--d:.3s"><div class="num">06</div><h3>Optimizar y escalar</h3><p>Mejorar lo que funciona y repetir el proceso.</p></article>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE -->
+    <section class="section" id="incluye">
+      <div class="incl">
+        <div>
+          <p class="eyebrow reveal">Qué incluye</p>
+          <h2 class="reveal" style="--d:.06s;font-size:clamp(1.9rem,4.4vw,2.9rem)">Todo lo que necesitas para ejecutarlo.</h2>
+          <ul class="incl-list" style="margin-top:1.8rem">
+            <li class="reveal"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Manual completo, paso a paso.</li>
+            <li class="reveal" style="--d:.04s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>El método para crear y monetizar páginas web.</li>
+            <li class="reveal" style="--d:.08s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sistema para encontrar temáticas y oportunidades.</li>
+            <li class="reveal" style="--d:.12s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Proceso para crear la web y estrategia de contenido.</li>
+            <li class="reveal" style="--d:.16s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>SEO, posicionamiento y monetización con Google AdSense.</li>
+            <li class="reveal" style="--d:.2s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Recursos, herramientas, plantillas, checklists y prompts.</li>
+            <li class="reveal" style="--d:.24s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ejemplos prácticos relacionados con el método.</li>
+            <li class="reveal" style="--d:.28s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acceso directo a Rubén para resolver dudas y orientarte.</li>
+          </ul>
+        </div>
+        <div class="incl-card reveal sc" style="--d:.1s">
+          <p class="k">Acceso completo</p>
+          <div class="big">97&nbsp;€</div>
+          <p class="u">Pago único · Sin suscripciones</p>
+          <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ -->
+    <section class="section why" id="porque">
+      <p class="eyebrow acc reveal">Por qué Ballmoney Method</p>
+      <h2 class="reveal" style="--d:.06s">No es teoría. Es lo que hago.</h2>
+      <p class="reveal" style="--d:.12s">No te enseño algo que encontré en Internet. Te enseño el <b>método que estoy utilizando</b> y que me ha permitido empezar a generar ingresos online creando y monetizando páginas web. Sin humo y sin atajos mágicos: el proceso real, las herramientas reales y mi <b>ayuda directa</b> cuando la necesites.</p>
+      <span class="sig reveal" style="--d:.18s"><span class="brand-logo" aria-hidden="true"></span> Rubén · Ballmoney</span>
+    </section>
+
+    <!-- PRECIO -->
+    <section class="section pricing" id="precio">
+      <p class="eyebrow reveal">Acceso al método</p>
+      <h2 class="reveal" style="--d:.06s;font-size:clamp(2rem,4.6vw,3rem)">Un pago. Todo el método.</h2>
+      <div class="price-box reveal sc" style="--d:.12s">
+        <p class="name">Ballmoney Method</p>
+        <div class="amount">97<span>€</span></div>
+        <ul class="sum">
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Manual completo paso a paso</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Recursos, herramientas, plantillas y prompts</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ejemplos prácticos del método</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acceso directo a Rubén</li>
+        </ul>
+        <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="fine">Pago único · Acceso al método completo</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <p class="eyebrow acc reveal" style="text-align:center">Preguntas frecuentes</p>
+      <h2 class="reveal" style="--d:.06s;text-align:center;font-size:clamp(1.9rem,4.4vw,2.8rem)">Antes de empezar.</h2>
+      <div class="faq-list reveal" style="--d:.1s">
+        <details class="faq-item" open><summary>¿Qué necesito para empezar?</summary><p>Un ordenador, conexión a Internet y ganas de aplicar el método. Del resto te guío yo, paso a paso.</p></details>
+        <details class="faq-item"><summary>¿Necesito experiencia?</summary><p>No. El método está pensado para empezar desde cero, aunque nunca hayas creado una web.</p></details>
+        <details class="faq-item"><summary>¿Necesito saber programar?</summary><p>No. Verás cómo crear la web sin necesidad de programar.</p></details>
+        <details class="faq-item"><summary>¿Google AdSense es realmente necesario?</summary><p>Es el modelo de monetización central del método. Te explico cómo prepararlo y aplicarlo correctamente.</p></details>
+        <details class="faq-item"><summary>¿Cuánto tiempo necesito dedicarle?</summary><p>El que puedas de forma constante. No hay un mínimo mágico: cuanta más constancia, mejor.</p></details>
+        <details class="faq-item"><summary>¿Está garantizado que voy a ganar dinero?</summary><p>No. Ningún método serio puede garantizar ingresos. Te enseño el proceso, las herramientas y cómo aplicarlo, pero los resultados dependen de tu ejecución, tu constancia, el proyecto y otros factores.</p></details>
+        <details class="faq-item"><summary>¿Qué ocurre después de comprar?</summary><p>Obtienes acceso al método completo y a todos sus recursos para poder empezar de inmediato.</p></details>
+        <details class="faq-item"><summary>¿Puedo preguntarle mis dudas a Rubén?</summary><p>Sí. Tienes acceso directo a Rubén para resolver dudas y recibir orientación durante el proceso.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section final">
+      <h2 class="reveal">Deja de consumir información. Empieza a construir.</h2>
+      <p class="reveal" style="--d:.08s">Conoce el método que estoy utilizando para construir ingresos online.</p>
+      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio">Quiero conocer el método
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="foot-in">
+      <span class="foot-id"><span class="brand-logo" aria-hidden="true"></span>Ballmoney</span>
+      <span class="foot-social">
+        <a href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://www.instagram.com/ballmoneyyyy" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </span>
+      <nav class="foot-legal">
+        <a href="../aviso-legal.html">Aviso legal</a>
+        <a href="../privacidad.html">Privacidad</a>
+        <a href="../cookies.html">Cookies</a>
+        <a href="../terminos.html">Términos</a>
+        <button type="button" data-cookie-settings>Configurar cookies</button>
+        <span class="cpy">© <span id="y">2026</span> Ballmoney</span>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- COOKIES -->
+  <div class="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+    <div class="cookie-in">
+      <div><h3>Cookies</h3><p>Usamos almacenamiento propio necesario y, con tu permiso, servicios de terceros (tipografías). Más info en la <a href="../cookies.html">Política de cookies</a>.</p></div>
+      <div class="ck-actions"><button type="button" class="btn-sm2" data-cookie-reject>Rechazar</button><button type="button" class="btn-sm2 solid" data-cookie-accept>Aceptar</button></div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    "use strict";
+    var yE=document.getElementById("y"); if(yE) yE.textContent=new Date().getFullYear();
+
+    /* Enlace de compra: pega aquí tu checkout (Stripe/Gumroad/etc.).
+       Vacío -> usa el correo de contacto como respaldo (no se pierde ninguna intención de compra). */
+    var CHECKOUT_URL="";
+    if(CHECKOUT_URL){ document.querySelectorAll("[data-buy]").forEach(function(a){ a.setAttribute("href",CHECKOUT_URL); a.setAttribute("rel","noopener"); }); }
+
+    /* nav glass */
+    var nav=document.querySelector("[data-nav]");
+    function onScroll(){ if(nav) nav.classList.toggle("scrolled",(window.scrollY||0)>10); }
+    onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
+
+    /* reveal on scroll */
+    var els=document.querySelectorAll(".reveal");
+    if("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(ents){
+        ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+      },{threshold:.14,rootMargin:"0px 0px -8% 0px"});
+      els.forEach(function(el){ io.observe(el); });
+    } else { els.forEach(function(el){ el.classList.add("in"); }); }
+  })();
+  </script>
+  <script defer src="../cookies.js?v=20260719"></script>
+</body>
+</html>
