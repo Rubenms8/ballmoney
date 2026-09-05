@@ -3,15 +3,20 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ballmoney | IA · Negocios · Productividad</title>
-<meta name="description" content="Genero dinero con inteligencia artificial y te enseño cómo. Sin cursos, sin humo. Todo gratis." />
-<meta name="theme-color" content="#060609" />
+<title>Ballmoney Method — El método que cambió mi vida</title>
+<meta name="description" content="El método real que utilizo para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo, sin promesas imposibles. Pago único de 97 €." />
+<meta name="theme-color" content="#060608" />
 <meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ballmoney.vercel.app/" />
 <link rel="icon" type="image/png" href="assets/img/bm-logo.png" />
 
-<meta property="og:title" content="Ballmoney | IA · Negocios · Productividad" />
-<meta property="og:description" content="Genero dinero con IA y te enseño cómo. Sin cursos, sin humo. Gratis." />
+<meta property="og:title" content="Ballmoney Method — El método que cambió mi vida" />
+<meta property="og:description" content="El método real que utilizo para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo. Pago único de 97 €." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://ballmoney.vercel.app/" />
+<meta property="og:image" content="https://ballmoney.vercel.app/assets/img/bm-logo.png" />
+<meta property="og:site_name" content="Ballmoney" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,318 +24,526 @@
 
 <style>
   :root{
-    --bg:#060609; --bg2:#0a0c14; --fg:#f3f5fa;
-    --sub:rgba(243,245,250,.64); --mute:rgba(243,245,250,.42);
-    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.05);
-    --glass:rgba(255,255,255,.035);
-    --blue:#4a9eff; --blue-lo:#2f7bff; --blue-hi:#a9d4ff; --green:#39d98a;
+    --bg:#060608; --bg2:#0a0b0f;
+    --panel:rgba(255,255,255,.028); --panel-2:rgba(255,255,255,.05);
+    --fg:#f4f5f7; --sub:rgba(244,245,247,.62); --mute:rgba(244,245,247,.40);
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.055);
+    --accent:#4a9eff; --accent-2:#a9d4ff; --accent-soft:rgba(74,158,255,.12);
     --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
     --ease:cubic-bezier(.16,1,.3,1);
-    --maxw:1120px; --pad:clamp(1.2rem,5vw,2.4rem);
+    --maxw:1080px; --pad:clamp(1.2rem,5vw,2.4rem);
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.65;
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;position:relative;min-height:100svh}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
-  ::selection{background:var(--blue);color:#04101f}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.04}
+  ::selection{background:var(--fg);color:#000}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.06;color:var(--fg);overflow-wrap:break-word}
+  p{overflow-wrap:break-word}
+  [id]{scroll-margin-top:84px}
 
-  /* ---------- FONDO ---------- */
+  /* ---------- FONDO CINEMATOGRÁFICO ---------- */
   .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .aura{position:absolute;border-radius:50%;filter:blur(105px);opacity:.5;will-change:transform}
-  .a1{width:72vw;height:72vw;max-width:860px;max-height:860px;top:-24%;left:50%;background:radial-gradient(circle,rgba(74,158,255,.32),transparent 62%);animation:d1 22s var(--ease) infinite alternate}
-  .a2{width:54vw;height:54vw;max-width:660px;max-height:660px;bottom:-20%;left:-12%;background:radial-gradient(circle,rgba(47,123,255,.24),transparent 60%);animation:d2 28s var(--ease) infinite alternate}
-  .a3{width:48vw;height:48vw;max-width:580px;max-height:580px;top:40%;right:-16%;background:radial-gradient(circle,rgba(124,192,255,.16),transparent 62%);animation:d3 32s var(--ease) infinite alternate}
-  @keyframes d1{from{transform:translate(-50%,0) scale(1)}to{transform:translate(-52%,7%) scale(1.12)}}
-  @keyframes d2{to{transform:translate(10%,-8%) scale(1.15)}}
-  @keyframes d3{to{transform:translate(-8%,6%) scale(1.1)}}
-  .grid{position:absolute;inset:-2px;opacity:.45;
-    background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-    background-size:62px 62px;
-    -webkit-mask-image:radial-gradient(ellipse 78% 62% at 50% 26%,#000,transparent 76%);mask-image:radial-gradient(ellipse 78% 62% at 50% 26%,#000,transparent 76%);
-    animation:gp 42s linear infinite}
-  @keyframes gp{to{background-position:62px 62px}}
-  .grain{position:absolute;inset:0;opacity:.03;mix-blend-mode:overlay;
+  .glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.5;will-change:transform}
+  .glow.g1{width:70vw;height:70vw;max-width:800px;max-height:800px;top:-28%;left:50%;
+    background:radial-gradient(circle,rgba(74,158,255,.15),transparent 60%);animation:float1 24s var(--ease) infinite alternate}
+  .glow.g2{width:46vw;height:46vw;max-width:540px;max-height:540px;bottom:-18%;right:-10%;
+    background:radial-gradient(circle,rgba(255,255,255,.035),transparent 60%);animation:float2 30s var(--ease) infinite alternate}
+  .glow.g3{width:40vw;height:40vw;max-width:480px;max-height:480px;top:44%;left:-14%;
+    background:radial-gradient(circle,rgba(74,158,255,.08),transparent 62%);animation:float3 34s var(--ease) infinite alternate}
+  @keyframes float1{from{transform:translateX(-50%)}to{transform:translate(-53%,6%) scale(1.1)}}
+  @keyframes float2{to{transform:translate(-8%,-6%) scale(1.12)}}
+  @keyframes float3{to{transform:translate(8%,-5%) scale(1.1)}}
+  .grain{position:absolute;inset:0;opacity:.028;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .cursor{position:fixed;top:0;left:0;width:540px;height:540px;margin:-270px 0 0 -270px;border-radius:50%;z-index:1;pointer-events:none;
-    background:radial-gradient(circle,rgba(74,158,255,.15),transparent 60%);opacity:0;transition:opacity .6s ease;mix-blend-mode:screen;will-change:transform}
-  .cursor.on{opacity:1}
-  .progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:120;background:linear-gradient(90deg,var(--blue-lo),var(--blue-hi));box-shadow:0 0 12px rgba(74,158,255,.6)}
+  .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 120% 80% at 50% 0%,transparent 55%,rgba(0,0,0,.55) 100%)}
+  .progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:120;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 12px rgba(74,158,255,.55)}
 
   /* ---------- LAYOUT ---------- */
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
-  .section{position:relative;z-index:2;padding-block:clamp(4rem,10vw,7.5rem)}
+  .section{position:relative;z-index:2;padding-block:clamp(4rem,10vw,7rem)}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);display:inline-flex;align-items:center;gap:.6rem}
+  .eyebrow.acc{color:var(--accent)}
+  .eyebrow .d{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor;opacity:.9}
+  .lead{color:var(--sub);font-size:clamp(1.02rem,1.6vw,1.18rem);max-width:60ch}
+  .h-xl{font-size:clamp(2.4rem,6.4vw,4.4rem);max-width:18ch;text-wrap:balance}
+  .h-lg{font-size:clamp(1.9rem,4.6vw,3rem);text-wrap:balance}
+  .h-md{font-size:clamp(1.7rem,4vw,2.6rem);text-wrap:balance}
+  .accent-txt{color:transparent;background:linear-gradient(100deg,var(--accent-2),var(--accent) 55%,#dbeaff);-webkit-background-clip:text;background-clip:text}
 
   /* ---------- NAV ---------- */
-  .nav{position:sticky;top:0;z-index:100;transition:padding .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease)}
-  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1.1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem;
-    transition:padding .4s var(--ease)}
-  .nav.scrolled{background:rgba(8,9,14,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
-  .nav.scrolled .nav-in{padding-block:.7rem}
-  .brand{display:inline-flex;align-items:center;gap:.75rem}
-  .brand-logo{width:46px;height:46px;border-radius:12px;flex-shrink:0;
+  .nav{position:sticky;top:0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .nav.scrolled{background:rgba(6,6,8,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
+  .brand{display:inline-flex;align-items:center;gap:.7rem}
+  .brand-logo{width:42px;height:42px;border-radius:11px;flex-shrink:0;
     background:#0a1122 url("assets/img/bm-logo.png") center/164% no-repeat;
-    border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 22px -8px rgba(74,158,255,.55)}
-  .brand-tx{display:flex;flex-direction:column;line-height:1.05}
-  .brand-name{font-family:var(--serif);font-weight:600;font-size:1.22rem;letter-spacing:-.01em}
-  .brand-sub{font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:2px}
-  .handle{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .95rem;border-radius:100px;border:1px solid var(--line);
-    background:var(--glass);backdrop-filter:blur(10px);font-size:.82rem;font-weight:600;color:var(--sub);
-    transition:transform .3s var(--ease),border-color .3s ease,color .3s ease}
-  .handle:hover{transform:translateY(-2px);border-color:rgba(74,158,255,.4);color:var(--fg)}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(57,217,138,.55);animation:pulse 2.4s ease-out infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(57,217,138,.5)}70%{box-shadow:0 0 0 8px rgba(57,217,138,0)}100%{box-shadow:0 0 0 0 rgba(57,217,138,0)}}
+    border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 20px -8px rgba(74,158,255,.5)}
+  .brand-name{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+  .nav-cta{display:inline-flex;align-items:center;gap:.9rem;flex-shrink:0}
+  .nav-cta .p{font-family:var(--serif);font-weight:600;font-size:1.02rem;color:var(--sub)}
+  .nav-cta .lbl-short{display:none}
+
+  /* ---------- BOTONES ---------- */
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;cursor:pointer;
+    font-family:var(--sans);font-weight:700;font-size:.92rem;letter-spacing:.01em;
+    padding:1.05rem 1.9rem;border-radius:100px;border:1px solid transparent;white-space:nowrap;isolation:isolate;
+    transition:transform .25s var(--ease),background .3s ease,border-color .3s ease,box-shadow .35s ease}
+  .btn--primary{background:#fff;color:#08080c;box-shadow:0 12px 44px -14px rgba(255,255,255,.4)}
+  .btn--primary:hover{transform:translateY(-2px);box-shadow:0 18px 60px -14px rgba(255,255,255,.55)}
+  .btn--primary::after{content:"";position:absolute;inset:0;border-radius:100px;z-index:1;pointer-events:none;
+    background:linear-gradient(110deg,transparent 34%,rgba(120,180,255,.55) 50%,transparent 66%);
+    background-size:250% 100%;background-position:200% 0;animation:sheen 6s ease-in-out infinite;mix-blend-mode:overlay}
+  @keyframes sheen{0%,72%{background-position:200% 0}100%{background-position:-130% 0}}
+  .btn--ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+  .btn--ghost:hover{border-color:var(--fg);transform:translateY(-2px)}
+  .btn--sm{padding:.62rem 1.2rem;font-size:.82rem}
+  .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
+  .btn:hover svg{transform:translateX(4px)}
 
   /* ---------- HERO ---------- */
-  .hero{min-height:calc(100svh - 78px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-block:clamp(2rem,6vw,4rem);position:relative;z-index:2}
-  .pill{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.05rem;border:1px solid var(--line);border-radius:100px;
-    background:var(--glass);backdrop-filter:blur(8px);font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--sub)}
-  .pill .spark{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);animation:sparkle 2.2s ease-in-out infinite}
-  @keyframes sparkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-  h1{font-size:clamp(2.15rem,7.6vw,5.7rem);margin-top:1.8rem;max-width:15ch;text-wrap:balance;font-weight:600;overflow-wrap:break-word;word-break:break-word}
-  .grad{background:linear-gradient(100deg,var(--blue-hi),var(--blue) 42%,#dbeaff 55%,var(--blue) 70%);
-    background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
-  @keyframes shimmer{to{background-position:220% 0}}
-  .sub{margin-top:1.6rem;font-size:clamp(1.05rem,1.9vw,1.35rem);color:var(--sub);font-weight:500;max-width:32ch}
-  .sub b{color:var(--fg);font-weight:600}
-
-  .cta-wrap{margin-top:2.6rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
-  .cta{position:relative;display:inline-flex;align-items:center;gap:.7rem;isolation:isolate;
-    background:#fff;color:#06101f;font-weight:700;font-size:1.08rem;padding:1.15rem 2.15rem;border-radius:100px;will-change:transform;
-    transition:transform .2s var(--ease),box-shadow .35s var(--ease);box-shadow:0 12px 45px -12px rgba(74,158,255,.6)}
-  .cta:hover{box-shadow:0 22px 72px -14px rgba(74,158,255,.9)}
-  .cta::before{content:"";position:absolute;inset:-2px;border-radius:100px;z-index:-1;padding:2px;
-    background:conic-gradient(from 0deg,var(--blue),#a9d4ff,var(--blue-lo),var(--blue));
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-    opacity:0;transition:opacity .35s ease;animation:spin 4s linear infinite}
-  .cta:hover::before{opacity:1}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .cta::after{content:"";position:absolute;inset:0;border-radius:100px;z-index:1;pointer-events:none;
-    background:linear-gradient(110deg,transparent 32%,rgba(255,255,255,.7) 50%,transparent 68%);
-    background-size:250% 100%;background-position:200% 0;animation:sheen 5s ease-in-out infinite;mix-blend-mode:overlay}
-  @keyframes sheen{0%,70%{background-position:200% 0}100%{background-position:-120% 0}}
-  .cta svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
-  .cta:hover svg{transform:translateX(5px)}
-  .cta-note{font-size:.8rem;color:var(--mute)}
-  .cta-note b{color:var(--sub);font-weight:600}
-  .scrollcue{margin-top:clamp(2rem,5vw,3.4rem);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:var(--mute);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase}
-  .scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--blue),transparent);position:relative;overflow:hidden}
-  .scrollcue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--blue);animation:sd 2s ease-in-out infinite}
+  .hero{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;
+    padding-block:clamp(3rem,9vw,6rem) clamp(3rem,8vw,5rem)}
+  .hero .eyebrow{margin-bottom:1.6rem}
+  .hero h1{margin-bottom:0}
+  .hero .lead{margin:1.7rem auto 0;font-size:clamp(1.06rem,1.9vw,1.32rem);max-width:40ch}
+  .hero .lead b{color:var(--fg);font-weight:600}
+  .hero-cta{margin-top:2.6rem;display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+  .price-chip{display:inline-flex;align-items:baseline;gap:.5rem;padding:.5rem 1.1rem;border:1px solid var(--line);border-radius:100px;background:var(--panel)}
+  .price-chip .n{font-family:var(--serif);font-weight:600;font-size:1.28rem;color:var(--fg)}
+  .price-chip .t{font-size:.78rem;color:var(--mute);letter-spacing:.04em}
+  .hero-micro{margin-top:1.4rem;font-size:.82rem;color:var(--mute);letter-spacing:.02em}
+  .scrollcue{margin-top:clamp(2.4rem,5vw,3.6rem);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:var(--mute);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase}
+  .scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--accent),transparent);position:relative;overflow:hidden}
+  .scrollcue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--accent);animation:sd 2.2s ease-in-out infinite}
   @keyframes sd{0%{top:-50%}100%{top:120%}}
 
-  /* ---------- STATS (contadores) ---------- */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,2vw,1.4rem)}
-  .stat{position:relative;padding:clamp(1.8rem,3.5vw,2.6rem) 1.2rem;border:1px solid var(--line);border-radius:20px;
-    background:linear-gradient(180deg,var(--glass),transparent);backdrop-filter:blur(10px);text-align:center;overflow:hidden}
-  .stat::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.6),transparent);opacity:.6}
-  .stat .num{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;letter-spacing:-.02em;
-    background:linear-gradient(160deg,var(--blue-hi),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-  .stat .lbl{margin-top:.7rem;font-size:.86rem;color:var(--mute);letter-spacing:.01em}
-  .stats-note{text-align:center;margin-top:1.8rem;font-size:.92rem;color:var(--sub);letter-spacing:.01em}
-  .stats-note b{color:var(--fg)}
-  /* odómetro (rolling numbers) */
-  .num.od{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;letter-spacing:-.01em;
-    background:none;color:#c3e2ff;-webkit-text-fill-color:#c3e2ff;font-variant-numeric:tabular-nums;text-shadow:0 0 26px rgba(74,158,255,.32)}
-  .od-col{display:inline-block;height:1em;overflow:hidden;vertical-align:top}
-  .od-strip{display:flex;flex-direction:column;will-change:transform}
-  .od-d{height:1em;line-height:1em;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
-  .od-s{display:inline-flex;align-items:center;height:1em;line-height:1em;padding:0 .01em}
+  /* ---------- PROBLEMA ---------- */
+  .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+  .prob-list{list-style:none;display:grid;gap:.1rem;margin-top:.4rem}
+  .prob-list li{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 0;border-top:1px solid var(--line2);color:var(--sub);font-size:1.02rem}
+  .prob-list li:first-child{border-top:0}
+  .prob-list li .x{flex-shrink:0;width:18px;height:18px;margin-top:.22em;color:var(--mute)}
+  .prob-close{margin-top:1.8rem;font-family:var(--serif);font-size:clamp(1.3rem,2.8vw,1.9rem);color:var(--fg);line-height:1.28;text-wrap:balance}
+  .prob-close b{color:var(--accent);font-weight:600}
 
-  /* ---------- BENTO (todo lo que necesitas) ---------- */
-  .head{text-align:center;margin-bottom:clamp(2.4rem,5vw,3.4rem)}
-  .head .ey{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
-  .head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin-top:.9rem}
-  .head p{margin-top:1rem;color:var(--sub);max-width:46ch;margin-inline:auto}
-  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.9rem,1.8vw,1.3rem)}
-  .bcard{position:relative;grid-column:span 2;padding:clamp(1.6rem,2.6vw,2.1rem);border:1px solid var(--line);border-radius:20px;
-    background:linear-gradient(180deg,var(--glass),transparent);backdrop-filter:blur(10px);overflow:hidden;
-    transition:transform .3s var(--ease),border-color .3s ease;will-change:transform}
-  .bcard::before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;
-    background:linear-gradient(140deg,rgba(74,158,255,.55),transparent 42%);
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-    opacity:0;transition:opacity .35s ease}
-  .bcard:hover::before{opacity:1}
-  .bcard:hover{border-color:transparent}
-  .b-lg{grid-column:span 3;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
-  .b-wide{grid-column:span 4}
-  .b-3{grid-column:span 3}
-  .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:1.2rem;
-    background:rgba(74,158,255,.10);border:1px solid rgba(74,158,255,.26)}
-  .ic svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
-    stroke-dasharray:120;stroke-dashoffset:120;transition:stroke-dashoffset 1.1s var(--ease) .15s}
-  .bcard.in .ic svg{stroke-dashoffset:0}
-  .bcard h3{font-size:1.3rem}
-  .b-lg h3{font-size:1.7rem}
-  .bcard p{margin-top:.5rem;color:var(--sub);font-size:.98rem}
-  .b-lg p{font-size:1.05rem;max-width:32ch}
-  .bars{display:flex;align-items:flex-end;gap:8px;height:64px;margin-top:1.6rem}
-  .bars span{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--blue),rgba(74,158,255,.25));transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--ease)}
-  .b-lg.in .bars span{transform:scaleY(1)}
-  .b-lg.in .bars span:nth-child(1){transition-delay:.1s}.b-lg.in .bars span:nth-child(2){transition-delay:.2s}
-  .b-lg.in .bars span:nth-child(3){transition-delay:.3s}.b-lg.in .bars span:nth-child(4){transition-delay:.4s}
-  .b-lg.in .bars span:nth-child(5){transition-delay:.5s}
+  /* ---------- HISTORIA ---------- */
+  .story{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center}
+  .story-photo{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    background:linear-gradient(160deg,#0d1017,#070709);display:grid;place-items:center}
+  .story-photo::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(74,158,255,.14),transparent 60%)}
+  .story-photo .mono{width:96px;height:96px;border-radius:24px;position:relative;z-index:1;
+    background:#0a1122 url("assets/img/bm-logo.png") center/164% no-repeat;
+    border:1px solid rgba(90,150,255,.28);box-shadow:0 10px 40px -12px rgba(74,158,255,.5)}
+  .story-photo figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1.1rem 1.2rem;font-size:.82rem;color:var(--mute);
+    background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);text-align:left}
+  .story-copy h2{margin-top:1rem}
+  .story-copy p{margin-top:1.3rem;color:var(--sub);font-size:clamp(1.02rem,1.6vw,1.16rem);line-height:1.72}
+  .story-copy p b{color:var(--fg);font-weight:600}
 
-  /* ---------- CIERRE ---------- */
-  .close{text-align:center}
-  .close .kick{font-size:.9rem;color:var(--mute)}
-  .close h2{font-size:clamp(2.5rem,7vw,5.2rem);margin-top:1rem;letter-spacing:-.03em}
+  /* ---------- QUÉ ES (pilares) ---------- */
+  .about-head{max-width:720px}
+  .about-head h2{margin-top:1rem}
+  .about-head p{margin-top:1.3rem;color:var(--sub);font-size:clamp(1.02rem,1.6vw,1.18rem);line-height:1.72}
+  .about-head p b{color:var(--fg);font-weight:600}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,2vw,1.3rem);margin-top:clamp(2.2rem,4vw,3rem)}
+  .pillar{position:relative;padding:clamp(1.6rem,2.6vw,2.1rem);border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden;
+    transition:transform .3s var(--ease),border-color .3s ease,background .3s ease}
+  .pillar:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);background:var(--panel-2)}
+  .pillar .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:1.1rem;
+    background:var(--accent-soft);border:1px solid rgba(74,158,255,.26)}
+  .pillar .ic svg{width:23px;height:23px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .pillar h3{font-size:1.2rem}
+  .pillar p{margin-top:.5rem;color:var(--sub);font-size:.96rem}
+  .about-note{margin-top:2rem;font-size:.92rem;color:var(--mute);max-width:60ch}
+  .about-note b{color:var(--sub);font-weight:600}
+
+  /* ---------- QUÉ OBTIENES ---------- */
+  .incl{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:center}
+  .incl h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-top:1rem}
+  .incl-list{list-style:none;display:grid;gap:.1rem;margin-top:1.8rem}
+  .incl-list li{display:flex;gap:.85rem;align-items:flex-start;padding:.8rem 0;border-top:1px solid var(--line2);font-size:1.02rem;color:var(--fg)}
+  .incl-list li:first-child{border-top:0}
+  .incl-list li span{display:block}
+  .incl-list li small{display:block;color:var(--mute);font-size:.86rem;font-weight:400;margin-top:.1rem}
+  .incl-list .ck{flex-shrink:0;width:22px;height:22px;margin-top:.15em;color:var(--accent)}
+  .incl-card{position:relative;padding:clamp(1.9rem,3vw,2.6rem);border:1px solid var(--line);border-radius:22px;
+    background:linear-gradient(180deg,var(--panel-2),transparent);text-align:center;overflow:hidden}
+  .incl-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.5),transparent)}
+  .incl-card .k{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .incl-card .big{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,7vw,4rem);line-height:1;margin:.6rem 0 .2rem}
+  .incl-card .big span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
+  .incl-card .u{color:var(--sub);font-size:.94rem}
+  .incl-card .btn{margin-top:1.6rem;width:100%}
+
+  /* ---------- MENTOR ---------- */
+  .mentor{position:relative;border:1px solid var(--line);border-radius:26px;overflow:hidden;
+    background:linear-gradient(160deg,rgba(74,158,255,.07),transparent 60%),var(--bg2);
+    padding:clamp(2rem,5vw,3.6rem)}
+  .mentor::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.6),transparent)}
+  .mentor .eyebrow{margin-bottom:1.2rem}
+  .mentor h2{max-width:20ch}
+  .mentor .m-lead{margin-top:1.4rem;color:var(--sub);font-size:clamp(1.04rem,1.7vw,1.2rem);line-height:1.72;max-width:62ch}
+  .mentor .m-lead b{color:var(--fg);font-weight:600}
+  .mentor-points{margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .m-point{padding:1.2rem 1.3rem;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+  .m-point .t{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+  .m-point p{margin-top:.35rem;color:var(--sub);font-size:.9rem}
+
+  /* ---------- DIFERENCIACIÓN ---------- */
+  .diff-head{text-align:center;max-width:640px;margin-inline:auto}
+  .diff-head h2{margin-top:1rem}
+  .diff-head p{margin-top:1.1rem;color:var(--sub)}
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.4vw,1.6rem);margin-top:clamp(2.2rem,4vw,3rem)}
+  .diff-col{padding:clamp(1.6rem,3vw,2.2rem);border:1px solid var(--line);border-radius:20px;background:var(--panel)}
+  .diff-col .ct{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.2rem}
+  .diff-col.no .ct{color:var(--mute)}
+  .diff-col.yes{background:linear-gradient(180deg,var(--accent-soft),transparent);border-color:rgba(74,158,255,.28)}
+  .diff-col.yes .ct{color:var(--accent)}
+  .diff-col ul{list-style:none;display:grid;gap:.85rem}
+  .diff-col li{display:flex;gap:.7rem;align-items:flex-start;font-size:.98rem;color:var(--sub)}
+  .diff-col.yes li{color:var(--fg)}
+  .diff-col li svg{flex-shrink:0;width:19px;height:19px;margin-top:.15em}
+  .diff-col.no li svg{color:var(--mute)}
+  .diff-col.yes li svg{color:var(--accent)}
+  .diff-disc{margin-top:2rem;text-align:center;font-size:.92rem;color:var(--mute);max-width:66ch;margin-inline:auto;line-height:1.6}
+
+  /* ---------- PRECIO ---------- */
+  .pricing{text-align:center}
+  .pricing h2{font-size:clamp(2rem,4.6vw,3rem);margin-top:1rem}
+  .price-box{max-width:520px;margin:clamp(2rem,4vw,3rem) auto 0;padding:clamp(2rem,4vw,3rem);
+    border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,var(--panel-2),transparent);position:relative;overflow:hidden}
+  .price-box::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.5),transparent)}
+  .price-box .name{font-family:var(--serif);font-weight:600;font-size:1.4rem}
+  .price-box .amount{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,9vw,5rem);line-height:1;margin:.5rem 0}
+  .price-box .amount span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
+  .price-box .tag{font-size:.85rem;color:var(--mute);letter-spacing:.04em}
+  .price-box .sum{list-style:none;display:grid;gap:.6rem;margin:1.8rem auto;max-width:360px;text-align:left}
+  .price-box .sum li{display:flex;gap:.6rem;align-items:flex-start;color:var(--sub);font-size:.96rem}
+  .price-box .sum .ck{flex-shrink:0;width:18px;height:18px;margin-top:.2em;color:var(--accent)}
+  .price-box .btn{width:100%}
+  .price-box .fine{margin-top:1rem;font-size:.8rem;color:var(--mute)}
+
+  /* ---------- RESEÑAS (preparado) ---------- */
+  .proof{text-align:center}
+  .proof h2{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-top:1rem}
+  .proof .lead{margin:1.2rem auto 0;text-align:center}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,2vw,1.3rem);margin-top:clamp(2.2rem,4vw,3rem)}
+  .proof-slot{position:relative;min-height:190px;border:1px dashed var(--line);border-radius:18px;background:var(--panel);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:1.5rem;text-align:center}
+  .proof-slot .lk{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line)}
+  .proof-slot .lk svg{width:20px;height:20px;fill:none;stroke:var(--mute);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .proof-slot .st{font-size:.82rem;color:var(--mute);letter-spacing:.02em}
+  .proof-note{margin-top:1.8rem;font-size:.85rem;color:var(--mute)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:800px;margin-inline:auto}
+  .faq .eyebrow,.faq h2{text-align:center}
+  .faq h2{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-top:1rem}
+  .faq-list{margin-top:clamp(1.8rem,3vw,2.6rem);border-top:1px solid var(--line2)}
+  .faq-item{border-bottom:1px solid var(--line2)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:1.4rem 0;display:flex;justify-content:space-between;gap:1.2rem;align-items:center;
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.06rem,2.2vw,1.26rem);color:var(--fg);transition:color .25s ease}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";color:var(--accent);font-size:1.5rem;line-height:1;flex-shrink:0;transition:transform .3s var(--ease)}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item summary:hover{color:var(--accent)}
+  .faq-item .a{color:var(--sub);line-height:1.7;padding:0 0 1.4rem;max-width:66ch}
+
+  /* ---------- CTA FINAL ---------- */
+  .final{text-align:center;position:relative;z-index:2}
+  .final h2{font-size:clamp(2.3rem,6vw,4rem);max-width:16ch;margin-inline:auto;letter-spacing:-.03em}
+  .final p{margin-top:1.3rem;color:var(--sub);font-size:clamp(1.05rem,1.7vw,1.25rem);max-width:44ch;margin-inline:auto}
+  .final .btn{margin-top:2.2rem}
+  .final .fine{margin-top:1.2rem;font-size:.8rem;color:var(--mute)}
 
   /* ---------- FOOTER ---------- */
   .foot{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem)}
-  .foot-in{max-width:var(--maxw);margin-inline:auto;padding:2.4rem var(--pad);
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.4rem}
-  .foot-id{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--serif);font-weight:600;color:var(--sub)}
-  .foot-id .brand-logo{width:34px;height:34px}
-  .foot-social{display:flex;gap:1.3rem}
-  .foot-social a{font-size:.86rem;color:var(--mute);transition:color .25s ease}
+  .foot-in{max-width:var(--maxw);margin-inline:auto;padding:2.2rem var(--pad);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem}
+  .foot-id{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:600;color:var(--sub)}
+  .foot-id .brand-logo{width:30px;height:30px}
+  .foot-social{display:flex;gap:1.2rem}
+  .foot-social a{font-size:.84rem;color:var(--mute);transition:color .25s ease}
   .foot-social a:hover{color:var(--fg)}
-  .foot-legal{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;padding-top:1.4rem;border-top:1px solid var(--line2)}
-  .foot-legal a,.foot-legal button{font-size:.8rem;color:var(--mute);background:none;border:0;padding:0;cursor:pointer;transition:color .2s ease;font-family:var(--sans)}
-  .foot-legal a:hover,.foot-legal button:hover{color:var(--blue)}
-  .foot-legal .cpy{margin-left:auto;color:var(--mute);font-size:.78rem}
+  .foot-legal{width:100%;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;padding-top:1.4rem;border-top:1px solid var(--line2)}
+  .foot-legal a,.foot-legal button{font-size:.8rem;color:var(--mute);background:none;border:0;padding:0;cursor:pointer;font-family:var(--sans);transition:color .2s ease}
+  .foot-legal a:hover,.foot-legal button:hover{color:var(--accent)}
+  .foot-legal .cpy{margin-left:auto;font-size:.78rem;color:var(--mute)}
 
   /* ---------- COOKIES ---------- */
-  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:130;padding:0 var(--pad) max(1rem,env(safe-area-inset-bottom));
-    transform:translateY(140%);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
+  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:130;padding:0 var(--pad) max(1rem,env(safe-area-inset-bottom));transform:translateY(140%);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
   .cookie-banner.is-visible{transform:none;opacity:1}
-  .cookie-in{max-width:960px;margin:0 auto 1rem;display:flex;align-items:center;gap:1.3rem;padding:1.1rem 1.35rem;
-    border:1px solid var(--line);border-radius:16px;background:rgba(12,14,22,.92);backdrop-filter:blur(16px);box-shadow:0 24px 60px -24px rgba(0,0,0,.7)}
+  .cookie-in{max-width:960px;margin:0 auto 1rem;display:flex;align-items:center;gap:1.3rem;padding:1.1rem 1.35rem;border:1px solid var(--line);border-radius:16px;background:rgba(12,13,18,.94);backdrop-filter:blur(16px);box-shadow:0 24px 60px -24px rgba(0,0,0,.7)}
   .cookie-in h3{font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--fg);margin-bottom:.25rem}
   .cookie-in p{font-size:.83rem;color:var(--sub);line-height:1.5;margin:0}
-  .cookie-in a{color:var(--blue);text-decoration:underline}
+  .cookie-in a{color:var(--accent);text-decoration:underline}
   .ck-actions{display:flex;gap:.6rem;flex-shrink:0}
-  .btn-sm{font-family:var(--sans);font-weight:600;font-size:.85rem;padding:.6rem 1.1rem;border-radius:100px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--fg);transition:border-color .25s ease,background .25s ease}
-  .btn-sm:hover{border-color:var(--blue)}
-  .btn-sm.solid{background:#fff;color:#06101f;border-color:#fff}
-  @media(max-width:640px){.cookie-in{flex-direction:column;align-items:stretch}.ck-actions .btn-sm{flex:1}}
+  .btn-sm2{font-family:var(--sans);font-weight:600;font-size:.85rem;padding:.6rem 1.1rem;border-radius:100px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--fg);transition:border-color .25s ease}
+  .btn-sm2:hover{border-color:var(--accent)}
+  .btn-sm2.solid{background:#fff;color:#08080c;border-color:#fff}
 
-  /* ---------- REVEAL / MICRO ---------- */
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
-  .reveal.sc{transform:translateY(28px) scale(.96)}
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+  .reveal.sc{transform:translateY(26px) scale(.97)}
   .reveal.in{opacity:1;transform:none}
-  .words .w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
-  .words.in .w{opacity:1;transform:none}
 
+  /* ---------- RESPONSIVE ---------- */
   @media(max-width:860px){
-    .stats{grid-template-columns:1fr}
-    .bento{grid-template-columns:repeat(2,1fr)}
-    .b-lg,.b-wide,.b-3,.bcard{grid-column:span 2!important;grid-row:auto!important}
-    .brand-sub{display:none}
+    .prob-grid{grid-template-columns:1fr;gap:1.4rem}
+    .story{grid-template-columns:1fr;gap:1.8rem}
+    .story-photo{max-width:340px;margin-inline:auto;width:100%}
+    .pillars{grid-template-columns:1fr}
+    .incl{grid-template-columns:1fr;gap:2rem}
+    .mentor-points{grid-template-columns:1fr}
+    .diff-grid{grid-template-columns:1fr}
+    .proof-grid{grid-template-columns:1fr}
+    .nav-cta .p{display:none}
   }
-  @media(max-width:520px){
+  @media(max-width:560px){
+    .hero-cta .btn,.final .btn{width:100%}
+    .nav-cta .lbl-full{display:none}
+    .nav-cta .lbl-short{display:inline}
+    .nav-cta .btn--sm{padding:.58rem 1rem}
     .foot-in{justify-content:center;text-align:center}
     .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
   }
-  @media(hover:none){.cursor{display:none}}
-  /* Animaciones activas por igual en escritorio y móvil (no se gatean por reduce). */
+  @media(max-width:360px){
+    .nav-in .brand-name{display:none}
+  }
+  @media(max-width:640px){.cookie-in{flex-direction:column;align-items:stretch}.ck-actions .btn-sm2{flex:1}}
 </style>
 </head>
 <body id="top">
 
   <div class="bg" aria-hidden="true">
-    <div class="aura a1"></div><div class="aura a2"></div><div class="aura a3"></div>
-    <div class="grid"></div><div class="grain"></div>
+    <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+    <div class="grain"></div><div class="vignette"></div>
   </div>
-  <div class="cursor" data-cursor aria-hidden="true"></div>
   <div class="progress" data-progress aria-hidden="true"></div>
 
   <!-- NAV -->
   <header class="nav" data-nav>
     <div class="nav-in">
-      <a class="brand reveal" href="#top" aria-label="Ballmoney — inicio">
+      <a class="brand" href="#top" aria-label="Ballmoney — inicio">
         <span class="brand-logo" aria-hidden="true"></span>
-        <span class="brand-tx"><span class="brand-name">Ballmoney</span><span class="brand-sub">IA · Negocios · Futuro</span></span>
+        <span class="brand-name">Ballmoney</span>
       </a>
-      <a class="handle reveal" style="--d:.08s" href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer">
-        <span class="dot" aria-hidden="true"></span><span>@ballmoney</span>
-      </a>
+      <span class="nav-cta">
+        <span class="p">97&nbsp;€</span>
+        <a class="btn btn--primary btn--sm" href="#precio"><span class="lbl-full">Quiero el método</span><span class="lbl-short">El método</span></a>
+      </span>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- HERO -->
+    <!-- 1 · HERO -->
     <section class="hero">
-      <span class="pill reveal" style="--d:.05s"><span class="spark"></span>IA aplicada a resultados reales</span>
-      <h1 class="words" data-stagger>
-        <span class="w" style="--d:.12s">Miles</span> <span class="w" style="--d:.2s">de</span> <span class="w" style="--d:.28s">euros</span><br>
-        <span class="w" style="--d:.38s">con</span> <span class="w grad" style="--d:.48s">inteligencia</span> <span class="w grad" style="--d:.56s">artificial.</span>
-      </h1>
-      <p class="sub reveal" style="--d:.62s">Y te enseño exactamente cómo. <b>Sin humo.</b></p>
-      <div class="cta-wrap reveal" style="--d:.74s">
-        <a class="cta" data-magnetic href="https://techix.es/?utm_source=tiktok&amp;utm_medium=bio&amp;utm_campaign=ballmoney_bridge&amp;utm_content=cta_hero" rel="noopener">
-          Ver cómo lo hago
+      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Ballmoney Method</p>
+      <h1 class="h-xl reveal" style="--d:.08s">El método que <span class="accent-txt">cambió mi vida</span>.</h1>
+      <p class="lead reveal" style="--d:.16s">El sistema que empecé a usar para construir <b>ingresos por Internet</b> y acercarme, poco a poco, a la libertad financiera. Ahora te enseño exactamente cómo lo hago.</p>
+      <div class="hero-cta reveal" style="--d:.24s">
+        <a class="btn btn--primary" href="#precio">Quiero conocer el método
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <p class="cta-note"><b>Acceso gratuito</b> · Nada que comprar</p>
+        <span class="price-chip"><span class="n">97&nbsp;€</span><span class="t">pago único</span></span>
+        <span class="hero-micro">Sin humo · Sin promesas imposibles</span>
       </div>
-      <div class="scrollcue reveal" style="--d:.9s"><span>Sigue</span><span class="bar"></span></div>
+      <div class="scrollcue reveal" style="--d:.4s"><span>Descubre</span><span class="bar"></span></div>
     </section>
 
-    <!-- STATS -->
-    <section class="section">
-      <div class="stats">
-        <div class="stat reveal sc" style="--d:0s"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Gratis. Siempre.</div></div>
-        <div class="stat reveal sc" style="--d:.1s"><div class="num" data-count="1000" data-prefix="+">0</div><div class="lbl">Horas dentro de la IA</div></div>
-        <div class="stat reveal sc" style="--d:.2s"><div class="num" data-count="10000" data-prefix="+">0</div><div class="lbl">En la comunidad</div></div>
-      </div>
-      <p class="stats-note reveal" style="--d:.3s">0 cursos · 0 mentorías · 0 ebooks · <b>nada que comprar</b></p>
-    </section>
-
-    <!-- BENTO -->
-    <section class="section">
-      <div class="head">
-        <p class="ey reveal">Qué obtienes</p>
-        <h2 class="reveal" style="--d:.06s">Todo lo que necesitas. Nada de relleno.</h2>
-        <p class="reveal" style="--d:.12s">Lo esencial para usar la IA de verdad y construir tu futuro. Directo, práctico y actualizado.</p>
-      </div>
-      <div class="bento">
-        <article class="bcard b-lg reveal sc" data-tilt style="--d:0s">
-          <div>
-            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M18.5 15l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
-            <h3>Herramientas de IA que sí funcionan</h3>
-            <p>Probadas, no recomendadas por moda. Las que de verdad ahorran tiempo y generan resultados.</p>
-          </div>
-          <div class="bars" aria-hidden="true"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:85%"></span><span style="height:100%"></span></div>
-        </article>
-        <article class="bcard b-3 reveal sc" data-tilt style="--d:.08s">
-          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span>
-          <h3>Estrategias reales</h3>
-          <p>Aplicables desde el primer día. Sin teoría de relleno.</p>
-        </article>
-        <article class="bcard b-3 reveal sc" data-tilt style="--d:.16s">
-          <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
-          <h3>Productividad</h3>
-          <p>Haz más en menos tiempo. Sistemas que funcionan.</p>
-        </article>
-        <article class="bcard b-3 reveal sc" data-tilt style="--d:.24s">
-          <span class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"/></svg></span>
-          <h3>Automatización</h3>
-          <p>Que el trabajo repetitivo lo haga la IA por ti.</p>
-        </article>
-        <article class="bcard b-3 reveal sc" data-tilt style="--d:.32s">
-          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <h3>Cero humo</h3>
-          <p>Directo al grano. Sin gurús, sin cuentos.</p>
-        </article>
+    <!-- 2 · EL PROBLEMA -->
+    <section class="section" id="problema">
+      <div class="prob-grid">
+        <div>
+          <p class="eyebrow reveal"><span class="d" aria-hidden="true"></span>El problema</p>
+          <h2 class="h-lg reveal" style="--d:.06s;margin-top:1rem">No te falta información. Te falta un camino.</h2>
+          <p class="lead reveal" style="--d:.12s;margin-top:1.3rem">Hoy hay más contenido que nunca sobre cómo ganar dinero por Internet: vídeos, hilos, gurús, promesas. Y aun así, casi nadie sabe qué hacer con todo eso.</p>
+        </div>
+        <div>
+          <ul class="prob-list">
+            <li class="reveal"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Demasiada información, y toda se contradice.</li>
+            <li class="reveal" style="--d:.05s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber por dónde empezar.</li>
+            <li class="reveal" style="--d:.1s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber qué construir ni qué ignorar.</li>
+            <li class="reveal" style="--d:.15s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber cómo convertir todo eso en un sistema.</li>
+          </ul>
+          <p class="prob-close reveal" style="--d:.2s">Deja de consumir información sin saber qué hacer con ella. <b>Necesitas un método.</b></p>
+        </div>
       </div>
     </section>
 
-    <!-- CIERRE -->
-    <section class="section close">
-      <p class="kick reveal">Sin cursos. Sin mentorías.</p>
-      <h2 class="words" data-stagger>
-        <span class="w" style="--d:0s">Solo</span> <span class="w" style="--d:.1s">lo</span> <span class="w" style="--d:.2s">que</span> <span class="w grad" style="--d:.3s">funciona.</span>
-      </h2>
-      <div class="cta-wrap reveal" style="--d:.2s">
-        <a class="cta" data-magnetic href="https://techix.es/?utm_source=tiktok&amp;utm_medium=bio&amp;utm_campaign=ballmoney_bridge&amp;utm_content=cta_final" rel="noopener">
-          Entrar gratis
+    <!-- 3 · MI HISTORIA -->
+    <section class="section" id="historia">
+      <div class="story">
+        <figure class="story-photo reveal sc" aria-label="Espacio reservado para una fotografía de Rubén">
+          <span class="mono" aria-hidden="true"></span>
+          <figcaption>Rubén · Fundador de Ballmoney</figcaption>
+        </figure>
+        <div class="story-copy">
+          <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Mi historia</p>
+          <h2 class="h-md reveal" style="--d:.06s">No nací sabiendo esto.</h2>
+          <p class="reveal" style="--d:.12s">Soy Rubén. Empecé como probablemente estás tú ahora: con la certeza de que tenía que existir una forma real de generar ingresos por Internet, más allá del humo y las promesas vacías.</p>
+          <p class="reveal" style="--d:.16s">Probé, me equivoqué y seguí buscando. Hasta que di con un sistema que <b>sí tenía sentido</b>: uno que podía construir con mis propias manos, paso a paso, sin depender de la suerte.</p>
+          <p class="reveal" style="--d:.2s">Ese sistema cambió mi forma de ver el dinero, el trabajo y mi futuro. Es exactamente lo que he ordenado, pieza a pieza, dentro de <b>Ballmoney Method</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · QUÉ ES BALLMONEY METHOD -->
+    <section class="section" id="metodo">
+      <div class="about-head">
+        <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Qué es</p>
+        <h2 class="h-lg reveal" style="--d:.06s">Un método, no un curso.</h2>
+        <p class="reveal" style="--d:.12s">Ballmoney Method es el sistema que utilizo para construir <b>activos digitales</b> en Internet: proyectos capaces de atraer visitas y generar ingresos a través del contenido y la monetización online —una de las vías principales es Google&nbsp;AdSense—. No es teoría reciclada: es el proceso real, ordenado de principio a fin, para que sepas <b>qué construir, en qué orden y por qué</b>.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal sc">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
+          <h3>Un activo propio</h3>
+          <p>Construyes algo tuyo, que sigue ahí y puede crecer con el tiempo.</p>
+        </article>
+        <article class="pillar reveal sc" style="--d:.08s">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+          <h3>Visibilidad real</h3>
+          <p>Aprendes a hacer que las personas lleguen a tu proyecto, no a perseguirlas.</p>
+        </article>
+        <article class="pillar reveal sc" style="--d:.16s">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <h3>Monetización</h3>
+          <p>El sistema para convertir ese trabajo en ingresos, de forma sostenible.</p>
+        </article>
+      </div>
+      <p class="about-note reveal">El <b>cómo</b> exacto —las temáticas, las herramientas, las decisiones que marcan la diferencia— está dentro del método. Aquí no vengo a resumírtelo: vengo a enseñártelo entero.</p>
+    </section>
+
+    <!-- 5 · QUÉ OBTIENES -->
+    <section class="section" id="incluye">
+      <div class="incl">
+        <div>
+          <p class="eyebrow reveal"><span class="d" aria-hidden="true"></span>Qué obtienes</p>
+          <h2 class="reveal" style="--d:.06s">No es un PDF. Es un sistema completo.</h2>
+          <ul class="incl-list">
+            <li class="reveal"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>El método completo<small>Ordenado de principio a fin, sin piezas sueltas.</small></span></li>
+            <li class="reveal" style="--d:.05s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Guía y documentación paso a paso<small>Para saber siempre cuál es el siguiente movimiento.</small></span></li>
+            <li class="reveal" style="--d:.1s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Recursos y materiales de apoyo<small>Todo lo que necesitas para no partir de cero.</small></span></li>
+            <li class="reveal" style="--d:.15s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Herramientas y plantillas<small>Para aplicar el método más rápido y con criterio.</small></span></li>
+            <li class="reveal" style="--d:.2s"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Acceso directo a mí como mentor<small>Para resolver dudas y orientarte mientras lo aplicas.</small></span></li>
+          </ul>
+        </div>
+        <div class="incl-card reveal sc" style="--d:.1s">
+          <p class="k">Acceso completo</p>
+          <div class="big">97<span>€</span></div>
+          <p class="u">Pago único · Sin suscripciones</p>
+          <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · MENTOR -->
+    <section class="section" id="mentor">
+      <div class="mentor reveal">
+        <p class="eyebrow acc"><span class="d" aria-hidden="true"></span>El acompañamiento</p>
+        <h2 class="h-md">No estás comprando un PDF. Estás aprendiendo el método conmigo.</h2>
+        <p class="m-lead">La mayoría de productos te entregan un archivo y te dejan solo. Aquí no. Cuando entras en Ballmoney Method, entras con <b>acceso directo a mí</b>. Podrás preguntarme tus dudas, consultarme cuando te atasques y pedirme orientación sobre cómo aplicar cada parte a tu propio proyecto. No caminas solo mientras lo construyes.</p>
+        <div class="mentor-points">
+          <div class="m-point"><div class="t">Pregúntame tus dudas</div><p>Cuando algo no encaje, me lo consultas y avanzamos.</p></div>
+          <div class="m-point"><div class="t">Orientación real</div><p>Te ayudo a aplicar el método a tu caso concreto.</p></div>
+          <div class="m-point"><div class="t">Acompañamiento</div><p>Estás respaldado durante el proceso, no después de pagar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · DIFERENCIACIÓN -->
+    <section class="section" id="diferencia">
+      <div class="diff-head">
+        <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Por qué es diferente</p>
+        <h2 class="h-lg reveal" style="--d:.06s">No es otro curso de Internet.</h2>
+        <p class="reveal" style="--d:.12s">No voy a atacar a nadie. Solo quiero ser claro con lo que esto es y con lo que no es.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-col no reveal sc">
+          <p class="ct">Lo que no vas a encontrar</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Promesas de dinero fácil.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Resultados garantizados.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Fórmulas mágicas ni atajos.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Humo ni lenguaje de gurú.</li>
+          </ul>
+        </div>
+        <div class="diff-col yes reveal sc" style="--d:.08s">
+          <p class="ct">Lo que sí</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Un método real que yo mismo utilizo.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Un proceso ordenado, de principio a fin.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Herramientas y recursos para aplicarlo.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento directo mientras lo ejecutas.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="diff-disc reveal">Voy a ser honesto: esto no es dinero fácil y no hay resultados garantizados. Es un método real que requiere trabajo y constancia. Los resultados dependen de tu ejecución, del tiempo que le dediques, de tu proyecto y de otros factores.</p>
+    </section>
+
+    <!-- 8 · PRECIO -->
+    <section class="section pricing" id="precio">
+      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Acceso al método</p>
+      <h2 class="reveal" style="--d:.06s">Un pago. Todo el método.</h2>
+      <div class="price-box reveal sc" style="--d:.12s">
+        <p class="name">Ballmoney Method</p>
+        <div class="amount">97<span>€</span></div>
+        <p class="tag">Pago único · Sin suscripciones</p>
+        <ul class="sum">
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>El método completo, paso a paso</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Guía, recursos, herramientas y plantillas</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acceso directo a Rubén como mentor</li>
+        </ul>
+        <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <p class="cta-note">Acceso inmediato · 100% gratuito</p>
+        <p class="fine">Acceso al método completo tras la compra.</p>
       </div>
+    </section>
+
+    <!-- 9 · RESULTADOS (preparado) -->
+    <section class="section proof" id="resultados">
+      <p class="eyebrow reveal"><span class="d" aria-hidden="true"></span>Resultados</p>
+      <h2 class="reveal" style="--d:.06s">Pruebas reales. Muy pronto.</h2>
+      <p class="lead reveal" style="--d:.12s">Prefiero enseñar resultados verificables antes que testimonios inventados. Estoy recopilando pruebas reales de personas aplicando el método; aparecerán aquí, sin exageraciones.</p>
+      <div class="proof-grid">
+        <div class="proof-slot reveal sc"><span class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="st">Próximamente</span></div>
+        <div class="proof-slot reveal sc" style="--d:.08s"><span class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="st">Próximamente</span></div>
+        <div class="proof-slot reveal sc" style="--d:.16s"><span class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="st">Próximamente</span></div>
+      </div>
+      <p class="proof-note reveal">Este espacio se irá llenando con resultados y experiencias reales.</p>
+    </section>
+
+    <!-- 10 · FAQ -->
+    <section class="section faq" id="faq">
+      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Preguntas frecuentes</p>
+      <h2 class="reveal" style="--d:.06s">Antes de decidir.</h2>
+      <div class="faq-list reveal" style="--d:.1s">
+        <details class="faq-item" open><summary>¿Qué es exactamente Ballmoney Method?</summary><p class="a">Es un método propio: la formación estructurada y el sistema que utilizo para construir ingresos por Internet a partir de activos digitales. Incluye la documentación paso a paso, recursos, herramientas y acceso directo a mí como mentor.</p></details>
+        <details class="faq-item"><summary>¿Es un curso?</summary><p class="a">No lo planteo como un curso al uso. Es un método: un camino ordenado para aplicar, con acompañamiento por el camino. No se trata de acumular clases, sino de ejecutar.</p></details>
+        <details class="faq-item"><summary>¿Necesito experiencia previa?</summary><p class="a">No. Está pensado para empezar desde cero. Si ya tienes experiencia, te servirá para ordenar y ejecutar con criterio.</p></details>
+        <details class="faq-item"><summary>¿Necesito saber programar?</summary><p class="a">No hace falta ser programador. El método está pensado para que puedas aplicarlo sin conocimientos técnicos avanzados.</p></details>
+        <details class="faq-item"><summary>¿Qué incluye el método?</summary><p class="a">El método completo, guía y documentación paso a paso, recursos y materiales de apoyo, herramientas y plantillas, y acceso directo a mí como mentor.</p></details>
+        <details class="faq-item"><summary>¿Tengo acceso directo a Rubén?</summary><p class="a">Sí. Podrás preguntarme dudas y pedirme orientación mientras aplicas el método. No compras un archivo y te quedas solo.</p></details>
+        <details class="faq-item"><summary>¿Está garantizado que voy a ganar dinero?</summary><p class="a">No. Ningún método serio puede garantizar ingresos. Te enseño el proceso, te doy las herramientas y te acompaño, pero los resultados dependen de tu ejecución, tu constancia, tu proyecto y otros factores.</p></details>
+        <details class="faq-item"><summary>¿Cuánto tiempo necesito dedicarle?</summary><p class="a">El que puedas de forma constante. No hay un mínimo mágico: cuanta más constancia, mejor irá.</p></details>
+        <details class="faq-item"><summary>¿Qué necesito para empezar?</summary><p class="a">Un ordenador, conexión a Internet y ganas de aplicar el método. Del resto te guío yo.</p></details>
+      </div>
+    </section>
+
+    <!-- 11 · CTA FINAL -->
+    <section class="section final">
+      <h2 class="reveal">Ahora ya sabes que el método existe.</h2>
+      <p class="reveal" style="--d:.08s">Lo siguiente depende de ti.</p>
+      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio">Descubrir Ballmoney Method
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <p class="fine reveal" style="--d:.24s">97&nbsp;€ · pago único · con acompañamiento directo</p>
     </section>
 
   </main>
@@ -338,8 +551,8 @@
   <!-- FOOTER -->
   <footer class="foot">
     <div class="foot-in">
-      <span class="foot-id reveal"><span class="brand-logo" aria-hidden="true"></span>Ballmoney</span>
-      <span class="foot-social reveal" style="--d:.06s">
+      <span class="foot-id"><span class="brand-logo" aria-hidden="true"></span>Ballmoney</span>
+      <span class="foot-social">
         <a href="https://www.tiktok.com/@ballmoneyy" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://www.instagram.com/ballmoneyyyy" target="_blank" rel="noopener noreferrer">Instagram</a>
       </span>
@@ -357,72 +570,20 @@
   <!-- COOKIES -->
   <div class="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
     <div class="cookie-in">
-      <div>
-        <h3>Cookies</h3>
-        <p>Usamos almacenamiento propio necesario y, con tu permiso, servicios de terceros (tipografías). Más info en la <a href="cookies.html">Política de cookies</a>.</p>
-      </div>
-      <div class="ck-actions">
-        <button type="button" class="btn-sm" data-cookie-reject>Rechazar</button>
-        <button type="button" class="btn-sm solid" data-cookie-accept>Aceptar</button>
-      </div>
+      <div><h3>Cookies</h3><p>Usamos almacenamiento propio necesario y, con tu permiso, servicios de terceros (tipografías). Más info en la <a href="cookies.html">Política de cookies</a>.</p></div>
+      <div class="ck-actions"><button type="button" class="btn-sm2" data-cookie-reject>Rechazar</button><button type="button" class="btn-sm2 solid" data-cookie-accept>Aceptar</button></div>
     </div>
   </div>
 
   <script>
   (function(){
     "use strict";
-    var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var fine=window.matchMedia("(hover:hover) and (pointer:fine)").matches;
     var yE=document.getElementById("y"); if(yE) yE.textContent=new Date().getFullYear();
 
-    function odStatic(ch){ var s=document.createElement("span"); s.className="od-s"; s.textContent=ch; return s; }
-    function buildOdometer(el){
-      if(el.dataset.done) return; el.dataset.done="1";
-      var target=parseInt(el.getAttribute("data-count"),10)||0;
-      var pre=el.getAttribute("data-prefix")||"", suf=el.getAttribute("data-suffix")||"";
-      var str=String(target), n=str.length;
-      el.textContent=""; el.classList.add("od");
-      if(pre) el.appendChild(odStatic(pre));
-      var cols=[];
-      for(var i=0;i<n;i++){
-        var place=n-1-i;
-        if(place<n-1 && (place+1)%3===0) el.appendChild(odStatic("."));   // separador de miles
-        var col=document.createElement("span"); col.className="od-col";
-        var strip=document.createElement("span"); strip.className="od-strip";
-        for(var d=0;d<=10;d++){ var dd=document.createElement("span"); dd.className="od-d"; dd.textContent=String(d%10); strip.appendChild(dd); }
-        col.appendChild(strip); el.appendChild(col);
-        cols.push({place:place,strip:strip});
-      }
-      if(suf) el.appendChild(odStatic(suf));
-      var dur=2300,t0=null;
-      function frame(now){
-        if(t0===null) t0=now;
-        var p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,5);   // easeOutQuint (muy suave)
-        var v=target*e;
-        for(var k=0;k<cols.length;k++){
-          var c=cols[k], wheel=v/Math.pow(10,c.place), m=wheel-Math.floor(wheel/10)*10;
-          c.strip.style.transform="translateY("+(-m).toFixed(4)+"em)";
-        }
-        if(p<1){ requestAnimationFrame(frame); }
-        else{ for(var j=0;j<cols.length;j++){ var cc=cols[j], dig=Math.floor(target/Math.pow(10,cc.place))%10; cc.strip.style.transform="translateY("+(-dig)+"em)"; } }
-      }
-      requestAnimationFrame(frame);
-    }
-
-    if("IntersectionObserver" in window){
-      var io=new IntersectionObserver(function(ents){
-        ents.forEach(function(en){
-          if(!en.isIntersecting) return;
-          var t=en.target; t.classList.add("in");
-          t.querySelectorAll("[data-count]").forEach(buildOdometer);
-          io.unobserve(t);
-        });
-      },{threshold:.18,rootMargin:"0px 0px -8% 0px"});
-      document.querySelectorAll(".reveal,.words,.bcard,.b-lg").forEach(function(el){ io.observe(el); });
-    } else {
-      document.querySelectorAll(".reveal,.words,.bcard,.b-lg").forEach(function(el){ el.classList.add("in"); });
-      document.querySelectorAll("[data-count]").forEach(buildOdometer);
-    }
+    /* Enlace de compra: pega aquí tu checkout (Stripe/Gumroad/etc.).
+       Vacío -> usa el correo de contacto como respaldo (no se pierde ninguna intención de compra). */
+    var CHECKOUT_URL="";
+    if(CHECKOUT_URL){ document.querySelectorAll("[data-buy]").forEach(function(a){ a.setAttribute("href",CHECKOUT_URL); a.setAttribute("rel","noopener"); }); }
 
     /* nav glass + barra de progreso */
     var nav=document.querySelector("[data-nav]"), prog=document.querySelector("[data-progress]");
@@ -433,29 +594,14 @@
     }
     onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
 
-    /* parallax de auroras */
-    var auras=document.querySelectorAll(".aura"), ticking=false;
-    window.addEventListener("scroll",function(){
-      if(ticking) return; ticking=true;
-      requestAnimationFrame(function(){ var y=scrollY; auras.forEach(function(a,i){ a.style.marginTop=(y*(0.02+i*0.012))+"px"; }); ticking=false; });
-    },{passive:true});
-
-    if(fine){
-      var cur=document.querySelector("[data-cursor]");
-      if(cur){ var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my,on=false;
-        addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY;if(!on){cur.classList.add("on");on=true;}},{passive:true});
-        (function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cur.style.transform="translate("+cx+"px,"+cy+"px)";requestAnimationFrame(loop);})();
-      }
-      document.querySelectorAll("[data-magnetic]").forEach(function(b){
-        b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.22)+"px,"+((e.clientY-r.top-r.height/2)*.38)+"px)";});
-        b.addEventListener("pointerleave",function(){b.style.transform="";});
-      });
-      document.querySelectorAll("[data-tilt]").forEach(function(c){
-        c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
-          c.style.transform="perspective(900px) rotateY("+(px*6)+"deg) rotateX("+(-py*6)+"deg) translateY(-4px)";});
-        c.addEventListener("pointerleave",function(){c.style.transform="";});
-      });
-    }
+    /* reveal on scroll (una sola vez) */
+    var els=document.querySelectorAll(".reveal");
+    if("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(ents){
+        ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+      },{threshold:.14,rootMargin:"0px 0px -8% 0px"});
+      els.forEach(function(el){ io.observe(el); });
+    } else { els.forEach(function(el){ el.classList.add("in"); }); }
   })();
   </script>
   <script defer src="cookies.js?v=20260719"></script>
