@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ballmoney Method — El método que cambió mi vida</title>
-<meta name="description" content="El método real que utilizo para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo, sin promesas imposibles. Pago único de 97 €." />
+<meta name="description" content="El método real para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo, sin promesas imposibles. Pago único." />
 <meta name="theme-color" content="#060608" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://ballmoney.vercel.app/" />
 <link rel="icon" type="image/png" href="assets/img/bm-logo.png" />
 
 <meta property="og:title" content="Ballmoney Method — El método que cambió mi vida" />
-<meta property="og:description" content="El método real que utilizo para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo. Pago único de 97 €." />
+<meta property="og:description" content="El método real para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo. Pago único." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ballmoney.vercel.app/" />
 <meta property="og:image" content="https://ballmoney.vercel.app/assets/img/bm-logo.png" />
@@ -177,6 +177,7 @@
   .incl-card .big{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,7vw,4rem);line-height:1;margin:.6rem 0 .2rem}
   .incl-card .big span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
   .incl-card .u{color:var(--sub);font-size:.94rem}
+  .incl-card .card-line{color:var(--sub);font-size:.98rem;line-height:1.55;margin:.8rem auto 0;max-width:26ch}
   .incl-card .btn{margin-top:1.6rem;width:100%}
 
   /* ---------- MENTOR ---------- */
@@ -273,6 +274,42 @@
   .foot-legal a:hover,.foot-legal button:hover{color:var(--accent)}
   .foot-legal .cpy{margin-left:auto;font-size:.78rem;color:var(--mute)}
 
+  /* ---------- LEAD MODAL (captación) ---------- */
+  .lead-modal{position:fixed;inset:0;z-index:140;display:flex;align-items:center;justify-content:center;
+    padding:var(--pad);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+  .lead-modal.is-open{opacity:1;visibility:visible}
+  .lead-modal .lm-backdrop{position:absolute;inset:0;background:rgba(4,4,7,.72);backdrop-filter:blur(6px)}
+  .lead-card{position:relative;z-index:1;width:100%;max-width:440px;padding:clamp(1.7rem,4vw,2.4rem);
+    border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#0c0d12,#08090d);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.8);transform:translateY(16px) scale(.98);transition:transform .4s var(--ease)}
+  .lead-modal.is-open .lead-card{transform:none}
+  .lead-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.55),transparent)}
+  .lead-close{position:absolute;top:.9rem;right:.9rem;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+    background:var(--panel);color:var(--sub);cursor:pointer;display:grid;place-items:center;transition:border-color .25s ease,color .25s ease}
+  .lead-close:hover{border-color:var(--fg);color:var(--fg)}
+  .lead-close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+  .lead-card .lm-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .lead-card h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,4vw,1.9rem);letter-spacing:-.02em;line-height:1.12;margin-top:.7rem}
+  .lead-card .lm-sub{margin-top:.7rem;color:var(--sub);font-size:.98rem;line-height:1.6}
+  .lead-form{margin-top:1.5rem;display:grid;gap:.8rem}
+  .lead-form .field{display:grid;gap:.35rem}
+  .lead-form label{font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--mute)}
+  .lead-form input{width:100%;font-family:var(--sans);font-size:1rem;color:var(--fg);
+    padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03);transition:border-color .25s ease,background .25s ease}
+  .lead-form input::placeholder{color:var(--mute)}
+  .lead-form input:focus{outline:none;border-color:var(--accent);background:rgba(74,158,255,.06)}
+  .lead-form .field.is-error input{border-color:#ff6b6b}
+  .lead-form .btn{width:100%;margin-top:.4rem}
+  .lead-note{margin-top:1rem;font-size:.76rem;color:var(--mute);line-height:1.5;text-align:center}
+  .lead-note a{color:var(--sub);text-decoration:underline}
+  .lead-ok{text-align:center;padding:.6rem 0}
+  .lead-ok .tick{width:52px;height:52px;border-radius:50%;margin:0 auto 1rem;display:grid;place-items:center;
+    background:var(--accent-soft);border:1px solid rgba(74,158,255,.3)}
+  .lead-ok .tick svg{width:26px;height:26px;fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .lead-ok h3{font-family:var(--serif);font-weight:600;font-size:1.5rem}
+  .lead-ok p{margin-top:.6rem;color:var(--sub);font-size:.96rem;line-height:1.6}
+  .lead-ok .btn{margin-top:1.4rem;width:100%}
+
   /* ---------- COOKIES ---------- */
   .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:130;padding:0 var(--pad) max(1rem,env(safe-area-inset-bottom));transform:translateY(140%);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
   .cookie-banner.is-visible{transform:none;opacity:1}
@@ -332,8 +369,7 @@
         <span class="brand-name">Ballmoney</span>
       </a>
       <span class="nav-cta">
-        <span class="p">97&nbsp;€</span>
-        <a class="btn btn--primary btn--sm" href="#precio"><span class="lbl-full">Quiero el método</span><span class="lbl-short">El método</span></a>
+        <a class="btn btn--primary btn--sm" href="#precio" data-lead><span class="lbl-full">Quiero conocer el método</span><span class="lbl-short">El método</span></a>
       </span>
     </div>
   </header>
@@ -346,11 +382,10 @@
       <h1 class="h-xl reveal" style="--d:.08s">El método que <span class="accent-txt">cambió mi vida</span>.</h1>
       <p class="lead reveal" style="--d:.16s">El sistema que empecé a usar para construir <b>ingresos por Internet</b> y acercarme, poco a poco, a la libertad financiera. Ahora te enseño exactamente cómo lo hago.</p>
       <div class="hero-cta reveal" style="--d:.24s">
-        <a class="btn btn--primary" href="#precio">Quiero conocer el método
+        <a class="btn btn--primary" href="#precio" data-lead>Quiero conocer el método
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <span class="price-chip"><span class="n">97&nbsp;€</span><span class="t">pago único</span></span>
-        <span class="hero-micro">Sin humo · Sin promesas imposibles</span>
+        <span class="hero-micro">Método real · Sin humo · Sin promesas imposibles</span>
       </div>
       <div class="scrollcue reveal" style="--d:.4s"><span>Descubre</span><span class="bar"></span></div>
     </section>
@@ -435,9 +470,8 @@
         </div>
         <div class="incl-card reveal sc" style="--d:.1s">
           <p class="k">Acceso completo</p>
-          <div class="big">97<span>€</span></div>
-          <p class="u">Pago único · Sin suscripciones</p>
-          <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method</a>
+          <p class="card-line">El método, los recursos y el acompañamiento de Ballmoney, en un solo lugar.</p>
+          <a class="btn btn--primary" href="#precio" data-lead>Quiero conocer el método</a>
         </div>
       </div>
     </section>
@@ -492,7 +526,7 @@
       <h2 class="reveal" style="--d:.06s">Un pago. Todo el método.</h2>
       <div class="price-box reveal sc" style="--d:.12s">
         <p class="name">Ballmoney Method</p>
-        <div class="amount">97<span>€</span></div>
+        <div class="amount">38,99<span>€</span></div>
         <p class="tag">Pago único · Sin suscripciones</p>
         <ul class="sum">
           <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>El método completo, paso a paso</li>
@@ -540,10 +574,10 @@
     <section class="section final">
       <h2 class="reveal">Ahora ya sabes que el método existe.</h2>
       <p class="reveal" style="--d:.08s">Lo siguiente depende de ti.</p>
-      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio">Descubrir Ballmoney Method
+      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio" data-lead>Descubrir Ballmoney Method
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <p class="fine reveal" style="--d:.24s">97&nbsp;€ · pago único · con acompañamiento directo</p>
+      <p class="fine reveal" style="--d:.24s">Pago único · con acompañamiento directo</p>
     </section>
 
   </main>
@@ -566,6 +600,43 @@
       </nav>
     </div>
   </footer>
+
+  <!-- MODAL DE CAPTACIÓN -->
+  <div class="lead-modal" data-lead-modal role="dialog" aria-modal="true" aria-labelledby="lead-title" hidden>
+    <div class="lm-backdrop" data-lead-close></div>
+    <div class="lead-card">
+      <button type="button" class="lead-close" data-lead-close aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div data-lead-step="form">
+        <p class="lm-eyebrow">Ballmoney Method</p>
+        <h3 id="lead-title">Empieza por aquí.</h3>
+        <p class="lm-sub">Déjanos tu nombre y tu email y te mostramos cómo funciona el método, paso a paso.</p>
+        <form class="lead-form" data-lead-form novalidate>
+          <div class="field">
+            <label for="lead-name">Nombre</label>
+            <input type="text" id="lead-name" name="nombre" autocomplete="given-name" placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="lead-email">Email</label>
+            <input type="email" id="lead-email" name="email" autocomplete="email" placeholder="tu@email.com" required />
+          </div>
+          <button type="submit" class="btn btn--primary"><span>Continuar</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="lead-note">Solo usamos tus datos para darte acceso al método y orientarte. Consulta la <a href="privacidad.html">Política de privacidad</a>.</p>
+        </form>
+      </div>
+      <div class="lead-ok" data-lead-step="ok" hidden>
+        <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h3>Perfecto.</h3>
+        <p>Gracias. Este es el siguiente paso hacia el método.</p>
+        <a class="btn btn--primary" href="#precio" data-lead-continue>Ver el método
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- COOKIES -->
   <div class="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
@@ -602,6 +673,71 @@
       },{threshold:.14,rootMargin:"0px 0px -8% 0px"});
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(function(el){ el.classList.add("in"); }); }
+
+    /* modal de captación (lead): nombre + email antes de la oferta */
+    (function(){
+      var modal=document.querySelector("[data-lead-modal]");
+      if(!modal) return;
+      var form=modal.querySelector("[data-lead-form]");
+      var stepForm=modal.querySelector('[data-lead-step="form"]');
+      var stepOk=modal.querySelector('[data-lead-step="ok"]');
+      var ENDPOINT="https://formspree.io/f/xrenybvd";
+      var LEAD_KEY="bm_lead", LIST_KEY="bm_lead_list";
+      var lastFocus=null, tHide=null;
+
+      function captured(){ try{ return localStorage.getItem(LEAD_KEY)==="1"; }catch(e){ return false; } }
+      function toPrecio(){ var t=document.getElementById("precio"); if(t) t.scrollIntoView({behavior:"smooth",block:"start"}); }
+      function focusSafe(el){ if(el&&el.focus){ try{ el.focus({preventScroll:true}); }catch(e){ try{ el.focus(); }catch(e2){} } } }
+
+      function open(){
+        if(tHide){ clearTimeout(tHide); tHide=null; }
+        lastFocus=document.activeElement;
+        modal.hidden=false;
+        if(stepForm) stepForm.hidden=false;
+        if(stepOk) stepOk.hidden=true;
+        void modal.offsetWidth;
+        modal.classList.add("is-open");
+        document.body.style.overflow="hidden";
+        setTimeout(function(){ focusSafe(modal.querySelector("#lead-name")||modal.querySelector("#lead-email")); },60);
+      }
+      function close(){
+        modal.classList.remove("is-open");
+        document.body.style.overflow="";
+        tHide=setTimeout(function(){ modal.hidden=true; },400);
+        focusSafe(lastFocus);
+      }
+
+      document.querySelectorAll("[data-lead]").forEach(function(a){
+        a.addEventListener("click",function(e){
+          e.preventDefault();
+          if(captured()){ toPrecio(); return; }
+          open();
+        });
+      });
+      modal.querySelectorAll("[data-lead-close]").forEach(function(b){ b.addEventListener("click",close); });
+      document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&modal.classList.contains("is-open")) close(); });
+      var cont=modal.querySelector("[data-lead-continue]");
+      if(cont) cont.addEventListener("click",function(e){ e.preventDefault(); close(); setTimeout(toPrecio,420); });
+
+      if(form){
+        form.addEventListener("input",function(e){ var fld=e.target.closest(".field"); if(fld) fld.classList.remove("is-error"); });
+        form.addEventListener("submit",function(e){
+          e.preventDefault();
+          var email=form.querySelector("#lead-email");
+          var okEmail=email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+          if(!okEmail){ if(email){ email.closest(".field").classList.add("is-error"); focusSafe(email); } return; }
+          var nameEl=form.querySelector("#lead-name");
+          var data={ nombre:nameEl?nameEl.value.trim():"", email:email.value.trim(),
+            tipo:"Interés Ballmoney Method", fecha:new Date().toISOString(), _subject:"Nuevo interés — Ballmoney Method" };
+          try{ var arr=JSON.parse(localStorage.getItem(LIST_KEY)||"[]"); arr.push(data); localStorage.setItem(LIST_KEY,JSON.stringify(arr)); localStorage.setItem(LEAD_KEY,"1"); }catch(err){}
+          var btn=form.querySelector("[type=submit]"), lab=btn?btn.querySelector("span"):null;
+          if(btn) btn.disabled=true; if(lab) lab.textContent="Enviando…";
+          function done(){ if(stepForm) stepForm.hidden=true; if(stepOk){ stepOk.hidden=false; focusSafe(stepOk.querySelector("[data-lead-continue]")); } }
+          fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+            .then(function(){ done(); }).catch(function(){ done(); });
+        });
+      }
+    })();
   })();
   </script>
   <script defer src="cookies.js?v=20260719"></script>
