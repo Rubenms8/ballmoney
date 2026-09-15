@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ballmoney Method — El método que cambió mi vida</title>
+<title>Ballmoney Method — Construye ingresos por Internet</title>
 <meta name="description" content="El método real para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo, sin promesas imposibles. Pago único." />
 <meta name="theme-color" content="#060608" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://ballmoney.vercel.app/" />
 <link rel="icon" type="image/png" href="assets/img/bm-logo.png" />
 
-<meta property="og:title" content="Ballmoney Method — El método que cambió mi vida" />
+<meta property="og:title" content="Ballmoney Method — Construye ingresos por Internet" />
 <meta property="og:description" content="El método real para construir ingresos por Internet, paso a paso y con acompañamiento directo. Sin humo. Pago único." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ballmoney.vercel.app/" />
@@ -104,17 +104,21 @@
   .btn:hover svg{transform:translateX(4px)}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;
-    padding-block:clamp(3rem,9vw,6rem) clamp(3rem,8vw,5rem)}
-  .hero .eyebrow{margin-bottom:1.6rem}
-  .hero h1{margin-bottom:0}
-  .hero .lead{margin:1.7rem auto 0;font-size:clamp(1.06rem,1.9vw,1.32rem);max-width:40ch}
-  .hero .lead b{color:var(--fg);font-weight:600}
-  .hero-cta{margin-top:2.6rem;display:flex;flex-direction:column;align-items:center;gap:1.1rem}
-  .price-chip{display:inline-flex;align-items:baseline;gap:.5rem;padding:.5rem 1.1rem;border:1px solid var(--line);border-radius:100px;background:var(--panel)}
-  .price-chip .n{font-family:var(--serif);font-weight:600;font-size:1.28rem;color:var(--fg)}
-  .price-chip .t{font-size:.78rem;color:var(--mute);letter-spacing:.04em}
-  .hero-micro{margin-top:1.4rem;font-size:.82rem;color:var(--mute);letter-spacing:.02em}
+  .hero{position:relative;z-index:2;min-height:calc(100svh - 64px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    padding-block:clamp(1.4rem,4vw,2.6rem) clamp(2rem,5vw,3.4rem)}
+  .hero-inner{width:100%;max-width:560px;margin-inline:auto;display:flex;flex-direction:column;align-items:center}
+  .hero-label{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.1rem}
+  .hero-label .d{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+  .hero-title{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.2rem,6.6vw,3.5rem);max-width:15ch;text-wrap:balance;overflow-wrap:break-word}
+  .hero-sub{margin-top:1rem;color:var(--sub);font-size:clamp(1rem,1.7vw,1.18rem);max-width:34ch;line-height:1.5}
+  .hero-media{position:relative;width:100%;margin-top:clamp(1.5rem,4vw,2.1rem);border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    background:#0a0b0f;box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
+  .hero-media img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 62%}
+  .hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(6,6,8,.10),transparent 20%,transparent 70%,rgba(6,6,8,.42))}
+  .hero-cta{margin-top:clamp(1.5rem,4vw,2.1rem);display:flex;flex-direction:column;align-items:center;gap:.85rem;width:100%}
+  .hero-cta .btn{min-width:min(320px,100%)}
+  .hero-micro{font-size:.8rem;color:var(--mute);letter-spacing:.02em}
   .scrollcue{margin-top:clamp(2.4rem,5vw,3.6rem);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:var(--mute);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase}
   .scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--accent),transparent);position:relative;overflow:hidden}
   .scrollcue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--accent);animation:sd 2.2s ease-in-out infinite}
@@ -369,7 +373,7 @@
         <span class="brand-name">Ballmoney</span>
       </a>
       <span class="nav-cta">
-        <a class="btn btn--primary btn--sm" href="#precio" data-lead><span class="lbl-full">Quiero conocer el método</span><span class="lbl-short">El método</span></a>
+        <a class="btn btn--primary btn--sm" href="#precio" data-lead><span class="lbl-full">Acceder al método</span><span class="lbl-short">El método</span></a>
       </span>
     </div>
   </header>
@@ -378,34 +382,18 @@
 
     <!-- 1 · HERO -->
     <section class="hero">
-      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Ballmoney Method</p>
-      <h1 class="h-xl reveal" style="--d:.08s">El método que <span class="accent-txt">cambió mi vida</span>.</h1>
-      <p class="lead reveal" style="--d:.16s">El sistema que empecé a usar para construir <b>ingresos por Internet</b> y acercarme, poco a poco, a la libertad financiera. Ahora te enseño exactamente cómo lo hago.</p>
-      <div class="hero-cta reveal" style="--d:.24s">
-        <a class="btn btn--primary" href="#precio" data-lead>Quiero conocer el método
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <span class="hero-micro">Método real · Sin humo · Sin promesas imposibles</span>
-      </div>
-      <div class="scrollcue reveal" style="--d:.4s"><span>Descubre</span><span class="bar"></span></div>
-    </section>
-
-    <!-- 2 · EL PROBLEMA -->
-    <section class="section" id="problema">
-      <div class="prob-grid">
-        <div>
-          <p class="eyebrow reveal"><span class="d" aria-hidden="true"></span>El problema</p>
-          <h2 class="h-lg reveal" style="--d:.06s;margin-top:1rem">No te falta información. Te falta un camino.</h2>
-          <p class="lead reveal" style="--d:.12s;margin-top:1.3rem">Hoy hay más contenido que nunca sobre cómo ganar dinero por Internet: vídeos, hilos, gurús, promesas. Y aun así, casi nadie sabe qué hacer con todo eso.</p>
-        </div>
-        <div>
-          <ul class="prob-list">
-            <li class="reveal"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Demasiada información, y toda se contradice.</li>
-            <li class="reveal" style="--d:.05s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber por dónde empezar.</li>
-            <li class="reveal" style="--d:.1s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber qué construir ni qué ignorar.</li>
-            <li class="reveal" style="--d:.15s"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No saber cómo convertir todo eso en un sistema.</li>
-          </ul>
-          <p class="prob-close reveal" style="--d:.2s">Deja de consumir información sin saber qué hacer con ella. <b>Necesitas un método.</b></p>
+      <div class="hero-inner">
+        <p class="hero-label reveal"><span class="d" aria-hidden="true"></span>Ballmoney Method</p>
+        <h1 class="hero-title reveal" style="--d:.06s">El método para construir <span class="accent-txt">ingresos por Internet</span>.</h1>
+        <p class="hero-sub reveal" style="--d:.12s">Un sistema práctico para crear y monetizar proyectos online. No es otro curso.</p>
+        <figure class="hero-media reveal sc" style="--d:.18s">
+          <img src="assets/img/hero-method.jpg" width="1170" height="1795" alt="Ballmoney Method — coche deportivo de noche" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="hero-cta reveal" style="--d:.24s">
+          <a class="btn btn--primary" href="#precio" data-lead>Acceder al método
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="hero-micro">Método real · Acompañamiento de Ballmoney</span>
         </div>
       </div>
     </section>
@@ -454,21 +442,7 @@
         <div class="incl-card reveal sc" style="--d:.1s">
           <p class="k">Acceso completo</p>
           <p class="card-line">El método, los recursos y el acompañamiento de Ballmoney, en un solo lugar.</p>
-          <a class="btn btn--primary" href="#precio" data-lead>Quiero conocer el método</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6 · MENTOR -->
-    <section class="section" id="mentor">
-      <div class="mentor reveal">
-        <p class="eyebrow acc"><span class="d" aria-hidden="true"></span>El acompañamiento</p>
-        <h2 class="h-md">No estás comprando un PDF. Aprendes el método con Ballmoney a tu lado.</h2>
-        <p class="m-lead">La mayoría de productos te entregan un archivo y te dejan solo. Aquí no. Cuando entras en Ballmoney Method, entras con <b>acompañamiento directo de Ballmoney</b>. Podrás plantear tus dudas, consultar cuando te atasques y pedir orientación sobre cómo aplicar cada parte a tu propio proyecto. No caminas solo mientras lo construyes.</p>
-        <div class="mentor-points">
-          <div class="m-point"><div class="t">Plantea tus dudas</div><p>Cuando algo no encaje, lo consultas y avanzamos.</p></div>
-          <div class="m-point"><div class="t">Orientación real</div><p>Orientación para aplicar el método a tu caso concreto.</p></div>
-          <div class="m-point"><div class="t">Acompañamiento</div><p>Estás respaldado durante el proceso, no después de pagar.</p></div>
+          <a class="btn btn--primary" href="#precio" data-lead>Acceder al método</a>
         </div>
       </div>
     </section>
@@ -493,18 +467,29 @@
           <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Guía, recursos, herramientas y plantillas</li>
           <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento directo de Ballmoney</li>
         </ul>
-        <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Quiero el Ballmoney Method
+        <a class="btn btn--primary" data-buy href="mailto:ballmoney.contact@gmail.com?subject=Quiero%20el%20Ballmoney%20Method">Acceder al método
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <p class="fine">Acceso al método completo tras la compra. No prometemos resultados: dependen de tu trabajo y tu ejecución.</p>
       </div>
     </section>
 
+    <!-- FAQ (corta) -->
+    <section class="section faq" id="faq">
+      <p class="eyebrow acc reveal" style="text-align:center"><span class="d" aria-hidden="true"></span>Preguntas frecuentes</p>
+      <h2 class="reveal" style="--d:.06s;text-align:center">Lo esencial.</h2>
+      <div class="faq-list reveal" style="--d:.1s">
+        <details class="faq-item" open><summary>¿Es un curso?</summary><p class="a">No. Es un método: un sistema práctico y ordenado para aplicar, con acompañamiento de Ballmoney. No se trata de acumular clases, sino de ejecutar.</p></details>
+        <details class="faq-item"><summary>¿Necesito experiencia o saber programar?</summary><p class="a">No. Está pensado para empezar desde cero, sin conocimientos técnicos avanzados.</p></details>
+        <details class="faq-item"><summary>¿Está garantizado que voy a ganar dinero?</summary><p class="a">No. Ningún método serio garantiza ingresos. Te damos el sistema, las herramientas y el acompañamiento; los resultados dependen de tu ejecución, tu constancia y tu proyecto.</p></details>
+      </div>
+    </section>
+
     <!-- CTA FINAL -->
     <section class="section final">
-      <h2 class="reveal">Ahora ya sabes que el método existe.</h2>
-      <p class="reveal" style="--d:.08s">Lo siguiente depende de ti.</p>
-      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio" data-lead>Descubrir Ballmoney Method
+      <h2 class="reveal">El método existe. El resto depende de ti.</h2>
+      <p class="reveal" style="--d:.08s">Accede a Ballmoney Method y empieza a construir.</p>
+      <a class="btn btn--primary reveal" style="--d:.16s" href="#precio" data-lead>Acceder al método
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <p class="fine reveal" style="--d:.24s">Pago único · con acompañamiento directo</p>
@@ -540,8 +525,8 @@
       </button>
       <div data-lead-step="form">
         <p class="lm-eyebrow">Ballmoney Method</p>
-        <h3 id="lead-title">Empieza por aquí.</h3>
-        <p class="lm-sub">Déjanos tu nombre y tu email y te mostramos cómo funciona el método, paso a paso.</p>
+        <h3 id="lead-title">Accede al método.</h3>
+        <p class="lm-sub">Déjanos tu nombre y tu email para continuar hacia Ballmoney Method.</p>
         <form class="lead-form" data-lead-form novalidate>
           <div class="field">
             <label for="lead-name">Nombre</label>
