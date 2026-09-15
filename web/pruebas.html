@@ -98,19 +98,13 @@
   .proof-head h1{font-size:clamp(2.5rem,9vw,4.2rem);letter-spacing:-.02em}
   .proof-head p{margin-top:1rem;color:var(--sub);font-size:clamp(1.04rem,1.9vw,1.24rem);text-wrap:balance;max-width:34ch;margin-inline:auto}
 
-  /* galería */
-  .gallery{position:relative;z-index:2;max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(1.1rem,3vw,2rem)}
+  /* galería (grid masonry: 2 columnas en desktop, 1 en móvil) */
+  .grid{position:relative;z-index:2;max-width:980px;margin:0 auto;column-count:2;column-gap:clamp(.9rem,2vw,1.4rem)}
+  .grid .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 clamp(.9rem,2vw,1.4rem)}
   .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0a0b0f;
     box-shadow:0 30px 70px -38px rgba(0,0,0,.85)}
   .shot img{display:block;width:100%;height:auto}
-
-  /* CTA intermedio */
-  .mid-cta{position:relative;z-index:2;max-width:900px;margin:clamp(2.2rem,5vw,3.4rem) auto;
-    padding:clamp(2rem,5vw,3rem) var(--pad);text-align:center;border:1px solid var(--line);border-radius:22px;
-    background:linear-gradient(180deg,var(--panel-2),transparent);overflow:hidden}
-  .mid-cta::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.5),transparent)}
-  .mid-cta p{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,4vw,2.05rem);color:var(--fg);letter-spacing:-.01em;text-wrap:balance}
-  .mid-cta .btn{margin-top:1.4rem}
+  .grid-empty{max-width:900px;margin:0 auto;text-align:center;color:var(--mute);font-size:.9rem;padding:2rem 0}
 
   /* CTA final */
   .proof-final{position:relative;z-index:2;text-align:center;max-width:720px;margin-inline:auto;padding-block:clamp(3rem,9vw,5.5rem)}
@@ -185,11 +179,9 @@
   .reveal.in{opacity:1;transform:none}
 
   /* responsive */
+  @media(max-width:720px){ .grid{column-count:1;max-width:560px} }
   @media(max-width:560px){
-    .nav-cta .lbl-full{display:none}
-    .nav-cta .lbl-short{display:inline}
-    .nav-cta .btn--sm{padding:.58rem 1rem}
-    .mid-cta .btn,.proof-final .btn{width:100%}
+    .proof-final .btn{width:100%}
     .foot-in{justify-content:center;text-align:center}
     .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
   }
@@ -212,9 +204,6 @@
         <span class="brand-logo" aria-hidden="true"></span>
         <span class="brand-name">Ballmoney</span>
       </a>
-      <span class="nav-cta">
-        <a class="btn btn--primary btn--sm" href="#" data-lead><span class="lbl-full">Acceder al método</span><span class="lbl-short">El método</span></a>
-      </span>
     </div>
   </header>
 
@@ -227,33 +216,10 @@
       <p class="reveal" style="--d:.12s">No tienes que creer en nuestras palabras. <span class="accent-txt">Míralas.</span></p>
     </header>
 
-    <!-- GALERÍA (primera parte) -->
-    <section class="gallery" aria-label="Pruebas reales de resultados con Google AdSense">
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-01.jpg" width="1448" height="1086" alt="Prueba real de Google AdSense — Ballmoney Method (1)" fetchpriority="high" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-02.jpg" width="1448" height="1086" alt="Prueba real de Google AdSense — Ballmoney Method (2)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-03.jpg" width="1448" height="1086" alt="Prueba real de Google AdSense — Ballmoney Method (3)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-04.jpg" width="1448" height="1086" alt="Prueba real de Google AdSense — Ballmoney Method (4)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-05.jpg" width="1472" height="1069" alt="Prueba real de Google AdSense — Ballmoney Method (5)" loading="lazy" decoding="async" /></figure>
-    </section>
+    <!-- GALERÍA (grid; imágenes detectadas automáticamente desde /pruebas-adsense/) -->
+    <section class="grid" id="proof-grid" aria-label="Pruebas reales de resultados con Google AdSense"></section>
 
-    <!-- CTA INTERMEDIO -->
-    <section class="mid-cta reveal">
-      <p>¿Quieres aprender el método?</p>
-      <a class="btn btn--primary" href="#" data-lead>Acceder al método
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </section>
-
-    <!-- GALERÍA (segunda parte) -->
-    <section class="gallery" aria-label="Más pruebas reales">
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-06.jpg" width="1473" height="1068" alt="Prueba real de Google AdSense — Ballmoney Method (6)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-07.jpg" width="1472" height="1069" alt="Prueba real de Google AdSense — Ballmoney Method (7)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-08.jpg" width="1473" height="1068" alt="Prueba real de Google AdSense — Ballmoney Method (8)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-09.jpg" width="1472" height="1069" alt="Prueba real de Google AdSense — Ballmoney Method (9)" loading="lazy" decoding="async" /></figure>
-      <figure class="shot reveal"><img src="pruebas-adsense/prueba-10.jpg" width="1472" height="1069" alt="Prueba real de Google AdSense — Ballmoney Method (10)" loading="lazy" decoding="async" /></figure>
-    </section>
-
-    <!-- CTA FINAL -->
+    <!-- CTA FINAL (único, tras la galería) -->
     <section class="proof-final">
       <h2 class="reveal">Ya has visto las pruebas.</h2>
       <p class="reveal" style="--d:.08s">El siguiente paso es conocer el método.</p>
@@ -348,6 +314,36 @@
       },{threshold:.12,rootMargin:"0px 0px -6% 0px"});
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(function(el){ el.classList.add("in"); }); }
+
+    /* GALERÍA: se rellena automáticamente desde el manifiesto /pruebas-adsense/pruebas.json.
+       Distribuye cualquier número de imágenes (grid de 2 columnas). Para añadir pruebas:
+       coloca la imagen optimizada en /pruebas-adsense/ y añade su nombre al manifiesto. */
+    (function(){
+      var grid=document.getElementById("proof-grid");
+      if(!grid) return;
+      var BASE="pruebas-adsense/";
+      function render(items){
+        if(!items || !items.length) return;
+        var frag=document.createDocumentFragment();
+        items.forEach(function(it,idx){
+          var src = (typeof it==="string") ? it : (it && it.src);
+          if(!src) return;
+          var f=document.createElement("figure"); f.className="shot";
+          var im=document.createElement("img");
+          im.src=BASE+src;
+          if(it && it.w && it.h){ im.width=it.w; im.height=it.h; }
+          im.alt="Prueba real de Google AdSense — Ballmoney Method";
+          im.decoding="async";
+          if(idx<2){ im.setAttribute("fetchpriority","high"); } else { im.loading="lazy"; }
+          f.appendChild(im); frag.appendChild(f);
+        });
+        grid.appendChild(frag);
+      }
+      fetch(BASE+"pruebas.json",{cache:"no-cache"})
+        .then(function(r){ return r.ok ? r.json() : []; })
+        .then(render)
+        .catch(function(){ /* sin manifiesto: no mostramos nada inventado */ });
+    })();
 
     /* modal de captación (lead): nombre + email. Paso previo al checkout (se conectará después). */
     (function(){
