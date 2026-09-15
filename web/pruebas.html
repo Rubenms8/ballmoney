@@ -66,7 +66,7 @@
 
   /* nav */
   .nav{position:sticky;top:0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
-  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:flex-start;gap:clamp(.7rem,2vw,1.1rem)}
   .nav.scrolled{background:rgba(6,6,8,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
   .brand{display:inline-flex;align-items:center;gap:.7rem}
   .brand-logo{width:42px;height:42px;border-radius:11px;flex-shrink:0;
@@ -181,6 +181,9 @@
   /* responsive */
   @media(max-width:720px){ .grid{column-count:1;max-width:560px} }
   @media(max-width:560px){
+    .nav-cta .lbl-full{display:none}
+    .nav-cta .lbl-short{display:inline}
+    .nav-cta .btn--sm{padding:.55rem .95rem}
     .proof-final .btn{width:100%}
     .foot-in{justify-content:center;text-align:center}
     .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
@@ -204,6 +207,9 @@
         <span class="brand-logo" aria-hidden="true"></span>
         <span class="brand-name">Ballmoney</span>
       </a>
+      <span class="nav-cta">
+        <a class="btn btn--primary btn--sm" href="#" data-lead><span class="lbl-full">Acceder al método</span><span class="lbl-short">El método</span></a>
+      </span>
     </div>
   </header>
 
