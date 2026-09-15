@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pruebas reales — Ballmoney Method</title>
-<meta name="description" content="Pruebas reales de resultados con Google AdSense. No tienes que creer en nuestras palabras: míralas. Ballmoney Method." />
+<title>Acceder al método — Ballmoney Method</title>
+<meta name="description" content="Accede a Ballmoney Method: método, recursos, herramientas, plantillas, prompts, ejemplos y acompañamiento directo de Ballmoney. Pago único." />
 <meta name="theme-color" content="#060608" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://ballmoney.vercel.app/pruebas.html" />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://ballmoney.vercel.app/pago.html" />
 <link rel="icon" type="image/png" href="assets/img/bm-logo.png" />
 
-<meta property="og:title" content="Pruebas reales — Ballmoney Method" />
-<meta property="og:description" content="No tienes que creer en nuestras palabras: mira las pruebas. Ballmoney Method." />
+<meta property="og:title" content="Acceder al método — Ballmoney Method" />
+<meta property="og:description" content="El acceso al método: método, recursos, herramientas y acompañamiento directo de Ballmoney. Pago único." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ballmoney.vercel.app/pruebas.html" />
-<meta property="og:image" content="https://ballmoney.vercel.app/pruebas-adsense/prueba-01.jpg" />
+<meta property="og:url" content="https://ballmoney.vercel.app/pago.html" />
+<meta property="og:image" content="https://ballmoney.vercel.app/assets/img/bm-logo.png" />
 <meta property="og:site_name" content="Ballmoney" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -62,24 +62,23 @@
   .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);display:inline-flex;align-items:center;gap:.6rem}
   .eyebrow.acc{color:var(--accent)}
   .eyebrow .d{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor;opacity:.9}
-  .accent-txt{color:transparent;background:linear-gradient(100deg,var(--accent-2),var(--accent) 55%,#dbeaff);-webkit-background-clip:text;background-clip:text}
 
   /* nav */
   .nav{position:sticky;top:0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
-  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:clamp(.7rem,2vw,1.1rem)}
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:1rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
   .nav.scrolled{background:rgba(6,6,8,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
   .brand{display:inline-flex;align-items:center;gap:.7rem}
   .brand-logo{width:42px;height:42px;border-radius:11px;flex-shrink:0;
     background:#0a1122 url("assets/img/bm-logo.png") center/164% no-repeat;
     border:1px solid rgba(90,150,255,.24);box-shadow:0 6px 20px -8px rgba(74,158,255,.5)}
   .brand-name{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
-  .nav-cta{display:inline-flex;align-items:center;gap:.9rem;flex-shrink:0}
-  .nav-cta .lbl-short{display:none}
+  .nav-back{font-size:.84rem;color:var(--mute);transition:color .25s ease}
+  .nav-back:hover{color:var(--fg)}
 
   /* botones */
   .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;cursor:pointer;
-    font-family:var(--sans);font-weight:700;font-size:.92rem;letter-spacing:.01em;
-    padding:1.05rem 1.9rem;border-radius:100px;border:1px solid transparent;white-space:nowrap;isolation:isolate;
+    font-family:var(--sans);font-weight:700;font-size:.95rem;letter-spacing:.01em;
+    padding:1.1rem 2rem;border-radius:100px;border:1px solid transparent;white-space:nowrap;isolation:isolate;
     transition:transform .25s var(--ease),background .3s ease,border-color .3s ease,box-shadow .35s ease}
   .btn--primary{background:#fff;color:#08080c;box-shadow:0 12px 44px -14px rgba(255,255,255,.4)}
   .btn--primary:hover{transform:translateY(-2px);box-shadow:0 18px 60px -14px rgba(255,255,255,.55)}
@@ -87,30 +86,34 @@
     background:linear-gradient(110deg,transparent 34%,rgba(120,180,255,.55) 50%,transparent 66%);
     background-size:250% 100%;background-position:200% 0;animation:sheen 6s ease-in-out infinite;mix-blend-mode:overlay}
   @keyframes sheen{0%,72%{background-position:200% 0}100%{background-position:-130% 0}}
-  .btn--sm{padding:.62rem 1.2rem;font-size:.82rem}
   .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
   .btn:hover svg{transform:translateX(4px)}
 
-  /* cabecera de pruebas */
-  .proof-head{position:relative;z-index:2;text-align:center;max-width:760px;margin-inline:auto;
-    padding-block:clamp(2.6rem,8vw,4.6rem) clamp(1.6rem,4vw,2.6rem)}
-  .proof-head .eyebrow{margin-bottom:1.1rem}
-  .proof-head h1{font-size:clamp(2.5rem,9vw,4.2rem);letter-spacing:-.02em}
-  .proof-head p{margin-top:1rem;color:var(--sub);font-size:clamp(1.04rem,1.9vw,1.24rem);text-wrap:balance;max-width:34ch;margin-inline:auto}
-
-  /* galería (grid masonry: 2 columnas en desktop, 1 en móvil) */
-  .grid{position:relative;z-index:2;max-width:980px;margin:0 auto;column-count:2;column-gap:clamp(.9rem,2vw,1.4rem)}
-  .grid .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 clamp(.9rem,2vw,1.4rem)}
-  .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0a0b0f;
-    box-shadow:0 30px 70px -38px rgba(0,0,0,.85)}
-  .shot img{display:block;width:100%;height:auto}
-  .grid-empty{max-width:900px;margin:0 auto;text-align:center;color:var(--mute);font-size:.9rem;padding:2rem 0}
-
-  /* CTA final */
-  .proof-final{position:relative;z-index:2;text-align:center;max-width:720px;margin-inline:auto;padding-block:clamp(3rem,9vw,5.5rem)}
-  .proof-final h2{font-size:clamp(2rem,6.5vw,3.4rem);letter-spacing:-.03em;text-wrap:balance}
-  .proof-final p{margin-top:1rem;color:var(--sub);font-size:clamp(1.04rem,1.8vw,1.22rem);max-width:40ch;margin-inline:auto}
-  .proof-final .btn{margin-top:1.9rem}
+  /* checkout */
+  .checkout{position:relative;z-index:2;max-width:940px;margin-inline:auto;
+    padding-block:clamp(2.4rem,7vw,4.4rem) clamp(2rem,5vw,3rem);text-align:center}
+  .checkout .eyebrow{margin-bottom:1rem}
+  .checkout h1{font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:-.02em}
+  .co-sub{margin:1rem auto 0;color:var(--sub);font-size:clamp(1.02rem,1.8vw,1.2rem);max-width:42ch;text-wrap:balance}
+  .co-card{margin-top:clamp(2rem,5vw,3rem);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.1rem,2.6vw,1.8rem);text-align:left;align-items:stretch}
+  .co-includes{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:clamp(1.6rem,3.4vw,2.3rem)}
+  .co-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:1.2rem}
+  .co-list{list-style:none;display:grid;gap:.75rem}
+  .co-list li{display:flex;gap:.7rem;align-items:flex-start;color:var(--fg);font-size:1rem}
+  .co-list .ck{flex-shrink:0;width:20px;height:20px;margin-top:.12em;color:var(--accent)}
+  .co-buy{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    background:linear-gradient(180deg,var(--panel-2),transparent);padding:clamp(1.8rem,4vw,2.5rem);
+    text-align:center;display:flex;flex-direction:column;justify-content:center}
+  .co-buy::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,158,255,.55),transparent)}
+  .co-name{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--fg)}
+  .co-price{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,10vw,4.4rem);line-height:1;margin:.5rem 0 .15rem}
+  .co-price span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
+  .co-tag{color:var(--mute);font-size:.9rem;letter-spacing:.02em}
+  .co-cta{width:100%;margin-top:1.6rem;font-size:1rem;padding:1.15rem 2rem}
+  .co-fine{margin-top:1.1rem;font-size:.78rem;color:var(--mute);line-height:1.55}
+  .co-back{margin-top:clamp(2rem,5vw,3rem);text-align:center}
+  .co-back a{color:var(--sub);font-size:.9rem;text-decoration:underline;text-underline-offset:3px;transition:color .2s ease}
+  .co-back a:hover{color:var(--fg)}
 
   /* footer */
   .foot{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem)}
@@ -125,7 +128,7 @@
   .foot-legal a:hover,.foot-legal button:hover{color:var(--accent)}
   .foot-legal .cpy{margin-left:auto;font-size:.78rem;color:var(--mute)}
 
-  /* modal de captación */
+  /* modal (captación provisional del enlace de pago) */
   .lead-modal{position:fixed;inset:0;z-index:140;display:flex;align-items:center;justify-content:center;
     padding:var(--pad);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
   .lead-modal.is-open{opacity:1;visibility:visible}
@@ -174,20 +177,11 @@
   .btn-sm2.solid{background:#fff;color:#08080c;border-color:#fff}
 
   /* reveal */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
-  .reveal.sc{transform:translateY(22px) scale(.98)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
   .reveal.in{opacity:1;transform:none}
 
   /* responsive */
-  @media(max-width:720px){ .grid{column-count:1;max-width:560px} }
-  @media(max-width:560px){
-    .nav-cta .lbl-full{display:none}
-    .nav-cta .lbl-short{display:inline}
-    .nav-cta .btn--sm{padding:.55rem .95rem}
-    .proof-final .btn{width:100%}
-    .foot-in{justify-content:center;text-align:center}
-    .foot-legal{justify-content:center}.foot-legal .cpy{margin:.4rem 0 0;width:100%;text-align:center}
-  }
+  @media(max-width:760px){ .co-card{grid-template-columns:1fr} }
   @media(max-width:360px){ .nav-in .brand-name{display:none} }
   @media(max-width:640px){.cookie-in{flex-direction:column;align-items:stretch}.ck-actions .btn-sm2{flex:1}}
 </style>
@@ -207,31 +201,46 @@
         <span class="brand-logo" aria-hidden="true"></span>
         <span class="brand-name">Ballmoney</span>
       </a>
-      <span class="nav-cta">
-        <a class="btn btn--primary btn--sm" href="pago.html"><span class="lbl-full">Acceder al método</span><span class="lbl-short">El método</span></a>
-      </span>
+      <a class="nav-back" href="pruebas.html">← Pruebas</a>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- CABECERA -->
-    <header class="proof-head">
-      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Pruebas reales</p>
-      <h1 class="reveal" style="--d:.06s">Pruebas reales.</h1>
-      <p class="reveal" style="--d:.12s">No tienes que creer en nuestras palabras. <span class="accent-txt">Míralas.</span></p>
-    </header>
+    <section class="checkout">
+      <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Ballmoney Method</p>
+      <h1 class="reveal" style="--d:.06s">Accede al método.</h1>
+      <p class="co-sub reveal" style="--d:.12s">Todo lo que necesitas para empezar a aplicar el método, en un único acceso.</p>
 
-    <!-- GALERÍA (grid; imágenes detectadas automáticamente desde /pruebas-adsense/) -->
-    <section class="grid" id="proof-grid" aria-label="Pruebas reales de resultados con Google AdSense"></section>
+      <div class="co-card">
+        <!-- QUÉ INCLUYE -->
+        <div class="co-includes reveal" style="--d:.16s">
+          <p class="co-label">Qué incluye</p>
+          <ul class="co-list">
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Manual y documentación del método</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Recursos y documentos</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Herramientas</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Plantillas</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Prompts</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ejemplos</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Material práctico para aplicar el método</li>
+            <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento directo de Ballmoney</li>
+          </ul>
+        </div>
 
-    <!-- CTA FINAL (único, tras la galería) -->
-    <section class="proof-final">
-      <h2 class="reveal">Ya has visto las pruebas.</h2>
-      <p class="reveal" style="--d:.08s">El siguiente paso es conocer el método.</p>
-      <a class="btn btn--primary reveal" style="--d:.16s" href="pago.html">Acceder al método
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+        <!-- PRECIO + CTA -->
+        <div class="co-buy reveal" style="--d:.2s">
+          <p class="co-name">Ballmoney Method</p>
+          <div class="co-price">38,99<span>€</span></div>
+          <p class="co-tag">Pago único · Sin suscripciones</p>
+          <a class="btn btn--primary co-cta" data-buy data-lead href="#">Acceder al método
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="co-fine">Acceso mediante pago único. No hay fórmulas mágicas: el método no garantiza resultados económicos; dependen de tu ejecución, de tu proyecto y de otros factores.</p>
+        </div>
+      </div>
+
+      <p class="co-back reveal"><a href="pruebas.html">¿Quieres volver a ver las pruebas?</a></p>
     </section>
 
   </main>
@@ -255,7 +264,7 @@
     </div>
   </footer>
 
-  <!-- MODAL DE CAPTACIÓN -->
+  <!-- MODAL (interino: reserva de acceso mientras se conecta la pasarela) -->
   <div class="lead-modal" data-lead-modal role="dialog" aria-modal="true" aria-labelledby="lead-title" hidden>
     <div class="lm-backdrop" data-lead-close></div>
     <div class="lead-card">
@@ -264,8 +273,8 @@
       </button>
       <div data-lead-step="form">
         <p class="lm-eyebrow">Ballmoney Method</p>
-        <h3 id="lead-title">Accede al método.</h3>
-        <p class="lm-sub">Déjanos tu nombre y tu email para continuar hacia Ballmoney Method.</p>
+        <h3 id="lead-title">Reserva tu acceso.</h3>
+        <p class="lm-sub">Déjanos tu nombre y tu email y te enviamos el enlace de pago para completar el acceso al método.</p>
         <form class="lead-form" data-lead-form novalidate>
           <div class="field">
             <label for="lead-name">Nombre</label>
@@ -278,13 +287,13 @@
           <button type="submit" class="btn btn--primary"><span>Continuar</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
-          <p class="lead-note">Solo usamos tus datos para darte acceso al método y orientarte. Consulta la <a href="privacidad.html">Política de privacidad</a>.</p>
+          <p class="lead-note">Solo usamos tus datos para enviarte el acceso al método. Consulta la <a href="privacidad.html">Política de privacidad</a>.</p>
         </form>
       </div>
       <div class="lead-ok" data-lead-step="ok" hidden>
         <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
         <h3>Perfecto.</h3>
-        <p>Hemos recibido tus datos. Muy pronto darás el siguiente paso hacia Ballmoney Method.</p>
+        <p>Hemos recibido tus datos. Te enviaremos el enlace de pago para completar el acceso.</p>
         <button type="button" class="btn btn--primary" data-lead-continue>Cerrar</button>
       </div>
     </div>
@@ -303,6 +312,21 @@
     "use strict";
     var yE=document.getElementById("y"); if(yE) yE.textContent=new Date().getFullYear();
 
+    /* ====== PASARELA DE PAGO ======================================================
+       Pega aquí el ENLACE DE PAGO alojado del producto de 38,99 € (pago único):
+         - Stripe Payment Link  (https://buy.stripe.com/...)
+         - o Gumroad / Lemon Squeezy / Paytpv, etc.
+       Es un enlace de checkout ALOJADO por la pasarela: seguro (no se guardan datos
+       de tarjeta en esta web y no hay claves secretas en el frontend).
+       Mientras esté vacío, el botón abre un formulario provisional (email) para
+       enviar el enlace de pago manualmente. */
+    var CHECKOUT_URL="";
+    if(CHECKOUT_URL){
+      document.querySelectorAll("[data-buy]").forEach(function(a){
+        a.setAttribute("href",CHECKOUT_URL); a.setAttribute("rel","noopener"); a.removeAttribute("data-lead");
+      });
+    }
+
     /* nav glass + barra de progreso */
     var nav=document.querySelector("[data-nav]"), prog=document.querySelector("[data-progress]");
     function onScroll(){
@@ -312,7 +336,7 @@
     }
     onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
 
-    /* reveal on scroll (una sola vez) */
+    /* reveal on scroll */
     var els=document.querySelectorAll(".reveal");
     if("IntersectionObserver" in window){
       var io=new IntersectionObserver(function(ents){
@@ -321,37 +345,7 @@
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(function(el){ el.classList.add("in"); }); }
 
-    /* GALERÍA: se rellena automáticamente desde el manifiesto /pruebas-adsense/pruebas.json.
-       Distribuye cualquier número de imágenes (grid de 2 columnas). Para añadir pruebas:
-       coloca la imagen optimizada en /pruebas-adsense/ y añade su nombre al manifiesto. */
-    (function(){
-      var grid=document.getElementById("proof-grid");
-      if(!grid) return;
-      var BASE="pruebas-adsense/";
-      function render(items){
-        if(!items || !items.length) return;
-        var frag=document.createDocumentFragment();
-        items.forEach(function(it,idx){
-          var src = (typeof it==="string") ? it : (it && it.src);
-          if(!src) return;
-          var f=document.createElement("figure"); f.className="shot";
-          var im=document.createElement("img");
-          im.src=BASE+src;
-          if(it && it.w && it.h){ im.width=it.w; im.height=it.h; }
-          im.alt="Prueba real de Google AdSense — Ballmoney Method";
-          im.decoding="async";
-          if(idx<2){ im.setAttribute("fetchpriority","high"); } else { im.loading="lazy"; }
-          f.appendChild(im); frag.appendChild(f);
-        });
-        grid.appendChild(frag);
-      }
-      fetch(BASE+"pruebas.json",{cache:"no-cache"})
-        .then(function(r){ return r.ok ? r.json() : []; })
-        .then(render)
-        .catch(function(){ /* sin manifiesto: no mostramos nada inventado */ });
-    })();
-
-    /* modal de captación (lead): nombre + email. Paso previo al checkout (se conectará después). */
+    /* modal provisional: reserva de acceso (email) mientras no hay pasarela conectada */
     (function(){
       var modal=document.querySelector("[data-lead-modal]");
       if(!modal) return;
@@ -359,43 +353,27 @@
       var stepForm=modal.querySelector('[data-lead-step="form"]');
       var stepOk=modal.querySelector('[data-lead-step="ok"]');
       var ENDPOINT="https://formspree.io/f/xrenybvd";
-      var LEAD_KEY="bm_lead", LIST_KEY="bm_lead_list";
+      var LEAD_KEY="bm_buy", LIST_KEY="bm_buy_list";
       var lastFocus=null, tHide=null;
-
-      function captured(){ try{ return localStorage.getItem(LEAD_KEY)==="1"; }catch(e){ return false; } }
       function focusSafe(el){ if(el&&el.focus){ try{ el.focus({preventScroll:true}); }catch(e){ try{ el.focus(); }catch(e2){} } } }
-
-      function open(showOk){
+      function open(){
         if(tHide){ clearTimeout(tHide); tHide=null; }
-        lastFocus=document.activeElement;
-        modal.hidden=false;
-        if(stepForm) stepForm.hidden=!!showOk;
-        if(stepOk) stepOk.hidden=!showOk;
-        void modal.offsetWidth;
-        modal.classList.add("is-open");
-        document.body.style.overflow="hidden";
-        if(!showOk) setTimeout(function(){ focusSafe(modal.querySelector("#lead-name")||modal.querySelector("#lead-email")); },60);
-        else focusSafe(modal.querySelector("[data-lead-continue]"));
+        lastFocus=document.activeElement; modal.hidden=false;
+        if(stepForm) stepForm.hidden=false; if(stepOk) stepOk.hidden=true;
+        void modal.offsetWidth; modal.classList.add("is-open"); document.body.style.overflow="hidden";
+        setTimeout(function(){ focusSafe(modal.querySelector("#lead-name")||modal.querySelector("#lead-email")); },60);
       }
       function close(){
-        modal.classList.remove("is-open");
-        document.body.style.overflow="";
-        tHide=setTimeout(function(){ modal.hidden=true; },400);
-        focusSafe(lastFocus);
+        modal.classList.remove("is-open"); document.body.style.overflow="";
+        tHide=setTimeout(function(){ modal.hidden=true; },400); focusSafe(lastFocus);
       }
-
       document.querySelectorAll("[data-lead]").forEach(function(a){
-        a.addEventListener("click",function(e){
-          e.preventDefault();
-          if(captured()){ open(true); return; }
-          open(false);
-        });
+        a.addEventListener("click",function(e){ e.preventDefault(); open(); });
       });
       modal.querySelectorAll("[data-lead-close]").forEach(function(b){ b.addEventListener("click",close); });
       document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&modal.classList.contains("is-open")) close(); });
       var cont=modal.querySelector("[data-lead-continue]");
       if(cont) cont.addEventListener("click",function(e){ e.preventDefault(); close(); });
-
       if(form){
         form.addEventListener("input",function(e){ var fld=e.target.closest(".field"); if(fld) fld.classList.remove("is-error"); });
         form.addEventListener("submit",function(e){
@@ -405,7 +383,7 @@
           if(!okEmail){ if(email){ email.closest(".field").classList.add("is-error"); focusSafe(email); } return; }
           var nameEl=form.querySelector("#lead-name");
           var data={ nombre:nameEl?nameEl.value.trim():"", email:email.value.trim(),
-            tipo:"Interés Ballmoney Method (pruebas)", fecha:new Date().toISOString(), _subject:"Nuevo interés — Ballmoney Method" };
+            tipo:"Compra Ballmoney Method (38,99 EUR)", fecha:new Date().toISOString(), _subject:"Nueva compra — Ballmoney Method" };
           try{ var arr=JSON.parse(localStorage.getItem(LIST_KEY)||"[]"); arr.push(data); localStorage.setItem(LIST_KEY,JSON.stringify(arr)); localStorage.setItem(LEAD_KEY,"1"); }catch(err){}
           var btn=form.querySelector("[type=submit]"), lab=btn?btn.querySelector("span"):null;
           if(btn) btn.disabled=true; if(lab) lab.textContent="Enviando…";
