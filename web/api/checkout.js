@@ -22,6 +22,8 @@ module.exports = async function handler(req, res) {
     // La variable de entorno aún no está configurada en Vercel.
     return res.status(500).json({ error: "stripe_no_configurado" });
   }
+  // Sanea la clave por si se pegó con saltos de línea o espacios al copiarla.
+  key = key.replace(/\s+/g, "");
 
   // Base URL de retorno (funciona en producción y en previews de Vercel).
   var host = req.headers["x-forwarded-host"] || req.headers.host;
@@ -51,6 +53,7 @@ module.exports = async function handler(req, res) {
     }
     return res.status(200).json({ url: data.url, id: data.id });
   } catch (e) {
-    return res.status(500).json({ error: "server_error", detail: String((e && e.message) || e) });
+    // No devolvemos el mensaje bruto: podría contener datos sensibles.
+    return res.status(500).json({ error: "server_error" });
   }
 };
