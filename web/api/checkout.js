@@ -51,6 +51,6 @@ module.exports = async function handler(req, res) {
     }
     return res.status(200).json({ url: data.url, id: data.id });
   } catch (e) {
-    return res.status(500).json({ error: "server_error" });
+    return res.status(500).json({ error: "server_error", detail: String((e && e.message) || e) });
   }
 };
