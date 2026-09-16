@@ -92,6 +92,10 @@
   /* checkout */
   .checkout{position:relative;z-index:2;max-width:940px;margin-inline:auto;
     padding-block:clamp(2.4rem,7vw,4.4rem) clamp(2rem,5vw,3rem);text-align:center}
+  .co-status{max-width:620px;margin:0 auto clamp(1.6rem,4vw,2.4rem);padding:1rem 1.2rem;border-radius:14px;
+    border:1px solid var(--line);background:var(--panel);font-size:.95rem;line-height:1.5;color:var(--sub)}
+  .co-status.ok{border-color:rgba(74,158,255,.35);background:var(--accent-soft);color:var(--fg)}
+  .co-status b{color:var(--fg);font-weight:600}
   .checkout .eyebrow{margin-bottom:1rem}
   .checkout h1{font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:-.02em}
   .co-sub{margin:1rem auto 0;color:var(--sub);font-size:clamp(1.02rem,1.8vw,1.2rem);max-width:42ch;text-wrap:balance}
@@ -208,6 +212,7 @@
   <main class="wrap">
 
     <section class="checkout">
+      <div class="co-status" data-status hidden></div>
       <p class="eyebrow acc reveal"><span class="d" aria-hidden="true"></span>Ballmoney Method</p>
       <h1 class="reveal" style="--d:.06s">Accede al método.</h1>
       <p class="co-sub reveal" style="--d:.12s">Todo lo que necesitas para empezar a aplicar el método, en un único acceso.</p>
@@ -233,7 +238,7 @@
           <p class="co-name">Ballmoney Method</p>
           <div class="co-price">38,99<span>€</span></div>
           <p class="co-tag">Pago único · Sin suscripciones</p>
-          <a class="btn btn--primary co-cta" data-buy data-lead href="#">Acceder al método
+          <a class="btn btn--primary co-cta" data-buy href="#">Acceder al método
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <p class="co-fine">Acceso mediante pago único. No hay fórmulas mágicas: el método no garantiza resultados económicos; dependen de tu ejecución, de tu proyecto y de otros factores.</p>
@@ -312,21 +317,6 @@
     "use strict";
     var yE=document.getElementById("y"); if(yE) yE.textContent=new Date().getFullYear();
 
-    /* ====== PASARELA DE PAGO ======================================================
-       Pega aquí el ENLACE DE PAGO alojado del producto de 38,99 € (pago único):
-         - Stripe Payment Link  (https://buy.stripe.com/...)
-         - o Gumroad / Lemon Squeezy / Paytpv, etc.
-       Es un enlace de checkout ALOJADO por la pasarela: seguro (no se guardan datos
-       de tarjeta en esta web y no hay claves secretas en el frontend).
-       Mientras esté vacío, el botón abre un formulario provisional (email) para
-       enviar el enlace de pago manualmente. */
-    var CHECKOUT_URL="";
-    if(CHECKOUT_URL){
-      document.querySelectorAll("[data-buy]").forEach(function(a){
-        a.setAttribute("href",CHECKOUT_URL); a.setAttribute("rel","noopener"); a.removeAttribute("data-lead");
-      });
-    }
-
     /* nav glass + barra de progreso */
     var nav=document.querySelector("[data-nav]"), prog=document.querySelector("[data-progress]");
     function onScroll(){
@@ -345,8 +335,8 @@
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(function(el){ el.classList.add("in"); }); }
 
-    /* modal provisional: reserva de acceso (email) mientras no hay pasarela conectada */
-    (function(){
+    /* modal de reserva (respaldo si el pago aún no está configurado en Vercel) */
+    var lead=(function(){
       var modal=document.querySelector("[data-lead-modal]");
       if(!modal) return;
       var form=modal.querySelector("[data-lead-form]");
@@ -392,6 +382,43 @@
             .then(function(){ done(); }).catch(function(){ done(); });
         });
       }
+      return { open: open };
+    })();
+
+    /* ====== STRIPE CHECKOUT (server-side) ==========================================
+       El CTA crea la sesión de Checkout en /api/checkout (Serverless Function).
+       La clave secreta vive SOLO en el servidor (STRIPE_SECRET_KEY); aquí no hay
+       ninguna clave. Si el pago aún no está configurado en Vercel, se abre el
+       formulario de reserva como respaldo. */
+    (function(){
+      document.querySelectorAll("[data-buy]").forEach(function(btn){
+        btn.addEventListener("click",function(e){
+          e.preventDefault();
+          if(btn.getAttribute("aria-busy")==="true") return;
+          btn.setAttribute("aria-busy","true"); btn.style.opacity=".7"; btn.style.pointerEvents="none";
+          fetch("/api/checkout",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})
+            .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok,d:d}; }); })
+            .then(function(res){
+              if(res.ok && res.d && res.d.url){ window.location.href=res.d.url; return; }
+              throw new Error((res.d && res.d.error) || "checkout_error");
+            })
+            .catch(function(){ if(lead && lead.open) lead.open(); })
+            .then(function(){ btn.removeAttribute("aria-busy"); btn.style.opacity=""; btn.style.pointerEvents=""; });
+        });
+      });
+
+      /* Retorno tras el pago (success_url / cancel_url) */
+      try{
+        var st=document.querySelector("[data-status]");
+        var estado=new URLSearchParams(location.search).get("pago");
+        if(st && estado==="ok"){
+          st.className="co-status ok"; st.hidden=false;
+          st.innerHTML="<b>Pago recibido.</b> ¡Gracias por tu compra! Te haremos llegar el acceso a Ballmoney&nbsp;Method.";
+        } else if(st && estado==="cancelado"){
+          st.className="co-status"; st.hidden=false;
+          st.textContent="Has cancelado el pago. Cuando quieras, puedes retomarlo desde el botón.";
+        }
+      }catch(e){}
     })();
   })();
   </script>

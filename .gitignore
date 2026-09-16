@@ -11,3 +11,8 @@ desktop.ini
 # Logs y temporales
 *.log
 node_modules/
+
+# Entorno / secretos (nunca subir claves)
+.env
+.env.*
+.vercel
