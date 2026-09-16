@@ -387,7 +387,7 @@
 
     /* ====== STRIPE CHECKOUT (server-side) ==========================================
        El CTA crea la sesión de Checkout en /api/checkout (Serverless Function).
-       La clave secreta vive SOLO en el servidor (STRIPE_SECRET_KEY); aquí no hay
+       La clave secreta vive SOLO en el servidor (variable de entorno); aquí no hay
        ninguna clave. Si el pago aún no está configurado en Vercel, se abre el
        formulario de reserva como respaldo. */
     (function(){
