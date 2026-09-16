@@ -114,6 +114,8 @@
   .co-price span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
   .co-tag{color:var(--mute);font-size:.9rem;letter-spacing:.02em}
   .co-cta{width:100%;margin-top:1.6rem;font-size:1rem;padding:1.15rem 2rem}
+  .co-error{margin-top:1rem;font-size:.85rem;line-height:1.5;color:#ff8a8a}
+  .co-error[hidden]{display:none}
   .co-fine{margin-top:1.1rem;font-size:.78rem;color:var(--mute);line-height:1.55}
   .co-back{margin-top:clamp(2rem,5vw,3rem);text-align:center}
   .co-back a{color:var(--sub);font-size:.9rem;text-decoration:underline;text-underline-offset:3px;transition:color .2s ease}
@@ -241,6 +243,7 @@
           <a class="btn btn--primary co-cta" data-buy href="#">Acceder al método
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
+          <p class="co-error" data-error hidden>No se ha podido iniciar el pago en este momento. Inténtalo de nuevo en unos minutos.</p>
           <p class="co-fine">Acceso mediante pago único. No hay fórmulas mágicas: el método no garantiza resultados económicos; dependen de tu ejecución, de tu proyecto y de otros factores.</p>
         </div>
       </div>
@@ -268,41 +271,6 @@
       </nav>
     </div>
   </footer>
-
-  <!-- MODAL (interino: reserva de acceso mientras se conecta la pasarela) -->
-  <div class="lead-modal" data-lead-modal role="dialog" aria-modal="true" aria-labelledby="lead-title" hidden>
-    <div class="lm-backdrop" data-lead-close></div>
-    <div class="lead-card">
-      <button type="button" class="lead-close" data-lead-close aria-label="Cerrar">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-      <div data-lead-step="form">
-        <p class="lm-eyebrow">Ballmoney Method</p>
-        <h3 id="lead-title">Reserva tu acceso.</h3>
-        <p class="lm-sub">Déjanos tu nombre y tu email y te enviamos el enlace de pago para completar el acceso al método.</p>
-        <form class="lead-form" data-lead-form novalidate>
-          <div class="field">
-            <label for="lead-name">Nombre</label>
-            <input type="text" id="lead-name" name="nombre" autocomplete="given-name" placeholder="Tu nombre" />
-          </div>
-          <div class="field">
-            <label for="lead-email">Email</label>
-            <input type="email" id="lead-email" name="email" autocomplete="email" placeholder="tu@email.com" required />
-          </div>
-          <button type="submit" class="btn btn--primary"><span>Continuar</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <p class="lead-note">Solo usamos tus datos para enviarte el acceso al método. Consulta la <a href="privacidad.html">Política de privacidad</a>.</p>
-        </form>
-      </div>
-      <div class="lead-ok" data-lead-step="ok" hidden>
-        <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <h3>Perfecto.</h3>
-        <p>Hemos recibido tus datos. Te enviaremos el enlace de pago para completar el acceso.</p>
-        <button type="button" class="btn btn--primary" data-lead-continue>Cerrar</button>
-      </div>
-    </div>
-  </div>
 
   <!-- COOKIES -->
   <div class="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
@@ -335,66 +303,18 @@
       els.forEach(function(el){ io.observe(el); });
     } else { els.forEach(function(el){ el.classList.add("in"); }); }
 
-    /* modal de reserva (respaldo si el pago aún no está configurado en Vercel) */
-    var lead=(function(){
-      var modal=document.querySelector("[data-lead-modal]");
-      if(!modal) return;
-      var form=modal.querySelector("[data-lead-form]");
-      var stepForm=modal.querySelector('[data-lead-step="form"]');
-      var stepOk=modal.querySelector('[data-lead-step="ok"]');
-      var ENDPOINT="https://formspree.io/f/xrenybvd";
-      var LEAD_KEY="bm_buy", LIST_KEY="bm_buy_list";
-      var lastFocus=null, tHide=null;
-      function focusSafe(el){ if(el&&el.focus){ try{ el.focus({preventScroll:true}); }catch(e){ try{ el.focus(); }catch(e2){} } } }
-      function open(){
-        if(tHide){ clearTimeout(tHide); tHide=null; }
-        lastFocus=document.activeElement; modal.hidden=false;
-        if(stepForm) stepForm.hidden=false; if(stepOk) stepOk.hidden=true;
-        void modal.offsetWidth; modal.classList.add("is-open"); document.body.style.overflow="hidden";
-        setTimeout(function(){ focusSafe(modal.querySelector("#lead-name")||modal.querySelector("#lead-email")); },60);
-      }
-      function close(){
-        modal.classList.remove("is-open"); document.body.style.overflow="";
-        tHide=setTimeout(function(){ modal.hidden=true; },400); focusSafe(lastFocus);
-      }
-      document.querySelectorAll("[data-lead]").forEach(function(a){
-        a.addEventListener("click",function(e){ e.preventDefault(); open(); });
-      });
-      modal.querySelectorAll("[data-lead-close]").forEach(function(b){ b.addEventListener("click",close); });
-      document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&modal.classList.contains("is-open")) close(); });
-      var cont=modal.querySelector("[data-lead-continue]");
-      if(cont) cont.addEventListener("click",function(e){ e.preventDefault(); close(); });
-      if(form){
-        form.addEventListener("input",function(e){ var fld=e.target.closest(".field"); if(fld) fld.classList.remove("is-error"); });
-        form.addEventListener("submit",function(e){
-          e.preventDefault();
-          var email=form.querySelector("#lead-email");
-          var okEmail=email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-          if(!okEmail){ if(email){ email.closest(".field").classList.add("is-error"); focusSafe(email); } return; }
-          var nameEl=form.querySelector("#lead-name");
-          var data={ nombre:nameEl?nameEl.value.trim():"", email:email.value.trim(),
-            tipo:"Compra Ballmoney Method (38,99 EUR)", fecha:new Date().toISOString(), _subject:"Nueva compra — Ballmoney Method" };
-          try{ var arr=JSON.parse(localStorage.getItem(LIST_KEY)||"[]"); arr.push(data); localStorage.setItem(LIST_KEY,JSON.stringify(arr)); localStorage.setItem(LEAD_KEY,"1"); }catch(err){}
-          var btn=form.querySelector("[type=submit]"), lab=btn?btn.querySelector("span"):null;
-          if(btn) btn.disabled=true; if(lab) lab.textContent="Enviando…";
-          function done(){ if(stepForm) stepForm.hidden=true; if(stepOk){ stepOk.hidden=false; focusSafe(stepOk.querySelector("[data-lead-continue]")); } }
-          fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
-            .then(function(){ done(); }).catch(function(){ done(); });
-        });
-      }
-      return { open: open };
-    })();
-
     /* ====== STRIPE CHECKOUT (server-side) ==========================================
-       El CTA crea la sesión de Checkout en /api/checkout (Serverless Function).
-       La clave secreta vive SOLO en el servidor (variable de entorno); aquí no hay
-       ninguna clave. Si el pago aún no está configurado en Vercel, se abre el
-       formulario de reserva como respaldo. */
+       El CTA "Acceder al método" crea la sesión de Checkout en /api/checkout
+       (Serverless Function) y redirige directamente a Stripe. La clave secreta vive
+       SOLO en el servidor (variable de entorno); aquí no hay ninguna clave ni ningún
+       formulario previo. */
     (function(){
+      var errEl=document.querySelector("[data-error]");
       document.querySelectorAll("[data-buy]").forEach(function(btn){
         btn.addEventListener("click",function(e){
           e.preventDefault();
           if(btn.getAttribute("aria-busy")==="true") return;
+          if(errEl) errEl.hidden=true;
           btn.setAttribute("aria-busy","true"); btn.style.opacity=".7"; btn.style.pointerEvents="none";
           fetch("/api/checkout",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})
             .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok,d:d}; }); })
@@ -402,7 +322,7 @@
               if(res.ok && res.d && res.d.url){ window.location.href=res.d.url; return; }
               throw new Error((res.d && res.d.error) || "checkout_error");
             })
-            .catch(function(){ if(lead && lead.open) lead.open(); })
+            .catch(function(){ if(errEl) errEl.hidden=false; })
             .then(function(){ btn.removeAttribute("aria-busy"); btn.style.opacity=""; btn.style.pointerEvents=""; });
         });
       });
