@@ -16,3 +16,7 @@ node_modules/
 .env
 .env.*
 .vercel
+
+# Contenido de pago de BALLMONEY METHOD (nunca subir: repo publico)
+# Los materiales del producto se guardan solo en local y se entregan manualmente.
+materiales/
