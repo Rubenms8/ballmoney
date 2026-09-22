@@ -333,7 +333,32 @@
         var estado=new URLSearchParams(location.search).get("pago");
         if(st && estado==="ok"){
           st.className="co-status ok"; st.hidden=false;
-          st.innerHTML="<b>Pago recibido.</b> ¡Gracias por tu compra! Te haremos llegar el acceso a Ballmoney&nbsp;Method.";
+          var sid=new URLSearchParams(location.search).get("session_id");
+          if(!sid){
+            st.innerHTML="<b>Pago recibido.</b> ¡Gracias por tu compra! Si no ves el botón de descarga, escríbenos y te haremos llegar el acceso a Ballmoney&nbsp;Method.";
+          } else {
+            st.innerHTML="<b>Pago recibido.</b> Un momento, estamos preparando tu descarga…";
+            fetch("/api/descargar?check=1&session_id="+encodeURIComponent(sid))
+              .then(function(r){ return r.ok ? r.json() : {ok:false}; })
+              .then(function(d){
+                if(d && d.ok){
+                  st.innerHTML="<b>Pago recibido.</b> ¡Gracias por tu compra! Ya puedes descargar el método:";
+                  var a=document.createElement("a");
+                  a.className="btn btn--primary";
+                  a.style.marginTop="1rem";
+                  a.href="/api/descargar?session_id="+encodeURIComponent(sid);
+                  a.setAttribute("download","");
+                  a.innerHTML='DESCARGAR BALLMONEY METHOD <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+                  st.appendChild(document.createElement("br"));
+                  st.appendChild(a);
+                } else {
+                  st.innerHTML="<b>Pago recibido.</b> No hemos podido validar la descarga automáticamente. Vuelve a intentarlo en unos minutos o escríbenos y te haremos llegar el acceso.";
+                }
+              })
+              .catch(function(){
+                st.innerHTML="<b>Pago recibido.</b> No hemos podido preparar la descarga en este momento. Inténtalo de nuevo o escríbenos.";
+              });
+          }
         } else if(st && estado==="cancelado"){
           st.className="co-status"; st.hidden=false;
           st.textContent="Has cancelado el pago. Cuando quieras, puedes retomarlo desde el botón.";

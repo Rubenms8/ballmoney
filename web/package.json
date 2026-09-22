@@ -1,0 +1,9 @@
+{
+  "name": "ballmoney-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BALLMONEY — sitio estatico + funciones serverless (checkout Stripe y descarga protegida).",
+  "dependencies": {
+    "@vercel/blob": "^2.3.0"
+  }
+}

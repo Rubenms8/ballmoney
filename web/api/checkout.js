@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
   params.append("mode", "payment");
   params.append("line_items[0][price]", PRICE_ID);
   params.append("line_items[0][quantity]", "1");
-  params.append("success_url", base + "/pago.html?pago=ok");
+  params.append("success_url", base + "/pago.html?pago=ok&session_id={CHECKOUT_SESSION_ID}");
   params.append("cancel_url", base + "/pago.html?pago=cancelado");
 
   try {
