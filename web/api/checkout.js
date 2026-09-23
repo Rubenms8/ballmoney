@@ -9,7 +9,7 @@
 // Producto: BALLMONEY METHOD · 46,99 € · pago único (mode: payment).
 // Se usa el Price ID indicado (los Price ID no son secretos).
 
-var PRICE_ID = "price_1UGI5nF3XQ4IYW2S7iQyHInw";
+var PRICE_ID = process.env.STRIPE_PRICE_ID || "price_1UGI5nF3XQ4IYW2S7iQyHInw";
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
