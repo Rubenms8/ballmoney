@@ -112,6 +112,7 @@
   .co-name{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--fg)}
   .co-price{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,10vw,4.4rem);line-height:1;margin:.5rem 0 .15rem}
   .co-price span{font-size:.4em;color:var(--sub);vertical-align:.35em;margin-left:.08em}
+  .co-price .co-old{font-size:.4em;color:var(--mute);text-decoration:line-through;text-decoration-thickness:2px;vertical-align:.34em;margin:0 .35em 0 0;font-weight:600}
   .co-tag{color:var(--mute);font-size:.9rem;letter-spacing:.02em}
   .co-cta{width:100%;margin-top:1.6rem;font-size:1rem;padding:1.15rem 2rem}
   .co-error{margin-top:1rem;font-size:.85rem;line-height:1.5;color:#ff8a8a}
@@ -238,13 +239,12 @@
         <!-- PRECIO + CTA -->
         <div class="co-buy reveal" style="--d:.2s">
           <p class="co-name">Ballmoney Method</p>
-          <div class="co-price">46,99<span>€</span></div>
+          <div class="co-price"><span class="co-old">97,99&nbsp;€</span>46,99<span>€</span></div>
           <p class="co-tag">Pago único · Sin suscripciones</p>
           <a class="btn btn--primary co-cta" data-buy href="#">Acceder al método
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <p class="co-error" data-error hidden>No se ha podido iniciar el pago en este momento. Inténtalo de nuevo en unos minutos.</p>
-          <p class="co-fine">Acceso mediante pago único. No hay fórmulas mágicas: el método no garantiza resultados económicos; dependen de tu ejecución, de tu proyecto y de otros factores.</p>
         </div>
       </div>
 
