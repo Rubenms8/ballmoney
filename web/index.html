@@ -54,6 +54,9 @@
     background:radial-gradient(circle,rgba(244,240,230,.07),transparent 62%)}
   .bg .glow.g2{width:60vw;height:60vw;max-width:520px;max-height:520px;bottom:-22%;right:-16%;
     background:radial-gradient(circle,rgba(244,240,230,.045),transparent 62%)}
+  .bg .texture{position:absolute;inset:auto 0 0 0;height:55%;
+    background:url("assets/img/photo-cash.jpg") center 35%/cover;
+    filter:grayscale(1) contrast(1.05) brightness(.6);opacity:.1;mix-blend-mode:screen}
   .bg .grain{position:absolute;inset:0;opacity:.03;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .bg .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 0%,transparent 55%,rgba(0,0,0,.6) 100%)}
@@ -71,6 +74,17 @@
   .brand-title{margin-top:1.1rem;font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,6vw,1.85rem);
     letter-spacing:.06em;color:var(--fg)}
   .brand-tag{margin-top:.5rem;color:var(--sub);font-size:.95rem;max-width:30ch}
+
+  /* ---------- FOTOGRAFÍAS ---------- */
+  .showcase{width:100%;margin-top:clamp(2rem,7vw,2.8rem);
+    opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) forwards}
+  .showcase:first-of-type{animation-delay:.12s}
+  .showcase:not(:first-of-type){animation-delay:.3s}
+  .photo-frame{background:var(--fg);border-radius:18px;padding:clamp(.55rem,2.4vw,.85rem);
+    border:1px solid var(--line-strong);box-shadow:0 26px 60px -26px rgba(0,0,0,.85)}
+  .photo-frame img{width:100%;height:auto;border-radius:10px;display:block}
+  .showcase-cap{margin-top:.7rem;text-align:center;font-family:var(--serif);font-weight:500;
+    font-size:.92rem;color:var(--sub);letter-spacing:.01em}
 
   /* ---------- ENLACES ---------- */
   .links{width:100%;display:grid;gap:.85rem;margin-top:clamp(2.2rem,7vw,3rem)}
@@ -135,6 +149,7 @@
 <div class="bg" aria-hidden="true">
   <div class="glow g1"></div>
   <div class="glow g2"></div>
+  <div class="texture"></div>
   <div class="grain"></div>
   <div class="vignette"></div>
 </div>
@@ -145,6 +160,12 @@
     <h1 class="brand-title">BALLMONEY</h1>
     <p class="brand-tag">Proyectos, ideas y nuevas oportunidades.</p>
   </header>
+
+  <section class="showcase">
+    <figure class="photo-frame">
+      <img src="assets/img/photo-ferrari.jpg" alt="Deportivo de alta gama en negro" loading="lazy" width="736" height="368" />
+    </figure>
+  </section>
 
   <nav class="links" aria-label="Enlaces de BallMoney">
     <a class="link-card" href="https://www.instagram.com/ballmoneyyyy/?psln=NXRodmhmb2lxYmUw&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">
@@ -199,6 +220,13 @@
     <!-- Para añadir un nuevo proyecto en el futuro, duplica un .link-card
          dentro de este <nav> con su propio icono, título, descripción y enlace. -->
   </nav>
+
+  <section class="showcase">
+    <figure class="photo-frame">
+      <img src="assets/img/photo-porsche.jpg" alt="Deportivo negro de alta gama" loading="lazy" width="735" height="490" />
+    </figure>
+    <p class="showcase-cap">Visión, disciplina y resultados.</p>
+  </section>
 
   <footer class="site-footer">
     <p>BALLMONEY · ballmoney.es</p>
