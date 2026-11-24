@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BallMoney | Proyectos, ideas y oportunidades</title>
-<meta name="description" content="Descubre BallMoney: proyectos, inversión y contenido sobre bolsa y economía. Sígueme en Instagram, X y TikTok, y contacta para colaboraciones." />
+<title>BallMoney</title>
+<meta name="description" content="BallMoney — perfil oficial. Redes sociales y contacto." />
 <meta name="theme-color" content="#050504" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://ballmoney.vercel.app/" />
@@ -13,15 +13,15 @@
 <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-<meta property="og:title" content="BallMoney | Proyectos, ideas y oportunidades" />
-<meta property="og:description" content="Descubre BallMoney: proyectos, inversión y contenido sobre bolsa y economía. Sígueme en Instagram, X y TikTok, y contacta para colaboraciones." />
+<meta property="og:title" content="BallMoney" />
+<meta property="og:description" content="BallMoney — perfil oficial. Redes sociales y contacto." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ballmoney.vercel.app/" />
 <meta property="og:image" content="https://ballmoney.vercel.app/assets/img/logo-ballmoney.png" />
 <meta property="og:site_name" content="BallMoney" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="BallMoney | Proyectos, ideas y oportunidades" />
-<meta name="twitter:description" content="Descubre BallMoney: proyectos, inversión y contenido sobre bolsa y economía. Sígueme en Instagram, X y TikTok, y contacta para colaboraciones." />
+<meta name="twitter:title" content="BallMoney" />
+<meta name="twitter:description" content="BallMoney — perfil oficial. Redes sociales y contacto." />
 <meta name="twitter:image" content="https://ballmoney.vercel.app/assets/img/logo-ballmoney.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,23 +69,17 @@
   /* ---------- CABECERA ---------- */
   .brand-head{display:flex;flex-direction:column;align-items:center;text-align:center;
     opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) .05s forwards}
-  .brand-mark{width:88px;height:88px;border-radius:50%;border:1px solid var(--line-strong);
-    box-shadow:0 18px 44px -18px rgba(0,0,0,.8);overflow:hidden}
+  .brand-mark{width:84px;height:84px;border-radius:50%;overflow:hidden}
   .brand-mark img{width:100%;height:100%;object-fit:cover}
-  .brand-title{margin-top:1.1rem;font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,6vw,1.85rem);
+  .brand-title{margin-top:1.2rem;font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,6vw,1.85rem);
     letter-spacing:.06em;color:var(--fg)}
-  .brand-tag{margin-top:.5rem;color:var(--sub);font-size:.95rem;max-width:30ch}
 
   /* ---------- FOTOGRAFÍAS (coches) ---------- */
   .showcase{width:100%;margin-top:clamp(2rem,7vw,2.8rem);
-    opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) forwards}
-  .showcase:first-of-type{animation-delay:.12s}
-  .showcase:not(:first-of-type){animation-delay:.3s}
+    opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) .12s forwards}
   .photo-frame{background:var(--gray-car);border-radius:18px;padding:clamp(.55rem,2.4vw,.85rem);
     border:1px solid rgba(255,255,255,.07);box-shadow:0 26px 60px -26px rgba(0,0,0,.85);isolation:isolate}
   .photo-frame img{width:100%;height:auto;border-radius:10px;display:block;mix-blend-mode:multiply}
-  .showcase-cap{margin-top:.7rem;text-align:center;font-family:var(--serif);font-weight:500;
-    font-size:.92rem;color:var(--sub);letter-spacing:.01em}
 
   /* ---------- ENLACES ---------- */
   .links{width:100%;display:grid;gap:.85rem;margin-top:clamp(2.2rem,7vw,3rem)}
@@ -159,7 +153,6 @@
   <header class="brand-head">
     <span class="brand-mark"><img src="assets/img/logo-ballmoney.png" alt="Logotipo de BallMoney" width="88" height="88" /></span>
     <h1 class="brand-title">BALLMONEY</h1>
-    <p class="brand-tag">Proyectos, ideas y nuevas oportunidades.</p>
   </header>
 
   <section class="showcase">
@@ -186,7 +179,7 @@
       </span>
       <span class="link-body">
         <span class="link-title">X (Twitter)</span>
-        <span class="link-desc">Inversión, bolsa, economía y mercados financieros.</span>
+        <span class="link-desc">Mercados y finanzas.</span>
       </span>
       <span class="link-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
@@ -221,13 +214,6 @@
     <!-- Para añadir un nuevo proyecto en el futuro, duplica un .link-card
          dentro de este <nav> con su propio icono, título, descripción y enlace. -->
   </nav>
-
-  <section class="showcase">
-    <figure class="photo-frame">
-      <img src="assets/img/photo-porsche.jpg" alt="Deportivo negro de alta gama" loading="lazy" width="735" height="490" />
-    </figure>
-    <p class="showcase-cap">Visión, disciplina y resultados.</p>
-  </section>
 
   <footer class="site-footer">
     <p>BALLMONEY · ballmoney.es</p>
